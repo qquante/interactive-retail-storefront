@@ -22,7 +22,10 @@ Atualizado em: 2026-08-28
 | DEC-014 | A marca é `HEAL`; `HEAL. CURA.` e `Heal Incensos` estão superseded. | Correção explícita do usuário. | confirmed |
 | DEC-015 | `HEALS` nomeia o sistema de incensos, usando `HEALS — os incensos da HEAL` nos primeiros contatos. | Evita exigir que a pessoa adivinhe o termo proprietário. | confirmed |
 | DEC-016 | As cinco direções, caixas e imagens atuais são explorações, não identidade ou embalagem oficial. | O usuário declarou que a marca continua em construção. | confirmed |
-| DEC-017 | O primeiro protótipo de experiência deve comparar `O intervalo aceso` e `Coreografia do ar`, ambos com prova factual de `Matéria aberta`. | Maximiza contraste útil sem misturar cinco identidades. | proposed-for-user-selection |
+| DEC-017 | O primeiro protótipo de experiência compararia `O intervalo aceso` e `Coreografia do ar`, ambos com prova factual de `Matéria aberta`. | A comparação foi encerrada pela escolha explícita do usuário. | superseded-by-DEC-018 |
+| DEC-018 | `Coreografia do ar` é a direção escolhida para desenvolvimento conceitual; `Matéria aberta` permanece como camada factual. | Escolha explícita do usuário; une experiência autoral e prova do bastão real. | confirmed-concept-direction |
+| DEC-019 | Na embalagem, `HEAL` aparece uma vez como masterbrand; o aroma domina; `incenso HEALS · em bastão` é descritor textual, nunca segundo logo empilhado. | Resolve a competição HEAL/HEALS apontada pelo usuário e mantém a categoria compreensível. | confirmed |
+| DEC-020 | A janela curva é uma hipótese de estrutura da `Coreografia do ar`, condicionada a pouch/barreira e testes de partículas, queda, compressão, umidade e transporte. | O bastão pretendido é grosso, áspero e pode desprender material; o gesto visual não pode comprometer proteção. | confirmed-as-physical-gate |
 
 ## Provisórias
 
@@ -37,7 +40,7 @@ Atualizado em: 2026-08-28
 - Provedor operacional de commerce/checkout.
 - CNPJ, políticas, frete e atendimento.
 - Fotografia/embalagem real da marca.
-- Direção principal entre as finalistas e challenger.
-- Mecânica inicial de embalagem entre `Janela Estratigráfica` e `Gaveta de Pausa`; `Arquivo Refil` permanece hipótese.
+- Challenger futuro para `Coreografia do ar`, somente se teste de uso justificar.
+- Mecânica industrial da caixa: janela curva com barreira versus frente sólida; depende dos testes físicos de DEC-020.
 - Medidas, composição, origem, processo, quantidade e performance de queima do bastão real.
 - Domínio e infraestrutura de produção.

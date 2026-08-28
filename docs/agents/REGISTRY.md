@@ -32,6 +32,9 @@ Atualizado em: 2026-08-28
 | HEAL-24 | Motion/experiência 2026 | `docs/concepts/EXPERIENCE_MOTION_LAB.md`, handoff próprio | `site/`, packages, assets | done |
 | HEAL-25 | Produto/bastão/embalagem | `docs/concepts/PRODUCT_PACKAGING_RESEARCH.md`, handoff próprio | `site/`, assets, governança | done |
 | HEAL-26 | Frontend experience/UX independente | `docs/concepts/FRONTEND_EXPERIENCE_GAP_AUDIT.md`, handoff próprio | `site/`, config, governança | done |
+| HEAL-30 | Arquitetura de marca/embalagem | `docs/concepts/PACKAGING_BRAND_ARCHITECTURE.md`, handoff próprio | `site/`, assets, packages, governança | done |
+| HEAL-31 | Auditoria de linhas e produto concorrente | `docs/concepts/COMPETITOR_LINE_AUDIT_V2.md`, handoff próprio | `site/`, assets, packages, governança | done |
+| HEAL-32 | Sistema de experiência `Coreografia do ar` | `docs/concepts/COREOGRAFIA_DO_AR_SYSTEM.md`, handoff próprio | `site/`, assets, packages, governança | done |
 
 ## Regra de Sites
 

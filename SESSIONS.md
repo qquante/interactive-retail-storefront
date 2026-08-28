@@ -37,6 +37,10 @@ Atualizado em: 2026-08-28
 | S-20260828-031 | HEAL-25 | Produto, bastão e embalagem | `docs/concepts/` + handoff próprio | done | Auditoria Nirvana/Fênix, cinco caixas e requisitos materiais documentados |
 | S-20260828-032 | HEAL-26 | Frontend experience/UX independente | `docs/concepts/` + handoff próprio | done | UI 1440/390 inspecionada; 32 propostas e três storyboards; nenhum código alterado |
 | S-20260828-033 | HEAL-00 | Naming, concept arts e integração documental | `site/` user-facing + docs/evidence/governança | verified | HEAL/HEALS aplicado; cinco imagens concept-only; lint/typecheck/12 Vitest/52 E2E/axe/build verdes |
+| S-20260828-034 | HEAL-30 | Arquitetura integral da caixa sem dois logos | `docs/concepts/` + handoff próprio | done | H1 aroma-first adotada; cinco SKUs, painéis, pouch, lacre, caixa-mãe e preflight regulatório |
+| S-20260828-035 | HEAL-31 | Auditoria aprofundada Nirvana/Fênix | `docs/concepts/` + handoff próprio | done | Linhas, formatos, cinco aromas, bastões, fotografia, gaps e gates documentados |
+| S-20260828-036 | HEAL-32 | Sistema físico/digital da direção escolhida | `docs/concepts/` + handoff próprio | done | Cinco gramáticas visuais, storyboards, Anime.js/Three.js, fallbacks, budgets e métricas |
+| S-20260828-037 | HEAL-00 | Mockups e prancha de embalagem V2 | `docs/evidence/concepts/packaging/coreografia-v2/` + governança | verified concept-only | 6 imagens, SVG/PNG de sistema e provenance; nenhuma mudança na loja |
 
 ## Metadados operacionais das sessões
 
@@ -77,3 +81,7 @@ O runtime registrou a data, mas não preservou horários de spawn/finalização 
 | S-20260828-031 | 2026-08-28, horário não capturado | 2026-08-28 | shared workspace; docs scope | sem amostra, dieline ou teste físico; conceitos mantidos como `[A VALIDAR]` |
 | S-20260828-032 | 2026-08-28, horário não capturado | 2026-08-28 | shared workspace; review read-only | nenhum teste automatizado executado pelo agente |
 | S-20260828-033 | 2026-08-28, horário não capturado | 2026-08-28 | `main`; root | primeira E2E teve 48/52 porque o naming removeu `Intervalo` da busca; corrigido para `[nome] — Incenso HEALS`, teste focado 4/4 e rerun completo 52/52. Social card legado ainda requer substituição antes de origem pública |
+| S-20260828-034 | 2026-08-28, horário não capturado | 2026-08-28 | shared workspace; docs scope | sem produto, fórmula, medidas ou enquadramento regulatório; todos os campos materiais permaneceram `[A VALIDAR]` |
+| S-20260828-035 | 2026-08-28, horário não capturado | 2026-08-28 | shared workspace; research/docs | concorrentes não exibem todas as faces; declarações próprias foram separadas de observação e inferência |
+| S-20260828-036 | 2026-08-28, horário não capturado | 2026-08-28 | shared workspace; docs scope | nenhuma animação ou mudança visual implementada na loja |
+| S-20260828-037 | 2026-08-28, horário não capturado | 2026-08-28 | `main`; root + ImageGen | imagens podem conter microtexto gerado; copy autoritativa ficou separada na arquitetura documental |

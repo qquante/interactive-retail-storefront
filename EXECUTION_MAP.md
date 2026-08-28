@@ -20,6 +20,8 @@ A11y + performance + segurança + analytics + QA
 HEAL-22 review → correções por owners → re-review
    ↓
 Release readiness local (sem deploy)
+   ↓
+Escolha conceitual B → arquitetura completa da caixa → auditoria V2 → mockups/faca conceitual
 ```
 
 ## Caminho crítico
@@ -38,4 +40,3 @@ Release readiness local (sem deploy)
 - Research read-only pode rodar em paralelo.
 - Escrita paralela exige ownership sem sobreposição.
 - Uma vaga deve ficar disponível para integração/revisão quando possível.
-

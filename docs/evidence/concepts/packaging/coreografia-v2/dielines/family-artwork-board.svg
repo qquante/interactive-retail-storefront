@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="980" viewBox="0 0 1800 980" role="img" aria-labelledby="title desc">
+  <title id="title">HEAL — sistema conceitual de embalagem Coreografia do ar</title>
+  <desc id="desc">Prancha vetorial com as cinco frentes e o mapa de todas as faces da caixa. Conceito, não faca de produção.</desc>
+  <defs>
+    <style>
+      .bg{fill:#121514}.paper{fill:#ebe8df}.ink{fill:#151716}.muted{fill:#6d726d}.hair{fill:none;stroke-width:2}.hair2{fill:none;stroke-width:1;opacity:.55}.fold{fill:none;stroke:#636862;stroke-width:1.5;stroke-dasharray:8 7}.cut{stroke:#c8cac4;stroke-width:2}.micro{font:500 12px Arial,sans-serif;letter-spacing:2px}.small{font:500 15px Arial,sans-serif;letter-spacing:2.5px}.brand{font:600 18px Arial,sans-serif;letter-spacing:5px}.aroma{font:500 29px Georgia,serif;letter-spacing:1px}.note{font:400 16px Arial,sans-serif}.section{font:600 21px Arial,sans-serif;letter-spacing:1px}
+    </style>
+    <pattern id="cnl" width="18" height="18" patternUnits="userSpaceOnUse"><path d="M-4 18 L18 -4 M5 22 L22 5" stroke="#efb085" stroke-width="2"/></pattern>
+    <pattern id="lvc" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="4" cy="4" r="1.8" fill="#c9c9ee"/></pattern>
+    <pattern id="mra" width="22" height="22" patternUnits="userSpaceOnUse"><rect x="0" y="0" width="15" height="15" fill="#a45f69"/><rect x="5" y="5" width="17" height="17" fill="#541f28"/></pattern>
+    <pattern id="olb" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M5 0 V20 M14 0 V20" stroke="#c6902e" stroke-width="2"/></pattern>
+    <pattern id="alc" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M3 4 L12 10 L3 16" fill="none" stroke="#9fcb72" stroke-width="2"/></pattern>
+  </defs>
+
+  <rect class="bg" width="1600" height="980"/>
+  <text x="62" y="62" fill="#f3f1e9" class="section">HEAL — COREOGRAFIA DO AR</text>
+  <text x="62" y="91" fill="#9da49e" class="note">ARTE CONCEITUAL V2 • NÃO É FACA DE PRODUÇÃO • MEDIDAS E DADOS [A VALIDAR]</text>
+
+  <!-- CANELA -->
+  <g transform="translate(62 135)">
+    <rect width="190" height="650" rx="4" fill="#a54127"/>
+    <rect width="190" height="650" rx="4" fill="url(#cnl)" opacity=".13"/>
+    <text x="24" y="43" fill="#fff4e9" class="brand">HEAL</text>
+    <text x="24" y="132" fill="#fff4e9" class="aroma">CANELA</text>
+    <text x="24" y="160" fill="#fff4e9" class="micro">INCENSO HEALS</text>
+    <path d="M-10 390 C35 330 95 340 188 244 M-8 432 C65 350 106 375 205 278 M-5 474 C82 385 126 405 210 318" class="hair" stroke="#efb085"/>
+    <path d="M45 405 C80 365 118 370 155 340 C125 420 105 492 65 545 C48 518 39 465 45 405Z" fill="#171917"/>
+    <text x="24" y="615" fill="#fff4e9" class="micro">CONTEÚDO [A VALIDAR]</text>
+    <rect y="662" width="190" height="56" rx="3" fill="url(#cnl)"/>
+    <text y="749" fill="#ddd9cf" class="small">CNL / PULSO</text>
+  </g>
+
+  <!-- LAVANDA CELESTIAL -->
+  <g transform="translate(272 135)">
+    <rect width="190" height="650" rx="4" fill="#3f3c70"/>
+    <rect width="190" height="650" rx="4" fill="url(#lvc)" opacity=".12"/>
+    <text x="24" y="43" fill="#f4f1ff" class="brand">HEAL</text>
+    <text x="24" y="122" fill="#f4f1ff" class="aroma">LAVANDA</text>
+    <text x="24" y="154" fill="#f4f1ff" class="aroma">CELESTIAL</text>
+    <text x="24" y="184" fill="#f4f1ff" class="micro">INCENSO HEALS</text>
+    <path d="M-5 310 C120 350 52 445 190 510 M-5 344 C105 374 58 470 195 538 M-5 378 C92 401 66 494 196 568" class="hair" stroke="#c9c9ee"/>
+    <path d="M53 340 C127 366 70 453 151 501 C108 487 74 512 53 560 C68 462 21 406 53 340Z" fill="#171917"/>
+    <text x="24" y="615" fill="#f4f1ff" class="micro">CONTEÚDO [A VALIDAR]</text>
+    <rect y="662" width="190" height="56" rx="3" fill="url(#lvc)"/>
+    <text y="749" fill="#ddd9cf" class="small">LVC / VÉU</text>
+  </g>
+
+  <!-- MIRRA -->
+  <g transform="translate(482 135)">
+    <rect width="190" height="650" rx="4" fill="#4a2027"/>
+    <text x="24" y="43" fill="#f7e7df" class="brand">HEAL</text>
+    <text x="24" y="132" fill="#f7e7df" class="aroma">MIRRA</text>
+    <text x="24" y="160" fill="#f7e7df" class="micro">INCENSO HEALS</text>
+    <path d="M10 306 C168 236 170 427 42 397 C-30 380 5 284 120 332 C212 370 148 540 40 510 C-24 492 5 420 92 441 C153 455 156 566 82 594" class="hair" stroke="#ba7378"/>
+    <path d="M61 373 C126 337 153 395 118 435 C84 469 54 452 44 429 C38 408 45 385 61 373Z" fill="#171917"/>
+    <text x="24" y="615" fill="#f7e7df" class="micro">CONTEÚDO [A VALIDAR]</text>
+    <rect y="662" width="190" height="56" rx="3" fill="url(#mra)"/>
+    <text y="749" fill="#ddd9cf" class="small">MRA / NÓ</text>
+  </g>
+
+  <!-- OLÍBANO -->
+  <g transform="translate(692 135)">
+    <rect width="190" height="650" rx="4" fill="#ece5d5"/>
+    <text x="24" y="43" fill="#282821" class="brand">HEAL</text>
+    <text x="24" y="132" fill="#282821" class="aroma">OLÍBANO</text>
+    <text x="24" y="160" fill="#282821" class="micro">INCENSO HEALS</text>
+    <path d="M20 560 V390 Q20 305 86 305 Q152 305 152 390 V560 M48 560 V420 Q48 346 102 346 Q156 346 156 420 V560 M78 560 V453 Q78 392 124 392 Q170 392 170 453 V560" class="hair" stroke="#bd8b31"/>
+    <path d="M66 380 C119 344 156 394 142 454 C130 500 95 529 63 548 C76 475 39 426 66 380Z" fill="#171917"/>
+    <text x="24" y="615" fill="#282821" class="micro">CONTEÚDO [A VALIDAR]</text>
+    <rect y="662" width="190" height="56" rx="3" fill="url(#olb)"/>
+    <text y="749" fill="#ddd9cf" class="small">OLB / ARCO</text>
+  </g>
+
+  <!-- ALECRIM -->
+  <g transform="translate(902 135)">
+    <rect width="190" height="650" rx="4" fill="#16372f"/>
+    <text x="24" y="43" fill="#edf5e8" class="brand">HEAL</text>
+    <text x="24" y="132" fill="#edf5e8" class="aroma">ALECRIM</text>
+    <text x="24" y="160" fill="#edf5e8" class="micro">INCENSO HEALS</text>
+    <path d="M24 570 C48 482 64 415 101 330 M62 450 L22 412 M70 426 L122 389 M88 360 L54 324 M101 330 L151 295 M48 500 L104 478" class="hair" stroke="#8fc167" stroke-width="4"/>
+    <path d="M53 405 C101 378 130 400 126 447 C118 500 81 518 46 536 C62 480 26 446 53 405Z" fill="#171917"/>
+    <text x="24" y="615" fill="#edf5e8" class="micro">CONTEÚDO [A VALIDAR]</text>
+    <rect y="662" width="190" height="56" rx="3" fill="url(#alc)"/>
+    <text y="749" fill="#ddd9cf" class="small">ALC / RAMO</text>
+  </g>
+
+  <!-- MAPA DE FACES -->
+  <g transform="translate(1144 135)">
+    <text x="0" y="0" fill="#f3f1e9" class="section">CAIXA INTEIRA</text>
+    <text x="0" y="28" fill="#9da49e" class="note">mapa editorial; geometria final depende do produto real</text>
+
+    <g transform="translate(0 66)">
+      <rect x="0" y="0" width="80" height="510" fill="#252a27" class="cut"/>
+      <rect x="80" y="0" width="150" height="510" fill="#ebe8df" class="cut"/>
+      <rect x="230" y="0" width="80" height="510" fill="#252a27" class="cut"/>
+      <rect x="310" y="0" width="150" height="510" fill="#ebe8df" class="cut"/>
+      <rect x="460" y="0" width="22" height="510" fill="#363c38" class="cut"/>
+      <path d="M0 0V510 M80 0V510 M230 0V510 M310 0V510 M460 0V510" class="fold"/>
+
+      <text x="40" y="30" text-anchor="middle" fill="#e9e6dc" class="micro">LOMBADA A</text>
+      <text x="155" y="30" text-anchor="middle" fill="#1a1d1b" class="micro">FRENTE</text>
+      <text x="270" y="30" text-anchor="middle" fill="#e9e6dc" class="micro">LOMBADA B</text>
+      <text x="385" y="30" text-anchor="middle" fill="#1a1d1b" class="micro">VERSO</text>
+      <text x="471" y="30" text-anchor="middle" fill="#e9e6dc" class="micro" transform="rotate(90 471 30)">COLA</text>
+
+      <text x="20" y="92" fill="#e9e6dc" class="micro">AROMA</text>
+      <text x="20" y="118" fill="#e9e6dc" class="micro">GLIFO</text>
+      <text x="20" y="144" fill="#e9e6dc" class="micro">CÓDIGO</text>
+      <text x="20" y="400" fill="#e9e6dc" class="micro">ABERTURA</text>
+      <text x="20" y="426" fill="#e9e6dc" class="micro">+ LOTE</text>
+
+      <text x="100" y="92" fill="#1a1d1b" class="brand">HEAL</text>
+      <text x="100" y="152" fill="#1a1d1b" class="aroma">AROMA</text>
+      <text x="100" y="180" fill="#1a1d1b" class="micro">INCENSO HEALS</text>
+      <text x="100" y="203" fill="#1a1d1b" class="micro">EM BASTÃO</text>
+      <path d="M112 268 C190 236 192 384 112 426" class="hair" stroke="#656b65"/>
+      <path d="M128 290 C184 284 186 366 132 400 C142 354 104 330 128 290Z" fill="#171917"/>
+      <text x="100" y="476" fill="#1a1d1b" class="micro">CONTEÚDO [A VALIDAR]</text>
+
+      <text x="250" y="92" fill="#e9e6dc" class="micro">AROMA</text>
+      <text x="250" y="118" fill="#e9e6dc" class="micro">MODO DE ABRIR</text>
+      <text x="250" y="400" fill="#e9e6dc" class="micro">SAC [A VALIDAR]</text>
+      <text x="250" y="426" fill="#e9e6dc" class="micro">QR OPCIONAL</text>
+
+      <text x="330" y="85" fill="#1a1d1b" class="small">O QUE É</text>
+      <rect x="330" y="100" width="110" height="44" fill="none" stroke="#777d77"/>
+      <text x="330" y="174" fill="#1a1d1b" class="small">COMPOSIÇÃO</text>
+      <rect x="330" y="188" width="110" height="54" fill="none" stroke="#777d77"/>
+      <text x="330" y="272" fill="#1a1d1b" class="small">COMO USAR</text>
+      <rect x="330" y="286" width="110" height="54" fill="none" stroke="#777d77"/>
+      <text x="330" y="370" fill="#1a1d1b" class="small">CUIDADOS</text>
+      <rect x="330" y="384" width="110" height="54" fill="none" stroke="#777d77"/>
+      <text x="330" y="468" fill="#1a1d1b" class="micro">ORIGEM • CNPJ</text>
+      <text x="330" y="490" fill="#1a1d1b" class="micro">REG. [A VALIDAR]</text>
+
+      <rect x="80" y="-70" width="150" height="70" fill="#d9d6cd" class="cut"/>
+      <rect x="310" y="-70" width="150" height="70" fill="#d9d6cd" class="cut"/>
+      <rect x="80" y="510" width="150" height="70" fill="#d9d6cd" class="cut"/>
+      <rect x="310" y="510" width="150" height="70" fill="#d9d6cd" class="cut"/>
+      <text x="155" y="-28" text-anchor="middle" fill="#1a1d1b" class="micro">TOPO: HEAL + AROMA</text>
+      <text x="385" y="-28" text-anchor="middle" fill="#1a1d1b" class="micro">LACRE [A VALIDAR]</text>
+      <text x="155" y="552" text-anchor="middle" fill="#1a1d1b" class="micro">BASE: LOTE / VALIDADE</text>
+      <text x="385" y="545" text-anchor="middle" fill="#1a1d1b" class="micro">GTIN / DADOS</text>
+      <text x="385" y="564" text-anchor="middle" fill="#1a1d1b" class="micro">VARIÁVEIS [A VALIDAR]</text>
+    </g>
+
+    <g transform="translate(0 700)">
+      <text x="0" y="0" fill="#f3f1e9" class="section">CAMADAS FÍSICAS CANDIDATAS</text>
+      <text x="0" y="34" fill="#c8cac4" class="note">1. cartucho de papel • 2. pouch/barreira • 3. feixe irregular</text>
+      <text x="0" y="62" fill="#c8cac4" class="note">4. lacre de papel • 5. impressão variável sem verniz</text>
+      <text x="0" y="104" fill="#efa778" class="note">A janela só avança se contenção de partículas, barreira e transporte passarem.</text>
+    </g>
+  </g>
+
+  <text x="62" y="930" fill="#9da49e" class="note">Aroma domina. HEAL assina. “Incenso HEALS” ensina a família. Nenhum benefício terapêutico ou espiritual é inferido.</text>
+</svg>

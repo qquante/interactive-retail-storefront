@@ -1,7 +1,7 @@
 # HEAL / HEALS — prancha de escolha conceitual
 
 Atualizado em: 2026-08-28  
-Estado: **exploração; nada visual, verbal ou industrial está oficializado**
+Estado: **`Coreografia do ar` escolhida para desenvolvimento conceitual; identidade e engenharia ainda não oficializadas**
 
 ## O que já está decidido
 
@@ -11,8 +11,21 @@ Estado: **exploração; nada visual, verbal ou industrial está oficializado**
 - Navegação, busca, cards, PDP, carrinho e SEO continuam usando a palavra comum `incenso(s)`.
 - O produto pretendido deve ser percebido como bastão espesso, áspero, granulado e levemente irregular, não como vareta fina e lisa.
 - Imagens desta prancha são concept art. Não provam ingrediente, origem, processo, dimensão, quantidade, aroma ou desempenho.
+- A frente não empilha `HEAL / HEALS`: `HEAL` assina uma vez, o aroma domina e `incenso HEALS · em bastão` explica a categoria.
 
-## Regra para escolher sem criar uma colcha de retalhos
+## Escolha registrada
+
+O usuário escolheu **B — Coreografia do ar**. A partir desta decisão:
+
+- `Coreografia do ar` é o sistema principal em desenvolvimento conceitual;
+- `Matéria aberta` entra apenas como camada de verdade do produto;
+- `O intervalo aceso` fica arquivado como challenger, não deve ser misturado à direção principal;
+- a janela curva permanece hipótese física sujeita a protótipo, contenção de partículas e teste de transporte;
+- os cinco SKUs iniciais são Canela, Lavanda Celestial, Mirra, Olíbano e Alecrim.
+
+As entregas V2 estão em `PACKAGING_BRAND_ARCHITECTURE.md`, `COMPETITOR_LINE_AUDIT_V2.md`, `COREOGRAFIA_DO_AR_SYSTEM.md` e `docs/evidence/concepts/packaging/coreografia-v2/`.
+
+## Regra para desenvolver sem criar uma colcha de retalhos
 
 Escolher **uma direção principal de experiência**, importar somente a camada factual de `Matéria aberta` e testar duas mecânicas físicas de embalagem. Não misturar as cinco estéticas.
 
