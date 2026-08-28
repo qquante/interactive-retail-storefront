@@ -30,3 +30,9 @@ Estados permitidos: `proposed`, `researching`, `ready`, `in_progress`, `review`,
 | HEAL-T021 | G-001..G-006 | HEAL-21 | Implementação | QA/E2E/visual | verified | QA independente entregue; root fechou QA-001/002; E2E padrão 48/48 |
 | HEAL-T022 | G-001..G-007 | HEAL-22 | HEAL-T021 | Review independente | verified | Re-review em `6b77c52`: approved para protótipo local fixture |
 | HEAL-T023 | G-005/G-007 | HEAL-00 | HEAL-T022 | Remediação pós-review e novo release candidate | done | HEAL22-001…004 fechados; H22-005 documental corrigido |
+| HEAL-T024 | G-001/G-008 | HEAL-23 | DEC-014/015 | Cinco direções de branding e copy | verified | 5 territórios, 50 dizeres, naming, microcopy, matriz e duas finalistas em `docs/concepts/BRANDING_COPY_DIRECTIONS.md` |
+| HEAL-T025 | G-003/G-008 | HEAL-24 | HEAL-T024 | Experience & Motion Lab | verified | 30 momentos, 5 signatures, Anime.js/Three.js, budgets e rotas de ambição em `docs/concepts/EXPERIENCE_MOTION_LAB.md` |
+| HEAL-T026 | G-001/G-008 | HEAL-25 | HEAL-T024 | Produto, bastão e embalagem | verified | Auditoria das referências, taxonomia do bastão, 5 caixas, shot list e gates em `docs/concepts/PRODUCT_PACKAGING_RESEARCH.md` |
+| HEAL-T027 | G-004/G-008 | HEAL-26 | HEAL-T024/T025 | Auditoria frontend experience | verified | 32 propostas, 3 storyboards, gaps desktop/mobile e laboratório A/B/C em `docs/concepts/FRONTEND_EXPERIENCE_GAP_AUDIT.md` |
+| HEAL-T028 | G-001/G-008 | HEAL-00 | HEAL-T024/T025/T026 | Cinco concept arts e prancha de escolha | verified concept-only | Imagens inspecionadas, provenance e `docs/concepts/CONCEPT_SELECTION_BOARD.md`; nenhuma integração visual na loja |
+| HEAL-T029 | G-001/G-007 | HEAL-00 | DEC-014/015 | Corrigir nomenclatura user-facing da fixture | verified | HEAL/HEALS/incensos atualizados; lint, typecheck, 12/12 Vitest, 52/52 E2E, axe 0 e build passaram |

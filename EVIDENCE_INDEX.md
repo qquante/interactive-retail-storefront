@@ -31,6 +31,11 @@ Atualizado em: 2026-08-28
 | Handoffs e sessões | governança real | `docs/agents/handoffs/`, `docs/agents/sessions/` e `SESSIONS.md`; horários ausentes explicitamente não inventados |
 | Release candidate remediado | Git/local | `70be2a6c92754339a9c90e1e987965a62243d0d2`; 12/12 Vitest, 52/52 E2E, build/smoke/audits verdes |
 | Release review independente | read-only | HEAL-22 revisou `6b77c52`; `approved` para fixture local, HOLD preview, NO-GO produção |
+| Branding/copy HEAL/HEALS | docs/hipótese | `docs/concepts/BRANDING_COPY_DIRECTIONS.md`; 5 direções, 50 dizeres e 2 finalistas, sem vencedora |
+| Motion/experience 2026 | docs/research/spec | `docs/concepts/EXPERIENCE_MOTION_LAB.md`; 30 interações e 5 signature moments |
+| Produto/bastão/embalagem | docs/research/spec | `docs/concepts/PRODUCT_PACKAGING_RESEARCH.md`; referências inspecionadas, 5 caixas e gates físicos |
+| Frontend experience audit | review read-only | `docs/concepts/FRONTEND_EXPERIENCE_GAP_AUDIT.md`; UI 1440/390, 32 propostas, 3 storyboards |
+| Cinco caixas conceituais | AI-generated concept-only | `docs/evidence/concepts/packaging/`; inspecionadas, prompts em `docs/concepts/IMAGEGEN_PROVENANCE.md` |
 
 | Evidence | Task | Tipo | Caminho/resultado | Estado |
 |---|---|---|---|---|
@@ -53,6 +58,10 @@ Atualizado em: 2026-08-28
 | E-0017 | HEAL-T009 | design system | 5 testes jsdom de overlays/disclosure/tabs/toast | verified local; adoção nas rotas é incremental |
 | E-0018 | HEAL-T021/T023 | build | dois manifests CSS SHA-256 idênticos | warning Vinext comprovadamente estável no estado testado |
 | E-0019 | G-007 | governance | handoffs HEAL-00…22/social e session metadata | consolidated; horários exatos não capturados |
+| E-0020 | HEAL-T024/T025/T026/T027 | agents | quatro frentes independentes entregaram docs e handoffs em scopes sem conflito | verified docs-only |
+| E-0021 | HEAL-T028 | ImageGen | cinco imagens isoladas, copiadas para evidência e inspecionadas visualmente | verified concept-only |
+| E-0022 | HEAL-T029 | browser | Home local inspecionada em 1440×1100 e 390×844 com HEAL/HEALS/incensos visíveis | verified visual |
+| E-0023 | HEAL-T029 | gates | lint, `tsc --noEmit`, 12/12 Vitest, 52/52 Playwright, axe 0 e build | verified local; warning de chunk/CSS Vinext conhecido permanece |
 
 Não registrar como evidência:
 

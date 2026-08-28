@@ -6,6 +6,7 @@ Cada agente tem um handoff próprio com estado real, arquivos, evidência, erros
 |---|---|---|
 | HEAL-00 | integração | `HEAL-00.md` |
 | HEAL-01…HEAL-22 | T001…T022 | arquivo de mesmo ID nesta pasta |
+| HEAL-23…HEAL-26 | T024…T027 | arquivo de mesmo ID nesta pasta |
 | HEAL-social | asset social | `HEAL-social.md` |
 
 Os artefatos especializados continuam sendo a evidência principal. Estes arquivos são o envelope operacional de entrega, não uma duplicação integral da pesquisa.

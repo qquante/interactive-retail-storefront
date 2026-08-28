@@ -28,6 +28,10 @@ Atualizado em: 2026-08-28
 | HEAL-21 | QA | `docs/qa/QA_RELEASE_MATRIX.md`, evidências próprias | Código/config/produção | done |
 | HEAL-22 | Release review | read-only | Todo código | approved local fixture |
 | HEAL-social | Social preview isolado | saída ImageGen fora do Site | Todo código/Sites/deploy | done |
+| HEAL-23 | Branding e copy exploratórios | `docs/concepts/BRANDING_COPY_DIRECTIONS.md`, handoff próprio | `site/`, assets, governança | done |
+| HEAL-24 | Motion/experiência 2026 | `docs/concepts/EXPERIENCE_MOTION_LAB.md`, handoff próprio | `site/`, packages, assets | done |
+| HEAL-25 | Produto/bastão/embalagem | `docs/concepts/PRODUCT_PACKAGING_RESEARCH.md`, handoff próprio | `site/`, assets, governança | done |
+| HEAL-26 | Frontend experience/UX independente | `docs/concepts/FRONTEND_EXPERIENCE_GAP_AUDIT.md`, handoff próprio | `site/`, config, governança | done |
 
 ## Regra de Sites
 

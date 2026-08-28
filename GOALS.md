@@ -11,3 +11,4 @@ Atualizado em: 2026-08-28
 | G-005 | SEO ecommerce 2026 tecnicamente correto. | HTML inicial, metadata, canonical, sitemap, schema factual e plano Merchant Center. | HEAL-15/16 | in_progress; produção depende de domínio/catálogo |
 | G-006 | Produto acessível, rápido e seguro. | WCAG 2.2 AA proporcional, budgets, testes, revisão de segurança/LGPD. | HEAL-17/18/19 | in_progress; performance/host/backend bloqueiam produção |
 | G-007 | Estado e evidência rastreáveis. | TASKS, SESSIONS, handoffs e EVIDENCE_INDEX atualizados. | HEAL-00 | verified local |
+| G-008 | Escolher uma direção própria para HEAL/HEALS antes de redesenhar a loja. | Cinco direções comparáveis, concept arts, storyboards e teste A/B definido; nenhuma direção integrada sem escolha. | HEAL-23/24/25/26/00 | ready for user selection |

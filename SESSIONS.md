@@ -32,6 +32,11 @@ Atualizado em: 2026-08-28
 | S-20260828-026 | HEAL-22 | Review final independente | Release candidate `b5ec182`, read-only | done | `changes_requested`: HEAL22-001…004; nenhum arquivo alterado pelo reviewer |
 | S-20260828-027 | HEAL-00 | Remediação pós-review | Design system, SEO, governança e prova CSS | done | 12/12 Vitest, 52/52 E2E, Axe 0, build/smoke/audits verdes |
 | S-20260828-028 | HEAL-22 | Re-review final independente | `70be2a6` + evidência `6b77c52`, read-only | done | `approved` para protótipo local; HOLD preview; NO-GO produção |
+| S-20260828-029 | HEAL-23 | Branding e copy exploratórios | `docs/concepts/` + handoff próprio | done | Cinco direções, 50 dizeres e finalistas sem escolher vencedora |
+| S-20260828-030 | HEAL-24 | Experience & Motion Lab | `docs/concepts/` + handoff próprio | done | 30 interações, cinco signatures e rota Signature recomendada para protótipo |
+| S-20260828-031 | HEAL-25 | Produto, bastão e embalagem | `docs/concepts/` + handoff próprio | done | Auditoria Nirvana/Fênix, cinco caixas e requisitos materiais documentados |
+| S-20260828-032 | HEAL-26 | Frontend experience/UX independente | `docs/concepts/` + handoff próprio | done | UI 1440/390 inspecionada; 32 propostas e três storyboards; nenhum código alterado |
+| S-20260828-033 | HEAL-00 | Naming, concept arts e integração documental | `site/` user-facing + docs/evidence/governança | verified | HEAL/HEALS aplicado; cinco imagens concept-only; lint/typecheck/12 Vitest/52 E2E/axe/build verdes |
 
 ## Metadados operacionais das sessões
 
@@ -67,3 +72,8 @@ O runtime registrou a data, mas não preservou horários de spawn/finalização 
 | S-20260828-026 | 2026-08-28, horário não capturado | 2026-08-28 | commit `b5ec182`; read-only | review retornou `changes_requested` com quatro findings internos |
 | S-20260828-027 | 2026-08-28, horário não capturado | 2026-08-28 | `main`; root | limpeza recursiva dos outputs foi rejeitada pela política de segurança; prova usou builds repetidos. Audit inicial no root falhou sem lockfile e agregação smoke usou `$home` protegido; reruns corretos em `site/`/`$healHtml` passaram |
 | S-20260828-028 | 2026-08-28, horário não capturado | 2026-08-28 | `6b77c52`; read-only | nenhum blocker local; H22-005 documental enviado ao root |
+| S-20260828-029 | 2026-08-28, horário não capturado | 2026-08-28 | shared workspace; docs scope | nenhuma vencedora escolhida |
+| S-20260828-030 | 2026-08-28, horário não capturado | 2026-08-28 | shared workspace; docs scope | nenhuma animação implementada nesta sessão |
+| S-20260828-031 | 2026-08-28, horário não capturado | 2026-08-28 | shared workspace; docs scope | sem amostra, dieline ou teste físico; conceitos mantidos como `[A VALIDAR]` |
+| S-20260828-032 | 2026-08-28, horário não capturado | 2026-08-28 | shared workspace; review read-only | nenhum teste automatizado executado pelo agente |
+| S-20260828-033 | 2026-08-28, horário não capturado | 2026-08-28 | `main`; root | primeira E2E teve 48/52 porque o naming removeu `Intervalo` da busca; corrigido para `[nome] — Incenso HEALS`, teste focado 4/4 e rerun completo 52/52. Social card legado ainda requer substituição antes de origem pública |

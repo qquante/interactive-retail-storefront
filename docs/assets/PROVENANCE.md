@@ -1,5 +1,7 @@
 # HEAL — Proveniência de assets
 
+> **Nota de 2026-08-28:** o cartão `site/public/og.png` com `HEAL. CURA.` é evidência histórica da primeira slice e não é mais emitido pela metadata. A marca atual é `HEAL`; a nova arte social depende da direção ainda não escolhida.
+
 Atualizado em: 2026-08-28
 
 ## `heal-ritual-demo`
