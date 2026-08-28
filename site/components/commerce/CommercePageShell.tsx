@@ -18,9 +18,8 @@ export function CommercePageShell({
       </a>
       <DemoBanner />
       <header className={styles.header}>
-        <Link className={styles.wordmark} href="/" aria-label="HEAL. CURA. — início">
-          <span>HEAL.</span>
-          <span>CURA.</span>
+        <Link className={styles.wordmark} href="/" aria-label="HEAL — início">
+          <span>HEAL</span>
         </Link>
         {minimal ? (
           <Link className={styles.headerLink} href="/carrinho">
@@ -44,7 +43,7 @@ export function CommercePageShell({
         {children}
       </main>
       <footer className={styles.footer}>
-        <p>HEAL. CURA. · Heal Incensos</p>
+        <p>HEAL · HEALS são os incensos da marca</p>
         <p>Estrutura comercial em demonstração; operação, políticas e atendimento ainda não foram definidos.</p>
         <p><Link href="/sobre">Sobre</Link> · <Link href="/seguranca">Segurança</Link> · <Link href="/entrega-trocas">Entrega e trocas</Link> · <Link href="/privacidade">Privacidade</Link> · <Link href="/termos">Termos</Link> · <Link href="/contato">Contato</Link></p>
       </footer>

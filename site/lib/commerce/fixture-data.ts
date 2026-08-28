@@ -66,7 +66,7 @@ function fixtureProduct(
   amount: string,
   inventoryStatus: Inventory['status'],
 ): Product {
-  const title = `HEAL Intervalo ${sequence} — Incenso [FORMATO A VALIDAR] [DEMONSTRAÇÃO]`;
+  const title = `Intervalo ${sequence} — Incenso HEALS [FORMATO A VALIDAR] [DEMONSTRAÇÃO]`;
 
   return {
     id: `fixture:product:intervalo-${sequence}` as ProductId,
@@ -109,7 +109,7 @@ export const FIXTURE_COLLECTIONS: readonly Collection[] = [
   {
     id: INTERVALOS_ID,
     handle: 'intervalos',
-    title: 'Intervalos — [DEMONSTRAÇÃO]',
+    title: 'HEALS — Intervalos [DEMONSTRAÇÃO]',
     description:
       'Uma coleção fictícia para validar comparação, navegação e caminho de compra. Nenhum nome, atributo ou condição representa produto real da HEAL.',
     image: null,
@@ -134,4 +134,3 @@ export function findFixtureVariant(
 
   return null;
 }
-

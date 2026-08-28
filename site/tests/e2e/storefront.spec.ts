@@ -23,11 +23,11 @@ test.describe('HEAL storefront', () => {
     await page.getByRole('link', { name: 'Ver sacola' }).click();
     await expect(page.getByText('R$ 78,00').first()).toBeVisible();
     await page.reload();
-    await expect(page.getByLabel(/Quantidade de HEAL Intervalo 01/).getByText('2')).toBeVisible();
-    await page.getByRole('button', { name: /Remover HEAL Intervalo 01/ }).click();
+    await expect(page.getByLabel(/Quantidade de Intervalo 01 — Incenso HEALS/).getByText('2')).toBeVisible();
+    await page.getByRole('button', { name: /Remover Intervalo 01 — Incenso HEALS/ }).click();
     await expect(page.getByRole('heading', { name: 'Sua sacola demonstrativa está vazia.' })).toBeVisible();
     await page.getByRole('button', { name: 'Desfazer remoção' }).click();
-    await expect(page.getByRole('heading', { name: /HEAL Intervalo 01/ })).toBeVisible();
+    await expect(page.getByRole('heading', { name: /Intervalo 01 — Incenso HEALS/ })).toBeVisible();
     await page.getByLabel('CEP para simulação').fill('123');
     await page.getByRole('button', { name: 'Simular entrega' }).click();
     await expect(page.getByLabel('CEP para simulação')).toHaveAttribute('aria-invalid', 'true');
@@ -121,14 +121,14 @@ test.describe('HEAL storefront', () => {
     await page.getByRole('button', { name: 'Buscar' }).click();
     await expect(page).toHaveURL(/q=Intervalo(?:\+|%20)02/);
     await expect(page.getByRole('heading', { name: /1 resultado/ })).toBeVisible();
-    await expect(page.getByRole('heading', { name: /HEAL Intervalo 02/ })).toBeVisible();
+    await expect(page.getByRole('heading', { name: /Intervalo 02 — Incenso HEALS/ })).toBeVisible();
 
     await page.goto('/colecoes/intervalos');
     await page.getByLabel('Disponibilidade demonstrativa').selectOption('desconhecida');
     await page.getByRole('button', { name: 'Aplicar ordenação' }).click();
     await expect(page).toHaveURL(/disponibilidade=desconhecida/);
     await expect(page.getByText('1 produto exibido')).toBeVisible();
-    await expect(page.getByRole('heading', { name: /HEAL Intervalo 03/ })).toBeVisible();
+    await expect(page.getByRole('heading', { name: /Intervalo 03 — Incenso HEALS/ })).toBeVisible();
   });
 
   for (const route of ['/', '/colecoes/intervalos', '/produtos/intervalo-01']) {

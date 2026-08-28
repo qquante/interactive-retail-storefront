@@ -6,7 +6,7 @@ import commerceStyles from '@/components/commerce/commerce.module.css';
 import editorialStyles from '@/components/editorial/EditorialPage.module.css';
 import { fixtureCommerce } from '@/lib/commerce';
 
-export const metadata: Metadata = { title: 'Busca', description: 'Busca demonstrativa da HEAL. CURA.', robots: { index: false, follow: true } };
+export const metadata: Metadata = { title: 'Busca', description: 'Busca demonstrativa da HEAL.', robots: { index: false, follow: true } };
 
 const healthPattern = /\b(cura|curar|ansiedade|ins[oô]nia|depress[aã]o|sa[uú]de|tratar|tratamento|estresse)\b/i;
 

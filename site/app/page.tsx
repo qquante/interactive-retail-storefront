@@ -28,9 +28,8 @@ export default async function Home() {
       </div>
 
       <header className="site-header">
-        <Link className="wordmark" href="/" aria-label="HEAL. CURA. — início">
-          <span>HEAL.</span>
-          <span>CURA.</span>
+        <Link className="wordmark" href="/" aria-label="HEAL — início">
+          <span>HEAL</span>
         </Link>
 
         <nav className="desktop-nav" aria-label="Navegação principal">
@@ -63,7 +62,7 @@ export default async function Home() {
         <section className="hero" aria-labelledby="hero-title">
           <div className="hero-inner">
             <div className="hero-copy">
-              <p className="eyebrow">Incensos · ritual contemporâneo</p>
+              <p className="eyebrow">HEALS — os incensos da HEAL · ritual contemporâneo</p>
               <h1 id="hero-title">Acenda o intervalo.</h1>
               <p className="hero-lead">
                 Incensos para escolher pela atmosfera — e entender pela matéria.
@@ -137,7 +136,7 @@ export default async function Home() {
         <section className="home-products" aria-labelledby="home-products-title">
           <div className="home-products-heading">
             <div>
-              <p className="eyebrow eyebrow-dark">Coleção demonstrativa</p>
+              <p className="eyebrow eyebrow-dark">HEALS — os incensos da HEAL</p>
               <h2 id="home-products-title">Intervalos.</h2>
             </div>
             <p>Três fixtures mostram como categoria, percepção, prova e compra ocuparão a mesma página — sem fingir que o catálogo já existe.</p>
@@ -171,7 +170,7 @@ export default async function Home() {
 
       <footer className="home-footer">
         <div>
-          <p className="wordmark" aria-label="HEAL. CURA."><span>HEAL.</span><span>CURA.</span></p>
+          <p className="wordmark" aria-label="HEAL"><span>HEAL</span></p>
           <p>Incensos para escolher pela atmosfera e entender pela matéria.</p>
         </div>
         <nav aria-label="Marca e conteúdo">

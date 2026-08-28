@@ -18,11 +18,11 @@ if (configuredOrigin) {
 export const metadata: Metadata = {
   metadataBase,
   title: {
-    default: 'HEAL. CURA. — Incensos para marcar a passagem',
-    template: '%s — HEAL. CURA.',
+    default: 'HEAL — Incensos para marcar a passagem',
+    template: '%s — HEAL',
   },
   description:
-    'Incensos para escolher pela atmosfera e entender pela matéria. Experiência demonstrativa da HEAL. CURA.',
+    'HEALS são os incensos da HEAL: escolha pela atmosfera e entenda pela matéria. Experiência demonstrativa.',
   robots: {
     index: false,
     follow: false,
@@ -30,17 +30,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'pt_BR',
-    title: 'HEAL. CURA. — Incensos para acender um intervalo',
-    description: 'Escolha pela atmosfera. Entenda pela matéria.',
-    ...(metadataBase
-      ? { images: [{ url: '/og.png', width: 1200, height: 630, alt: 'HEAL. CURA. — Incensos para acender um intervalo.' }] }
-      : {}),
+    title: 'HEAL — Incensos para acender um intervalo',
+    description: 'HEALS são os incensos da HEAL. Escolha pela atmosfera. Entenda pela matéria.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'HEAL. CURA. — Incensos para acender um intervalo',
-    description: 'Escolha pela atmosfera. Entenda pela matéria.',
-    ...(metadataBase ? { images: ['/og.png'] } : {}),
+    title: 'HEAL — Incensos para acender um intervalo',
+    description: 'HEALS são os incensos da HEAL. Escolha pela atmosfera. Entenda pela matéria.',
   },
 };
 
