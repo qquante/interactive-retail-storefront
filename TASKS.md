@@ -28,5 +28,5 @@ Estados permitidos: `proposed`, `researching`, `ready`, `in_progress`, `review`,
 | HEAL-T019 | G-006 | HEAL-19 | HEAL-T013/T014 | Segurança/LGPD | review | GO local/NO-GO produção; CEP/session remediado, headers/backend pendentes |
 | HEAL-T020 | G-002/G-005 | HEAL-20 | HEAL-T003/T013/T015 | Analytics/CRO | verified | Plano e guardrails prontos; nenhuma instrumentação/consentimento conectado |
 | HEAL-T021 | G-001..G-006 | HEAL-21 | Implementação | QA/E2E/visual | verified | QA independente entregue; root fechou QA-001/002; E2E padrão 48/48 |
-| HEAL-T022 | G-001..G-007 | HEAL-22 | HEAL-T021 | Review independente | changes_requested | Primeiro review em `b5ec182`: HEAL22-001…004 |
-| HEAL-T023 | G-005/G-007 | HEAL-00 | HEAL-T022 | Remediação pós-review e novo release candidate | review | 12/12 Vitest, 52/52 E2E, build/smoke/audits verdes; aguarda HEAL-22 |
+| HEAL-T022 | G-001..G-007 | HEAL-22 | HEAL-T021 | Review independente | verified | Re-review em `6b77c52`: approved para protótipo local fixture |
+| HEAL-T023 | G-005/G-007 | HEAL-00 | HEAL-T022 | Remediação pós-review e novo release candidate | done | HEAL22-001…004 fechados; H22-005 documental corrigido |

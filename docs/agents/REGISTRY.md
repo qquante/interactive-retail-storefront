@@ -4,7 +4,7 @@ Atualizado em: 2026-08-28
 
 | Agent | Responsabilidade | Write scope | No-touch | Estado |
 |---|---|---|---|---|
-| HEAL-00 | Coordenação, governança e integração | Root docs + integração em `site/` | Mudanças alheias não verificadas | active |
+| HEAL-00 | Coordenação, governança e integração | Root docs + integração em `site/` | Mudanças alheias não verificadas | done local fixture |
 | HEAL-01 | Reconhecimento/arquitetura | none (read-only) | Todo o workspace | done |
 | HEAL-02 | Mercado/benchmarks | `docs/research/`, handoff próprio | `site/` | done |
 | HEAL-03 | Marca/marketing | `docs/brand/`, handoff próprio | `site/` | done |
@@ -26,7 +26,7 @@ Atualizado em: 2026-08-28
 | HEAL-19 | Segurança/LGPD | `docs/security/` | Código/config/visual | done |
 | HEAL-20 | Analytics/CRO | `docs/analytics/` | Checkout financeiro | done |
 | HEAL-21 | QA | `docs/qa/QA_RELEASE_MATRIX.md`, evidências próprias | Código/config/produção | done |
-| HEAL-22 | Release review | read-only | Todo código | queued para re-review |
+| HEAL-22 | Release review | read-only | Todo código | approved local fixture |
 | HEAL-social | Social preview isolado | saída ImageGen fora do Site | Todo código/Sites/deploy | done |
 
 ## Regra de Sites

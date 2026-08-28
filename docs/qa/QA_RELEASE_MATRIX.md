@@ -105,7 +105,7 @@ O caso foi minimizado e rerodado aguardando o botão hidratado antes da mutaçã
 
 ## Navegadores, viewports e overflow
 
-A suíte versionada final executou os mesmos doze testes em:
+A suíte versionada final executou os mesmos treze testes em:
 
 - Chromium desktop `1440×900`;
 - Chromium mobile `390×844`;

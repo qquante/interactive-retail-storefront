@@ -31,7 +31,7 @@ Atualizado em: 2026-08-28
 | S-20260828-025 | HEAL-21 | QA final independente | Review read-only e gates completos | done | Relatório entregue; root remediou QA-001/002; E2E padrão final 48/48 |
 | S-20260828-026 | HEAL-22 | Review final independente | Release candidate `b5ec182`, read-only | done | `changes_requested`: HEAL22-001…004; nenhum arquivo alterado pelo reviewer |
 | S-20260828-027 | HEAL-00 | Remediação pós-review | Design system, SEO, governança e prova CSS | done | 12/12 Vitest, 52/52 E2E, Axe 0, build/smoke/audits verdes |
-| S-20260828-028 | HEAL-22 | Re-review final independente | Novo release candidate, read-only | queued | Aguardando hash imutável da remediação |
+| S-20260828-028 | HEAL-22 | Re-review final independente | `70be2a6` + evidência `6b77c52`, read-only | done | `approved` para protótipo local; HOLD preview; NO-GO produção |
 
 ## Metadados operacionais das sessões
 
@@ -66,4 +66,4 @@ O runtime registrou a data, mas não preservou horários de spawn/finalização 
 | S-20260828-025 | 2026-08-28, horário não capturado | 2026-08-28 | shared workspace; QA read-only | 26/28 em paralelo; root configurou 1 worker e obteve 48/48 |
 | S-20260828-026 | 2026-08-28, horário não capturado | 2026-08-28 | commit `b5ec182`; read-only | review retornou `changes_requested` com quatro findings internos |
 | S-20260828-027 | 2026-08-28, horário não capturado | 2026-08-28 | `main`; root | primeira auditoria foi executada no diretório raiz sem lockfile; rerun correto em `site/` passou com 0 vulnerabilidades |
-| S-20260828-028 | 2026-08-28, horário não capturado | aberto | novo commit; read-only | aguardando dispatch |
+| S-20260828-028 | 2026-08-28, horário não capturado | 2026-08-28 | `6b77c52`; read-only | nenhum blocker local; H22-005 documental enviado ao root |

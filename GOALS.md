@@ -10,4 +10,4 @@ Atualizado em: 2026-08-28
 | G-004 | Mobile e desktop equivalentes. | Fluxos críticos testados de 320 a 1920 CSS px. | HEAL-12 | verified local |
 | G-005 | SEO ecommerce 2026 tecnicamente correto. | HTML inicial, metadata, canonical, sitemap, schema factual e plano Merchant Center. | HEAL-15/16 | in_progress; produção depende de domínio/catálogo |
 | G-006 | Produto acessível, rápido e seguro. | WCAG 2.2 AA proporcional, budgets, testes, revisão de segurança/LGPD. | HEAL-17/18/19 | in_progress; performance/host/backend bloqueiam produção |
-| G-007 | Estado e evidência rastreáveis. | TASKS, SESSIONS, handoffs e EVIDENCE_INDEX atualizados. | HEAL-00 | in_progress |
+| G-007 | Estado e evidência rastreáveis. | TASKS, SESSIONS, handoffs e EVIDENCE_INDEX atualizados. | HEAL-00 | verified local |

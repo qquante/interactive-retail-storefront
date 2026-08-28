@@ -30,6 +30,7 @@ Atualizado em: 2026-08-28
 | Warning CSS Vinext | real/local | `docs/qa/BUILD_DETERMINISM.md`; dois builds, hashes CSS estáveis e cópias idênticas |
 | Handoffs e sessões | governança real | `docs/agents/handoffs/`, `docs/agents/sessions/` e `SESSIONS.md`; horários ausentes explicitamente não inventados |
 | Release candidate remediado | Git/local | `70be2a6c92754339a9c90e1e987965a62243d0d2`; 12/12 Vitest, 52/52 E2E, build/smoke/audits verdes |
+| Release review independente | read-only | HEAL-22 revisou `6b77c52`; `approved` para fixture local, HOLD preview, NO-GO produção |
 
 | Evidence | Task | Tipo | Caminho/resultado | Estado |
 |---|---|---|---|---|

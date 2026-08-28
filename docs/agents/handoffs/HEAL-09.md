@@ -14,7 +14,7 @@ Migração indiscriminada de rotas e lógica de commerce.
 ## Comandos executados
 Lint, TypeScript e `npm run test:unit`.
 ## Testes e exit codes
-9/9 unitários finais, incluindo 5 interações UI, exit 0.
+10/10 unitários finais, incluindo 5 interações UI, exit 0; mais 2 testes de integração.
 ## Evidências geradas
 Barrel público, CSS Modules e testes jsdom.
 ## Erros encontrados e como foram resolvidos
