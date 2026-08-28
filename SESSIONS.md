@@ -65,5 +65,5 @@ O runtime registrou a data, mas não preservou horários de spawn/finalização 
 | S-20260828-024 | 2026-08-28, horário não capturado | 2026-08-28 | `main`; root | probes pré-hidratação e duas asserções E2E frágeis corrigidos |
 | S-20260828-025 | 2026-08-28, horário não capturado | 2026-08-28 | shared workspace; QA read-only | 26/28 em paralelo; root configurou 1 worker e obteve 48/48 |
 | S-20260828-026 | 2026-08-28, horário não capturado | 2026-08-28 | commit `b5ec182`; read-only | review retornou `changes_requested` com quatro findings internos |
-| S-20260828-027 | 2026-08-28, horário não capturado | 2026-08-28 | `main`; root | primeira auditoria foi executada no diretório raiz sem lockfile; rerun correto em `site/` passou com 0 vulnerabilidades |
+| S-20260828-027 | 2026-08-28, horário não capturado | 2026-08-28 | `main`; root | limpeza recursiva dos outputs foi rejeitada pela política de segurança; prova usou builds repetidos. Audit inicial no root falhou sem lockfile e agregação smoke usou `$home` protegido; reruns corretos em `site/`/`$healHtml` passaram |
 | S-20260828-028 | 2026-08-28, horário não capturado | 2026-08-28 | `6b77c52`; read-only | nenhum blocker local; H22-005 documental enviado ao root |
