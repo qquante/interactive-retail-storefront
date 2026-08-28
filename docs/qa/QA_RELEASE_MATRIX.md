@@ -10,7 +10,7 @@ Alvo complementar: `http://localhost:3001` (artefato de `vinext build`, iniciado
 
 **Protótipo local rotulado: aprovado com ressalvas. Produção: não aprovada.**
 
-O storefront demonstrativo funciona de ponta a ponta dentro da fixture: Home, coleção, PDP, busca/filtro, sacola, quantidade, remoção/undo, CEP fictício e handoff de checkout sem pedido ou pagamento. Após o handoff de HEAL-21, o coordenador limitou a suíte a um worker, incorporou os probes críticos e obteve `48/48` no comando padrão em Chromium desktop, Chromium mobile, Firefox e WebKit. A matriz axe estendida passou em 20 combinações de rota/viewport com zero violações. Build e smoke do servidor de produção local passaram.
+O storefront demonstrativo funciona de ponta a ponta dentro da fixture: Home, coleção, PDP, busca/filtro, sacola, quantidade, remoção/undo, CEP fictício e handoff de checkout sem pedido ou pagamento. Após o handoff de HEAL-21, o coordenador limitou a suíte a um worker, incorporou os probes críticos e obteve `52/52` no comando padrão em Chromium desktop, Chromium mobile, Firefox e WebKit. A matriz axe estendida passou em 20 combinações de rota/viewport com zero violações. Build e smoke do servidor de produção local passaram.
 
 Isso não constitui prontidão para venda. Catálogo, preço, estoque, frete, pedido, pagamento, CMS e políticas comerciais continuam fictícios ou ausentes. Os gates de performance mobile, compressão/CDN, GPU real, headers/CSP, backend autoritativo e LGPD operacional continuam abertos.
 
@@ -44,7 +44,7 @@ Não houve deploy, domínio, conexão de terceiros, pagamento, pedido, conta, se
 | E2E padrão — run 2 | `npm run test:e2e` | 26/28; 2 recusas de conexão no Firefox | 1 | FAIL |
 | Firefox axe isolado | `npx playwright test --project=firefox-desktop --grep "não tem violações"` | 3/3 | 0 | PASS |
 | E2E determinístico | `npx playwright test --workers=1` | 28/28, 4 projetos | 0 | PASS |
-| E2E padrão pós-remediação | `npm run test:e2e` | 48/48, 4 projetos, 1 worker configurado | 0 | PASS |
+| E2E padrão pós-remediação | `npm run test:e2e` | 52/52, 4 projetos, 1 worker configurado | 0 | PASS |
 | Build | `npm run build` | concluído; 2 warnings documentados | 0 | PASS com warning |
 | Smoke do build | servidor `npm run start -- --port 3001` + Playwright | 6 rotas HTTP 200, sem overflow/console error | 0 | PASS |
 | 404 | `curl` + Playwright | rotas, produto e coleção inexistentes retornam 404 | 0 | PASS |
@@ -101,7 +101,7 @@ O caso foi minimizado e rerodado aguardando o botão hidratado antes da mutaçã
 | Retry vazio | reexecuta e mantém erro esperado, sem falso sucesso | PASS |
 | 404 genérico | `/qa-rota-inexistente` retorna HTTP 404 e heading próprio | PASS |
 | 404 dinâmico | produto e coleção inexistentes retornam HTTP 404 | PASS |
-| Robots fixture | `/robots.txt` retorna `Disallow: /` | PASS |
+| Robots fixture | `/robots.txt` retorna `Allow: /`; HTML retorna `noindex, nofollow` | PASS |
 
 ## Navegadores, viewports e overflow
 
@@ -167,7 +167,7 @@ O custo WebGL real não foi aprovado por este gate; continua necessário medir G
 1. chunk lazy `createEmberSmokeRuntime-Cz2EhLHN.js`: `516.529` bytes minificados, acima do limiar de warning de 500 kB;
 2. `[FILE_NAME_CONFLICT]` para `_next/static/css/commerce.BmIhDIRk.css`.
 
-O servidor do build foi iniciado temporariamente na porta 3001. Home, coleção, PDP, sacola, checkout e busca retornaram HTTP 200, zero overflow e zero console/page error. As quatro folhas CSS estavam carregadas e acessíveis via CSSOM; `commerce.BmIhDIRk.css` expôs 75 regras. Assim, o conflito de nome não se manifestou no smoke atual, mas deve ser eliminado ou explicado antes do gate final porque o warning sinaliza overwrite durante a emissão.
+O servidor do build foi iniciado temporariamente na porta 3001. Home, coleção, PDP, sacola, checkout e busca retornaram HTTP 200, zero overflow e zero console/page error. As folhas CSS estavam carregadas e acessíveis via CSSOM; `commerce.BmIhDIRk.css` expôs 75 regras. Dois builds adicionais produziram nomes, tamanhos e SHA-256 idênticos; as três cópias da folha commerce têm 8.444 bytes e o mesmo hash. A prova está em `docs/qa/BUILD_DETERMINISM.md`. O warning permanece visível como limitação Vinext monitorada, sem perda observada neste estado.
 
 Tamanhos observados no build:
 
@@ -196,29 +196,29 @@ Nenhum P0 identificado no protótipo local. Isso não equivale a pentest, compli
 **Impacto:** CI/release gate padrão não é determinístico e pode falhar sem regressionar o produto.  
 **Owner:** frontend platform/test infra (root).  
 **Correção sugerida:** testar o build/servidor de produção em porta dedicada ou limitar workers para a capacidade do Vinext local; remover dependência de servidor compartilhado; preservar trace em falha.  
-**Remediação:** `workers: 1` foi versionado para respeitar a capacidade do servidor Vinext local; `npm run test:e2e` passou `48/48`, incluindo Firefox, sem rerun manual. Repetições em CI limpo continuam recomendadas, mas o gate local padrão está verde.
+**Remediação:** `workers: 1` foi versionado para respeitar a capacidade do servidor Vinext local; `npm run test:e2e` passou `52/52`, incluindo Firefox, sem rerun manual. Repetições em CI limpo continuam recomendadas, mas o gate local padrão está verde.
 
 ### QA-002 — P2 — fechado — casos críticos foram incorporados à suíte versionada
 
 **Escopo ausente da suíte versionada:** quantidade inválida/2, persistência de sessão, remoção/undo, CEP inválido, checkout vazio/retry, 404, teclado e reduced motion; axe de sacola/checkout e quatro viewports.  
 **Impacto:** esses comportamentos passaram agora, mas podem regredir sem que o CI detecte.  
 **Owner:** frontend QA/root.  
-**Remediação:** a suíte versionada agora cobre quantidade 2, persistência de sessão, remoção/undo, CEP inválido/válido, checkout vazio/retry, 404, teclado/menu, reduced motion, inventory unknown, busca/filtro e axe de sacola/checkout. Resultado final: `48/48`, exit 0.
+**Remediação:** a suíte versionada agora cobre quantidade 2, persistência de sessão, remoção/undo, CEP inválido/válido, checkout vazio/retry, 404, teclado/menu, reduced motion, inventory unknown, busca/filtro, política noindex/robots e axe de sacola/checkout. Resultado final: `52/52`, exit 0.
 
-### QA-003 — P2 — build termina com overwrite warning de CSS
+### QA-003 — P2 — fechado com limitação monitorada — warning CSS
 
 **Reprodução:** `npm run build`.  
 **Resultado:** `[FILE_NAME_CONFLICT]` informa overwrite de `commerce.BmIhDIRk.css`. O smoke de produção atual ficou visual e funcionalmente íntegro.  
 **Impacto:** risco de output não determinístico ou perda silenciosa quando os módulos CSS divergirem.  
 **Owner:** frontend platform/Vinext.  
-**Aceite:** build sem conflito ou análise documentada que prove arquivos byte-idênticos e comportamento estável em build limpo.
+**Remediação/prova:** dois builds consecutivos produziram manifesto CSS estável. Client, server e SSR emitiram `commerce.BmIhDIRk.css` com 8.444 bytes e SHA-256 `4458929FDF990B76B178B7D6743B0A7B8173411F5042D466F69F138DE75674B7`; o smoke carregou o CSSOM sem perda. Ver `BUILD_DETERMINISM.md`. Reabre se o conteúdo divergir ou o smoke falhar.
 
-### QA-004 — P3 — evidência ainda não está ligada a um commit imutável
+### QA-004 — P3 — fechado no primeiro release candidate; nova remediação aguarda hash final
 
 **Evidência:** a auditoria testou `HEAD 04d1e04` mais uma árvore de trabalho com arquivos modificados e não rastreados. `git diff --check` passou, porém há avisos LF→CRLF.  
 **Impacto:** não é possível reproduzir exatamente o estado aprovado apenas pelo hash atual.  
 **Owner:** root/release owner.  
-**Aceite:** integrar mudanças intencionais, excluir artefatos efêmeros do pacote quando apropriado, criar commit de release candidate e rerodar os gates sobre esse hash.
+**Remediação:** o estado HEAL-21 foi consolidado em `b5ec1826ec1255a8cbe66c37e37660edb800afe2`, limpo e revisado por HEAL-22. As correções pedidas no primeiro review serão ligadas a um segundo hash e rerodadas antes do re-review.
 
 ## Blockers de produção confirmados fora do escopo funcional local
 
@@ -231,7 +231,7 @@ Os itens abaixo já pertencem aos owners especializados e foram confirmados como
 - **Commerce/segurança P1:** backend autoritativo, revalidação server-side, allowlist de checkout, webhooks e idempotência ainda não existem;
 - **LGPD/operação:** controlador, operadores, retenção, canal de direitos, política factual, contratos e runbook de incidente ainda precisam ser aprovados/testados;
 - **Conteúdo/comercial:** catálogo real, estoque, preços, frete, políticas, atendimento e dados empresariais permanecem `[A VALIDAR]`;
-- **SEO/release:** o fixture está corretamente bloqueado por `Disallow: /` e `noindex`; domínio, canonical, sitemap, schema factual e feed real dependem de conteúdo/origem aprovados;
+- **SEO/release:** o fixture usa `noindex`; `robots.txt` permite crawl para que a diretiva seja lida; preview público exige autenticação no edge; domínio, canonical, sitemap, schema factual e feed real dependem de conteúdo/origem aprovados;
 - **Acessibilidade humana:** leitores de tela reais, Safari/iOS físico, teclado virtual, Dynamic Type e percepção de usuários não foram testados.
 
 ## O que não foi testado
@@ -249,14 +249,12 @@ Os itens abaixo já pertencem aos owners especializados e foram confirmados como
 | Alvo | Decisão | Condição |
 |---|---|---|
 | Demonstração local rotulada | **GO com ressalvas** | manter sem dados/pagamentos/serviços reais e sem indexação |
-| Preview compartilhado | **HOLD** | estabilizar gate E2E, fechar provenance do commit e validar segurança/origem do preview |
+| Preview compartilhado | **HOLD** | autenticação no edge, origem HTTPS/headers e novo gate de segurança/performance |
 | Produção comercial | **NO-GO** | fechar blockers de commerce, conteúdo, performance, segurança, LGPD, SEO e acessibilidade humana |
 
 ## Handoff objetivo
 
-1. Root/frontend platform corrige QA-001 e QA-003.
-2. QA incorpora os probes críticos da QA-002 à suíte versionada.
-3. Root consolida a árvore em um release-candidate commit e reroda lint, typecheck, unit, integration, audit, axe, E2E serial/estável, build e smoke de produção.
-4. HEAL-18 mede origem comprimida e GPU/dispositivo real.
-5. HEAL-19 revalida headers/CSP, dados, providers, checkout e LGPD após integrações reais.
-6. Somente depois disso o reviewer HEAL-22 deve emitir o veredito final de release.
+1. Root fecha as remediações HEAL22-001…004 em novo commit e reroda os gates.
+2. HEAL-22 faz re-review read-only do hash final.
+3. HEAL-18 mede origem comprimida e GPU/dispositivo real antes de preview/produção.
+4. HEAL-19 revalida headers/CSP, dados, providers, checkout e LGPD após integrações reais.

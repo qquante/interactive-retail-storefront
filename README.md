@@ -7,7 +7,7 @@ Storefront premium PT-BR para Heal Incensos, construído como uma demonstração
 - Funciona localmente com catálogo e valores de fixture.
 - Não cria pedido, cobrança, Pix, boleto ou transação de cartão.
 - Não possui domínio, empresa/políticas aprovadas, catálogo real, backend, CMS, Shopify, analytics ou deploy.
-- Permanece globalmente `noindex`.
+- Permanece globalmente `noindex`; `robots.txt` permite crawl técnico para que a diretiva seja lida. Preview compartilhado exige autenticação no edge.
 - O veredito de segurança é GO apenas para protótipo local e NO-GO para produção.
 
 ## Executar
@@ -49,6 +49,6 @@ Copie `site/.env.example` para um arquivo local ignorado somente quando houver u
 - Commerce/backend: `docs/commerce/` e `docs/architecture/`.
 - QA, segurança e performance: `docs/qa/`, `docs/security/`, `docs/performance/`.
 - Evidências: `EVIDENCE_INDEX.md` e `docs/evidence/`.
+- Agentes: `docs/agents/handoffs/`, `docs/agents/sessions/` e `docs/agents/REGISTRY.md`.
 
 Antes de qualquer publicação, siga `docs/operations/RELEASE_READINESS.md`. Este repositório não foi implantado.
-

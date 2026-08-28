@@ -8,7 +8,7 @@ Atualizado em: 2026-08-28
 - títulos e descrições próprios na Home, coleção, produto, sacola e checkout demonstrativo;
 - diretiva global `noindex, nofollow`, apropriada enquanto catálogo, domínio e operação são fixtures;
 - produto demonstrativo com `noindex, follow` explícito;
-- `robots.txt` gerado pela rota `app/robots.ts` com `Disallow: /`;
+- `robots.txt` gerado pela rota `app/robots.ts` com `Allow: /`, para que crawlers possam ler o `meta noindex`;
 - headings e links navegáveis sem depender de JavaScript para descoberta básica;
 - imagens decorativas com alternativa vazia ou marcação não semântica;
 - metadados Open Graph/Twitter e cartão social 1200×630 prontos; a URL da imagem só é emitida quando `SITE_ORIGIN` contém uma origem HTTPS confiável (ou localhost em desenvolvimento);
@@ -24,7 +24,7 @@ Atualizado em: 2026-08-28
 
 ## Limitação encontrada
 
-Foi testada a configuração de `X-Robots-Tag` em `next.config.ts`, porém o runtime Vinext local não emitiu o header no servidor de desenvolvimento. A tentativa foi revertida para não criar uma falsa garantia. O bloqueio atual é feito por `meta robots` e `robots.txt`, ambos verificados. Antes de qualquer publicação, o header deverá ser aplicado e testado na camada de hospedagem/CDN.
+Foi testada a configuração de `X-Robots-Tag` em `next.config.ts`, porém o runtime Vinext local não emitiu o header no servidor de desenvolvimento. A tentativa foi revertida para não criar uma falsa garantia. O controle atual é o `meta robots`, verificado no HTML. O `robots.txt` permite crawl deliberadamente, pois bloquear `/` impediria o Google de ler `noindex`. Preview compartilhado deve ser autenticado no edge; antes de publicação, o header deverá ser aplicado e testado na hospedagem/CDN.
 
 ## Gate antes de indexar
 

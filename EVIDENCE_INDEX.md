@@ -24,8 +24,11 @@ Atualizado em: 2026-08-28
 | Checkout fixture | browser screenshot | `docs/evidence/screenshots/checkout-fixture-handoff.png` |
 | Lighthouse mobile/desktop | lab local | `docs/evidence/performance/`; mobile 79, desktop 99; sem field data |
 | Axe pós-correção | real/local | `npm run test:a11y`: 3 rotas, 0 violations |
-| Testes unitários/integração | real/local | `npm run test`: 6 testes passados |
-| Playwright cross-browser | real/local | `npm run test:e2e`: 48/48 em Chromium mobile/desktop, Firefox e WebKit; 1 worker determinístico |
+| Testes unitários/integração | real/local | `npm run test`: 12 testes passados, incluindo 5 interações de design system e robots |
+| Playwright cross-browser | real/local | `npm run test:e2e`: 52/52 em Chromium mobile/desktop, Firefox e WebKit; 1 worker determinístico |
+| Design system obrigatório | real/local | Dialog, drawer, accordion, tabs e toast em `site/components/ui/`; testes em `ui-interactions.test.tsx` |
+| Warning CSS Vinext | real/local | `docs/qa/BUILD_DETERMINISM.md`; dois builds, hashes CSS estáveis e cópias idênticas |
+| Handoffs e sessões | governança real | `docs/agents/handoffs/`, `docs/agents/sessions/` e `SESSIONS.md`; horários ausentes explicitamente não inventados |
 
 | Evidence | Task | Tipo | Caminho/resultado | Estado |
 |---|---|---|---|---|
@@ -43,8 +46,11 @@ Atualizado em: 2026-08-28
 | E-0012 | HEAL-T017 | a11y | `npm run test:a11y` | verified: 0 violations em 3 rotas |
 | E-0013 | HEAL-T018 | performance | Lighthouse lab | mobile 79; desktop 99; production gate open |
 | E-0014 | HEAL-T019 | security | audit + threat/LGPD review | 0 vulnerabilidades npm; NO-GO produção |
-| E-0015 | HEAL-T021 | tests | Vitest + Playwright/axe | verified: 6/6 Vitest, 48/48 E2E, axe 0 violações |
+| E-0015 | HEAL-T021/T023 | tests | Vitest + Playwright/axe | verified: 12/12 Vitest, 52/52 E2E, axe 0 violações |
 | E-0016 | HEAL-T015/T016 | SEO | noindex/robots/metadata + research oficial 2026 | verified fixture; domain/schema/feed blocked |
+| E-0017 | HEAL-T009 | design system | 5 testes jsdom de overlays/disclosure/tabs/toast | verified local; adoção nas rotas é incremental |
+| E-0018 | HEAL-T021/T023 | build | dois manifests CSS SHA-256 idênticos | warning Vinext comprovadamente estável no estado testado |
+| E-0019 | G-007 | governance | handoffs HEAL-00…22/social e session metadata | consolidated; horários exatos não capturados |
 
 Não registrar como evidência:
 

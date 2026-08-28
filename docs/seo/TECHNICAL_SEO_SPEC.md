@@ -57,11 +57,11 @@ Aplicar defesa em profundidade:
 
 - `robots` metadata: `noindex, nofollow, noarchive`;
 - header `X-Robots-Tag: noindex, nofollow, noarchive` em todas as respostas HTML;
-- `robots.txt` com `Disallow: /`;
+- `robots.txt` com `Allow: /`, para que o crawler consiga ler o `meta noindex`;
 - autenticação de preview, se o host oferecer;
 - sitemap vazio ou omitido.
 
-`robots.txt` sozinho não impede que uma URL conhecida apareça no índice. O header/meta é o controle de indexação; autenticação é o controle mais forte.
+`robots.txt` sozinho não impede que uma URL conhecida apareça no índice. Pior: `Disallow: /` impede que o crawler leia `noindex`. O header/meta é o controle de indexação; autenticação é o controle mais forte para preview.
 
 ### Produção
 
@@ -236,7 +236,7 @@ Produção:
 
 Não bloquear `/_next/`, CSS, JS, imagens ou fontes necessários à renderização. Busca, carrinho e checkout usam `noindex` de página; não dependem de `robots.txt`.
 
-Não produção: `Disallow: /`, sem sitemap público.
+Não produção: `Allow: /` + `noindex` no HTML, sem sitemap público. Preview compartilhado deve exigir autenticação no edge; `robots.txt` não é controle de acesso.
 
 ### `app/sitemap.ts`
 
@@ -508,4 +508,3 @@ Não alegar validação oficial a partir de localhost.
 - teste de compatibilidade Vinext no HTML/build final.
 
 Até esses itens existirem, o resultado correto é: **estrutura SEO testável em fixture, globalmente `noindex`; não storefront indexável**.
-

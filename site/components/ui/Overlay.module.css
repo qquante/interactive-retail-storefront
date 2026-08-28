@@ -1,0 +1,122 @@
+.overlay {
+  inline-size: min(42rem, calc(100% - 2rem));
+  max-block-size: calc(100dvh - 2rem);
+  margin: auto;
+  padding: 0;
+  overflow: visible;
+  border: 1px solid var(--color-line);
+  border-radius: 0.25rem;
+  background: var(--color-paper-strong);
+  color: var(--color-ink);
+  box-shadow: 0 1.5rem 5rem rgb(23 20 17 / 24%);
+}
+
+.overlay::backdrop {
+  background: rgb(23 20 17 / 68%);
+  backdrop-filter: blur(3px);
+}
+
+.panel {
+  display: grid;
+  max-block-size: calc(100dvh - 2rem);
+  grid-template-rows: auto minmax(0, 1fr);
+}
+
+.header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 1rem;
+  border-block-end: 1px solid var(--color-line);
+  padding: 1.25rem;
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-display, Georgia, serif);
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.description {
+  margin: 0.5rem 0 0;
+  color: var(--color-muted);
+  line-height: 1.5;
+}
+
+.close {
+  display: grid;
+  inline-size: 2.75rem;
+  block-size: 2.75rem;
+  place-items: center;
+  border: 1px solid var(--color-line);
+  border-radius: 50%;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.close:hover {
+  border-color: var(--color-ink);
+  background: var(--color-paper);
+}
+
+.close:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 3px;
+}
+
+.body {
+  overflow: auto;
+  overscroll-behavior: contain;
+  padding: 1.25rem;
+}
+
+.overlay[data-layout='drawer'] {
+  inline-size: min(30rem, 100%);
+  max-block-size: 100dvh;
+  block-size: 100dvh;
+  margin: 0 0 0 auto;
+  border-block: 0;
+  border-inline-end: 0;
+}
+
+.overlay[data-layout='drawer'] .panel {
+  max-block-size: 100dvh;
+  block-size: 100dvh;
+}
+
+.srOnly {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (max-width: 40rem) {
+  .overlay[data-layout='drawer'] {
+    inline-size: 100%;
+    block-size: min(80dvh, 44rem);
+    max-block-size: 80dvh;
+    margin: auto 0 0;
+    border-block-start: 1px solid var(--color-line);
+    border-inline-start: 0;
+  }
+
+  .overlay[data-layout='drawer'] .panel {
+    block-size: 100%;
+    max-block-size: none;
+  }
+}
+
+@media (forced-colors: active) {
+  .overlay,
+  .close {
+    forced-color-adjust: auto;
+  }
+}

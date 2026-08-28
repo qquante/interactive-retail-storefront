@@ -25,7 +25,7 @@ Não há neste documento volume, dificuldade, posição, demanda ou potencial de
 ### Baseline implementado
 
 - rotas Home, coleções, coleção, PDP, busca, guias e páginas institucionais existem;
-- a fixture está bloqueada por `robots.txt` e metadata `noindex`; páginas comerciais não são elegíveis a indexação;
+- a fixture permite crawl técnico apenas para que a metadata `noindex` seja lida; páginas comerciais não são elegíveis a indexação;
 - catálogo, preço, estoque, composição, procedência, segurança e políticas são demonstrativos ou `[A VALIDAR]`;
 - nenhum artigo real, schema comercial, sitemap de produção, Search Console ou Merchant Center está conectado.
 
@@ -287,4 +287,3 @@ Consulta em **2026-08-28**:
 - **HEAL-19:** aprovar claims, segurança, políticas e disclosures.
 - **HEAL-20:** separar visibilidade, comportamento e compra autoritativa no measurement plan.
 - **HEAL-21/22:** auditar duplicação, intenção owner, factualidade e renderização antes do release.
-

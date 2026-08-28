@@ -29,4 +29,41 @@ Atualizado em: 2026-08-28
 | S-20260828-023 | HEAL-20 | Analytics/CRO | Plano e guardrails | done | 16 eventos especificados; nenhuma coleta/instrumentação instalada |
 | S-20260828-024 | HEAL-00 | Hardening e expansão | Rotas restantes, busca/filtro, testes e remediações | verified | Unit/integration/E2E/axe cross-browser implementados; OG/SEO/storage/a11y corrigidos |
 | S-20260828-025 | HEAL-21 | QA final independente | Review read-only e gates completos | done | Relatório entregue; root remediou QA-001/002; E2E padrão final 48/48 |
-| S-20260828-026 | HEAL-22 | Review final independente | Release candidate imutável, read-only | queued | Aguardando commit e rerun completo do coordenador |
+| S-20260828-026 | HEAL-22 | Review final independente | Release candidate `b5ec182`, read-only | done | `changes_requested`: HEAL22-001…004; nenhum arquivo alterado pelo reviewer |
+| S-20260828-027 | HEAL-00 | Remediação pós-review | Design system, SEO, governança e prova CSS | done | 12/12 Vitest, 52/52 E2E, Axe 0, build/smoke/audits verdes |
+| S-20260828-028 | HEAL-22 | Re-review final independente | Novo release candidate, read-only | queued | Aguardando hash imutável da remediação |
+
+## Metadados operacionais das sessões
+
+O runtime registrou a data, mas não preservou horários de spawn/finalização exportáveis. Por isso, `horário não capturado` é dado explícito, não horário estimado. Todos os subagentes trabalharam no workspace compartilhado disponibilizado pela plataforma; writers receberam write scope/no-touch e o coordenador fez a integração em `main`, mas não houve branch/worktree individual retroativa.
+
+| Session | Início | Fim | Branch/worktree | Erros relevantes |
+|---|---|---|---|---|
+| S-20260828-001 | 2026-08-28, horário não capturado | 2026-08-28 | `main`; root, `site/` | scaffold no root colidiu com arquivo existente; recuperado em `site/` |
+| S-20260828-002 | 2026-08-28, horário não capturado | 2026-08-28 | shared workspace; read-only | nenhum reportado |
+| S-20260828-003 | 2026-08-28, horário não capturado | 2026-08-28 | shared workspace; docs scope | nenhum reportado |
+| S-20260828-004 | 2026-08-28, horário não capturado | 2026-08-28 | shared workspace; docs scope | claims terapêuticos delimitados |
+| S-20260828-005 | 2026-08-28, horário não capturado | 2026-08-28 | shared workspace; docs scope | nenhum reportado |
+| S-20260828-006 | 2026-08-28, horário não capturado | 2026-08-28 | shared workspace; docs scope | nenhum reportado |
+| S-20260828-007 | 2026-08-28, horário não capturado | 2026-08-28 | shared workspace; docs scope | nenhum reportado |
+| S-20260828-008 | 2026-08-28, horário não capturado | 2026-08-28 | shared workspace; docs scope | header `X-Robots-Tag` não emitido pelo Vinext dev; falsa garantia revertida |
+| S-20260828-009 | 2026-08-28, horário não capturado | 2026-08-28 | `main`; root | nenhum reportado no checkpoint |
+| S-20260828-010 | 2026-08-28, horário não capturado | 2026-08-28 | shared workspace; código delimitado | findings UX integrados posteriormente pelo root |
+| S-20260828-011 | 2026-08-28, horário não capturado | 2026-08-28 | shared workspace; motion | nenhum final reportado |
+| S-20260828-012 | 2026-08-28, horário não capturado | 2026-08-28 | shared workspace; Three | mismatch de hidratação corrigido pelo root |
+| S-20260828-013 | 2026-08-28, horário não capturado | 2026-08-28 | shared workspace; docs scope | nenhum reportado |
+| S-20260828-014 | 2026-08-28, horário não capturado | 2026-08-28 | shared workspace; review | 14 findings entregues; remediação pelo root |
+| S-20260828-015 | 2026-08-28, horário não capturado | 2026-08-28 | shared workspace; UI primitives | inventário obrigatório incompleto, reaberto por HEAL22 e completado pelo root |
+| S-20260828-016 | 2026-08-28, horário não capturado | 2026-08-28 | shared workspace; read-only | overflow PDP e hydration encontrados; root corrigiu |
+| S-20260828-017 | 2026-08-28, horário não capturado | 2026-08-28 | ImageGen isolado | asset fonte grande; movido para evidência e OG otimizado |
+| S-20260828-018 | 2026-08-28, horário não capturado | 2026-08-28 | shared workspace; read-only | headers/backend/LGPD abertos como gates |
+| S-20260828-019 | 2026-08-28, horário não capturado | 2026-08-28 | shared workspace; docs scope | nenhum reportado |
+| S-20260828-020 | 2026-08-28, horário não capturado | 2026-08-28 | shared workspace; review | findings P2/P3 remediados pelo root |
+| S-20260828-021 | 2026-08-28, horário não capturado | 2026-08-28 | shared workspace; performance | Lighthouse gerou JSON, mas CLI saiu 1 por EPERM ao limpar temporário |
+| S-20260828-022 | 2026-08-28, horário não capturado | 2026-08-28 | shared workspace; docs scope | bypass UI/adapter identificado e documentado |
+| S-20260828-023 | 2026-08-28, horário não capturado | 2026-08-28 | shared workspace; docs scope | nenhum reportado |
+| S-20260828-024 | 2026-08-28, horário não capturado | 2026-08-28 | `main`; root | probes pré-hidratação e duas asserções E2E frágeis corrigidos |
+| S-20260828-025 | 2026-08-28, horário não capturado | 2026-08-28 | shared workspace; QA read-only | 26/28 em paralelo; root configurou 1 worker e obteve 48/48 |
+| S-20260828-026 | 2026-08-28, horário não capturado | 2026-08-28 | commit `b5ec182`; read-only | review retornou `changes_requested` com quatro findings internos |
+| S-20260828-027 | 2026-08-28, horário não capturado | 2026-08-28 | `main`; root | primeira auditoria foi executada no diretório raiz sem lockfile; rerun correto em `site/` passou com 0 vulnerabilidades |
+| S-20260828-028 | 2026-08-28, horário não capturado | aberto | novo commit; read-only | aguardando dispatch |

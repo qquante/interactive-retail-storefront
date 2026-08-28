@@ -32,7 +32,7 @@ O projeto **não está apto para produção** sob segurança/LGPD. Não há find
 | Termos | Template explicitamente não contratual/não vigente | `site/app/termos/page.tsx:4-10` |
 | Hosting/storage | D1 e R2 não conectados | `site/.openai/hosting.json:1-4` |
 | Secrets | `.env*`, `*.pem` e estado Wrangler ignorados; nenhum arquivo com nome de secret/chave encontrado no Git | `site/.gitignore:19-37` + `git ls-files` |
-| Indexação | `noindex` global e `robots.txt` bloqueando `/`; é controle editorial, não controle de acesso | `site/app/layout.tsx:4-15`, `site/app/robots.ts:3-14` |
+| Indexação | `noindex` global; `robots.txt` permite crawl para que a diretiva seja lida; nenhum dos dois é controle de acesso | `site/app/layout.tsx`, `site/app/robots.ts` |
 
 ## 3. Inventário de dados atual
 

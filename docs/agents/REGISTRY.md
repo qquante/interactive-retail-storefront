@@ -26,7 +26,7 @@ Atualizado em: 2026-08-28
 | HEAL-19 | Segurança/LGPD | `docs/security/` | Código/config/visual | done |
 | HEAL-20 | Analytics/CRO | `docs/analytics/` | Checkout financeiro | done |
 | HEAL-21 | QA | `docs/qa/QA_RELEASE_MATRIX.md`, evidências próprias | Código/config/produção | done |
-| HEAL-22 | Release review | read-only | Todo código | queued |
+| HEAL-22 | Release review | read-only | Todo código | queued para re-review |
 | HEAL-social | Social preview isolado | saída ImageGen fora do Site | Todo código/Sites/deploy | done |
 
 ## Regra de Sites

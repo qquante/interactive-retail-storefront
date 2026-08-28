@@ -10,6 +10,7 @@ Veredito atual: **NO-GO produção; GO apenas para protótipo local**.
 - instruções de uso e segurança por produto;
 - frete, cobertura, prazos, trocas, devoluções e privacidade vigentes;
 - domínio canônico e origem HTTPS confiável;
+- autenticação no edge para qualquer preview compartilhado enquanto a fixture estiver ativa;
 - escolha/contratação de commerce, CMS, checkout e meios de pagamento;
 - credenciais criadas pelo owner humano em ambiente seguro;
 - consentimento/base legal e mapa final de dados;

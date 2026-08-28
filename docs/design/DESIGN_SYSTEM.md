@@ -2,7 +2,7 @@
 
 Data: 2026-08-28  
 Owner: HEAL-09  
-Estado real: `primitives implementadas e validadas por lint/typecheck; ainda não migradas para as rotas nem validadas visualmente no navegador`  
+Estado real: `primitives obrigatórias implementadas; interações críticas validadas por 5 testes jsdom; adoção nas rotas permanece incremental`
 Código: `site/components/ui/**`
 
 ## 1. Princípio
@@ -20,8 +20,11 @@ Ordem de decisão preservada:
 ```tsx
 import {
   Badge,
+  Accordion,
   Button,
   Card,
+  Dialog,
+  Drawer,
   InputField,
   LinkButton,
   Price,
@@ -29,6 +32,9 @@ import {
   SelectField,
   StatusMessage,
   Surface,
+  Tabs,
+  Toast,
+  ToastRegion,
 } from '@/components/ui';
 ```
 
@@ -52,7 +58,7 @@ Os components não redefinem a paleta global. Eles consomem:
 --font-ui
 ```
 
-`--color-error` e `--color-success` já pertencem ao contrato visual, mas ainda não estão materializados em `globals.css`; até a integração dos tokens, os módulos fazem fallback semântico para `ember` e `moss`. O owner de integração deve materializar esses dois tokens globalmente antes de congelar o visual.
+`--color-error` e `--color-success` estão materializados em `globals.css`. Os módulos ainda mantêm fallback semântico para `ember` e `moss` como defesa contra consumo isolado.
 
 ## 4. Matriz de estados
 
@@ -63,6 +69,10 @@ Os components não redefinem a paleta global. Eles consomem:
 | `InputField` | borda mais forte | ring + borda de foco | borda mais forte | estado nativo | preserva valor, `readOnly`, `aria-busy` e texto visível | `aria-invalid`, borda dupla, marca e mensagem associada |
 | `SelectField` | borda mais forte | ring + borda de foco | borda mais forte | estado nativo | `disabled`, `aria-busy` e texto visível | `aria-invalid`, borda dupla, marca e mensagem associada |
 | `QuantityControl` | botões ganham superfície | foco interno não é encoberto | deslocamento de 1px | limites e bloqueio usam `disabled` real | grupo `aria-busy`, controles bloqueados e texto visível | input inválido + mensagem associada |
+| `Dialog`/`Drawer` | fechar ganha superfície | foco inicial, trap nativo do modal e retorno ao acionador | backdrop/fechar explícitos | controle pelo owner | permanece aberto até estado autoritativo | erro pertence ao conteúdo/owner |
+| `Accordion` | título ganha cor brasa | summary nativo com ring | disclosure nativo | atributo nativo quando aplicável | não aplicável | mensagem permanece no painel |
+| `Tabs` | rótulo ganha cor | roving tabindex + setas/Home/End | ativa painel | tab nativamente desabilitada | não aplicável | painel mantém conteúdo textual |
+| `Toast` | fechar explícito | botão de 44px | dispensa controlada | sem auto-dismiss | não aplicável | `role=alert` apenas para erro; demais usam `status` |
 
 `Badge`, `Price`, `StatusMessage` e `Surface/Card` são informativos ou estruturais; não inventam estados interativos.
 
@@ -201,10 +211,19 @@ Tons: `paper`, `strong`, `dark`. Padding: `none`, `small`, `medium`, `large`. `C
 
 Cards não ganham sombra, radius grande nem comportamento clicável implícito. Se houver destino, use link real no título/CTA; não transforme toda a superfície em botão sem necessidade.
 
-## 12. Checklist de integração
+## 12. Overlays, disclosure, tabs e toast
+
+- `Dialog` e `Drawer` usam `<dialog>.showModal()`, cancelamento por Escape, backdrop, foco inicial e retorno ao elemento acionador. O trap e a inertização ficam com a primitiva modal nativa.
+- `Drawer` é lateral no desktop e bottom sheet no mobile, sem duplicar semântica.
+- `Accordion` usa `<details>/<summary>` e não esconde o conteúdo da árvore de acessibilidade quando aberto.
+- `Tabs` implementa `tablist/tab/tabpanel`, roving tabindex, setas, Home/End e tabs desabilitadas.
+- `Toast` é controlado, não desaparece por temporizador e separa `status` educado de `alert` assertivo.
+- Os cinco testes em `tests/unit/ui-interactions.test.tsx` cobrem abertura/fechamento e retorno de foco de Dialog/Drawer, disclosure, teclado de tabs e dispensa do toast.
+
+## 13. Checklist de integração
 
 - [ ] Migrar componentes existentes um fluxo por vez; não reescrever commerce junto.
-- [ ] Materializar `--color-error` e `--color-success` em `globals.css` conforme contrato visual.
+- [x] Materializar `--color-error` e `--color-success` em `globals.css` conforme contrato visual.
 - [ ] Conferir contraste calculado no CSS final, inclusive disabled e zona escura.
 - [ ] Testar teclado e focus-visible em claro/escuro.
 - [ ] Testar 320px, zoom 200%, forced colors e reduced motion.
@@ -213,13 +232,11 @@ Cards não ganham sombra, radius grande nem comportamento clicável implícito. 
 - [ ] Revalidar quantity/price/stock no boundary autoritativo de commerce.
 - [ ] Fazer QA visual antes de declarar o design system integrado.
 
-## 13. Escopo deliberadamente não implementado nesta entrega
+## 14. Escopo ainda não integrado nas rotas
 
-- Dialog, drawer, accordion, tabs e toast com lifecycle/focus management.
 - Migração de `site/app/**` ou `site/components/commerce/**`.
-- Tokens globais ou fontes.
 - Variações visuais de produto/catalogo.
 - Motion Anime.js, Three.js e feedback de brasa.
-- Testes em navegador e aprovação visual.
+- Aprovação visual desses primitives numa página real; os controles atualmente usados pelas rotas seguem validados pela matriz cross-browser.
 
-Esses itens ficam para owners próprios. Esta entrega é um conjunto isolado de primitives pronto para revisão e integração, não prova de que as rotas já os usam.
+Esses itens ficam para owners próprios. O design system cobre o inventário obrigatório, mas a existência de um primitive não prova sua adoção numa rota que não precisa dele.

@@ -57,6 +57,17 @@ test.describe('HEAL storefront', () => {
     await expect(page.getByRole('link', { name: 'Voltar ao início' })).toBeVisible();
   });
 
+  test('mantém a fixture crawlable para leitura do noindex', async ({ page, request }) => {
+    const robotsResponse = await request.get('/robots.txt');
+    expect(robotsResponse.ok()).toBe(true);
+    const robotsBody = await robotsResponse.text();
+    expect(robotsBody).toContain('Allow: /');
+    expect(robotsBody).not.toContain('Disallow: /');
+
+    await page.goto('/');
+    await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', /noindex/i);
+  });
+
   test('teclado alcança skip link e abre menu móvel', async ({ page, browserName }) => {
     await page.setViewportSize({ width: 390, height: 844 });
     await page.goto('/');
