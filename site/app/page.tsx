@@ -1,107 +1,153 @@
-const sidebarWidths = [74, 58, 82, 66, 71, 54];
-const articleWidths = [100, 97, 94, 98, 86];
+import Link from 'next/link';
+
+const navItems = [
+  { href: '#escolher', label: 'Incensos' },
+  { href: '#como-escolher', label: 'Como escolher' },
+  { href: '#materia', label: 'Matéria' },
+];
 
 export default function Home() {
   return (
-    <main className="fixed inset-0 overflow-hidden bg-[#fbfaf8] text-zinc-900">
-      <header
-        aria-hidden="true"
-        className="grid h-[76px] grid-cols-[1fr_auto_1fr] items-center border-b border-stone-200 bg-white/95 px-6 sm:px-14"
-      >
-        <div className="flex items-center gap-3">
-          <span className="h-9 w-9 rounded-full bg-stone-100" />
-          <span className="h-3.5 w-28 rounded-full bg-stone-100" />
-        </div>
-        <span className="hidden h-9 w-[min(30vw,420px)] rounded-xl bg-stone-100 sm:block" />
-        <div className="flex items-center justify-end gap-3">
-          <span className="hidden h-9 w-9 rounded-full bg-stone-100 sm:block" />
-          <span className="h-9 w-24 rounded-xl bg-stone-100" />
-        </div>
-      </header>
+    <>
+      <a className="skip-link" href="#conteudo">
+        Pular para o conteúdo
+      </a>
 
-      <div
-        aria-hidden="true"
-        className="grid h-[calc(100%-76px)] grid-cols-[180px_minmax(0,1fr)_260px] gap-10 px-6 pb-24 pt-10 opacity-55 max-lg:grid-cols-[150px_minmax(0,1fr)] max-sm:grid-cols-1 sm:px-14"
-      >
-        <aside className="hidden border-r border-stone-200 pr-7 sm:block">
-          <div className="mb-6 h-2.5 w-16 rounded-full bg-stone-200" />
-          <div className="space-y-4">
-            {sidebarWidths.map((width) => (
-              <div key={width} className="flex items-center gap-3">
-                <span className="h-4 w-4 rounded bg-stone-200" />
-                <span
-                  className="h-2.5 rounded-full bg-stone-200"
-                  style={{ width: `${width}%` }}
-                />
-              </div>
-            ))}
-          </div>
-          <div className="mb-6 mt-9 h-2.5 w-24 rounded-full bg-stone-200" />
-          <div className="space-y-4">
-            {sidebarWidths.slice(0, 3).map((width) => (
-              <span
-                key={width}
-                className="block h-2.5 rounded-full bg-stone-200"
-                style={{ width: `${width}%` }}
-              />
-            ))}
-          </div>
-        </aside>
-
-        <article className="mx-auto flex w-full max-w-3xl flex-col gap-6">
-          <div className="space-y-3">
-            <div className="h-2.5 w-28 rounded-full bg-stone-200" />
-            <div className="h-7 w-4/5 rounded-lg bg-stone-200" />
-            <div className="h-7 w-3/5 rounded-lg bg-stone-200" />
-          </div>
-          <div className="min-h-[240px] flex-1 rounded-2xl bg-stone-200" />
-          <div className="flex items-center gap-3">
-            <span className="h-9 w-9 rounded-full bg-stone-200" />
-            <span className="h-2.5 w-28 rounded-full bg-stone-200" />
-          </div>
-          <div className="space-y-2">
-            {articleWidths.map((width) => (
-              <span
-                key={width}
-                className="block h-2.5 rounded-full bg-stone-200"
-                style={{ width: `${width}%` }}
-              />
-            ))}
-          </div>
-        </article>
-
-        <aside className="space-y-5 max-lg:hidden">
-          {[0, 1].map((card) => (
-            <div
-              key={card}
-              className="space-y-4 rounded-2xl border border-stone-200 bg-white/70 p-6"
-            >
-              <span className="block h-10 w-10 rounded-full bg-stone-200" />
-              <span className="block h-3 w-3/5 rounded-full bg-stone-200" />
-              <span className="block h-2.5 w-full rounded-full bg-stone-200" />
-              <span className="block h-2.5 w-4/5 rounded-full bg-stone-200" />
-              <span className="block h-8 w-24 rounded-lg bg-stone-200" />
-            </div>
-          ))}
-        </aside>
+      <div className="demo-banner" role="note">
+        <span>Ambiente de demonstração</span>
+        <span>Dados e imagens ilustrativos</span>
       </div>
 
-      <section
-        role="status"
-        aria-live="polite"
-        aria-atomic="true"
-        className="absolute left-1/2 top-[clamp(96px,13vh,122px)] w-[min(620px,calc(100%-40px))] -translate-x-1/2 rounded-[18px] border border-stone-200 bg-white/95 px-5 py-5 shadow-[0_18px_50px_rgb(24_24_27/9%)] backdrop-blur-sm"
-      >
-        <p className="mb-1 text-[11px] font-semibold uppercase tracking-[0.09em] text-stone-500">
-          Building your site
-        </p>
-        <h1 className="text-xl font-semibold tracking-tight">
-          Your site is taking shape
-        </h1>
-        <p className="mt-1 text-sm text-stone-500">
-          Your first version will appear here automatically when it’s ready.
-        </p>
-      </section>
-    </main>
+      <header className="site-header">
+        <Link className="wordmark" href="/" aria-label="HEAL. CURA. — início">
+          <span>HEAL.</span>
+          <span>CURA.</span>
+        </Link>
+
+        <nav className="desktop-nav" aria-label="Navegação principal">
+          {navItems.map((item) => (
+            <a key={item.href} href={item.href}>
+              {item.label}
+            </a>
+          ))}
+        </nav>
+
+        <div className="header-actions">
+          <Link className="bag-link" href="/carrinho" aria-label="Abrir sacola, vazia">
+            Sacola <span aria-hidden="true">(0)</span>
+          </Link>
+        </div>
+
+        <details className="mobile-menu">
+          <summary>Menu</summary>
+          <nav aria-label="Navegação móvel">
+            {navItems.map((item) => (
+              <a key={item.href} href={item.href}>
+                {item.label}
+              </a>
+            ))}
+          </nav>
+        </details>
+      </header>
+
+      <main id="conteudo">
+        <section className="hero" aria-labelledby="hero-title">
+          <div className="hero-inner">
+            <div className="hero-copy">
+              <p className="eyebrow">Incensos · ritual contemporâneo</p>
+              <h1 id="hero-title">Acenda o intervalo.</h1>
+              <p className="hero-lead">
+                Incensos para escolher pela atmosfera — e entender pela matéria.
+                A beleza chama. A informação sustenta a escolha.
+              </p>
+              <div className="hero-actions">
+                <a className="button button-light" href="#escolher">
+                  Escolher uma atmosfera
+                </a>
+                <a className="editorial-link" href="#como-escolher">
+                  Como escolher
+                </a>
+              </div>
+              <dl className="hero-proof" aria-label="Princípios da experiência HEAL">
+                <div>
+                  <dt>Escolha</dt>
+                  <dd>por matéria e momento</dd>
+                </div>
+                <div>
+                  <dt>Prova</dt>
+                  <dd>junto da poesia</dd>
+                </div>
+                <div>
+                  <dt>Ritual</dt>
+                  <dd>sem promessas de cura</dd>
+                </div>
+              </dl>
+            </div>
+
+            <figure className="hero-visual">
+              <picture>
+                <source srcSet="/images/heal-ritual-demo.avif" type="image/avif" />
+                <source srcSet="/images/heal-ritual-demo.webp" type="image/webp" />
+                <img
+                  src="/images/heal-ritual-demo.png"
+                  width="1536"
+                  height="1024"
+                  alt="Composição demonstrativa de uma vareta de incenso acesa em suporte cerâmico escuro"
+                  fetchPriority="high"
+                />
+              </picture>
+              <figcaption>Imagem demonstrativa — não representa um produto real.</figcaption>
+            </figure>
+          </div>
+          <div className="transition-seam" aria-hidden="true" />
+        </section>
+
+        <section className="choice-section" id="escolher" aria-labelledby="choice-title">
+          <div className="section-heading">
+            <p className="eyebrow eyebrow-dark">Comece pelo que faz sentido</p>
+            <h2 id="choice-title">Duas portas para a mesma pausa.</h2>
+            <p>
+              Explore por matéria quando já conhece seu repertório. Comece pelo
+              momento quando ainda procura palavras para a atmosfera.
+            </p>
+          </div>
+
+          <div className="choice-grid">
+            <a className="choice-card choice-card-matter" href="#materia" id="materia">
+              <span className="card-index">01</span>
+              <span className="card-kicker">Por matéria</span>
+              <strong>Madeiras, resinas e folhas</strong>
+              <span className="card-copy">
+                Famílias conceituais. Composição e origem aguardam catálogo real.
+              </span>
+              <span className="card-cta">Explorar famílias →</span>
+            </a>
+
+            <a className="choice-card choice-card-moment" href="#como-escolher">
+              <span className="card-index">02</span>
+              <span className="card-kicker">Por momento</span>
+              <strong>Chegar, receber, recolher</strong>
+              <span className="card-copy">
+                Uma orientação editorial — nunca uma promessa de efeito terapêutico.
+              </span>
+              <span className="card-cta">Encontrar uma atmosfera →</span>
+            </a>
+          </div>
+        </section>
+
+        <section className="method-strip" id="como-escolher" aria-labelledby="method-title">
+          <div>
+            <p className="eyebrow eyebrow-dark">Passaporte sensorial</p>
+            <h2 id="method-title">Sentir também pode ser compreensível.</h2>
+          </div>
+          <ol>
+            <li><span>01</span> Família aromática</li>
+            <li><span>02</span> Intensidade percebida</li>
+            <li><span>03</span> Nível de fumaça</li>
+            <li><span>04</span> Uso e cuidados</li>
+          </ol>
+        </section>
+      </main>
+    </>
   );
 }

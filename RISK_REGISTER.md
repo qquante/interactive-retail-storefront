@@ -12,4 +12,5 @@ Atualizado em: 2026-08-28
 | R-006 | Confundir fixture com checkout real. | Alta | Alto | Badges/estado explícito em docs e UI de desenvolvimento. | HEAL-13/21 | open |
 | R-007 | Agentes editarem arquivos sobrepostos. | Média | Alto | Registry, no-touch boundaries e integração central. | HEAL-00 | open |
 | R-008 | Assets genéricos quebrarem autenticidade. | Alta | Médio | Direção de arte; usar material gerado apenas como provisório e com provenance. | HEAL-02/07 | open |
-
+| R-009 | Conteúdo fixture ser indexado como oferta real. | Média | Alto | `noindex`, badge persistente, nenhum feed/schema Product até catálogo real. | HEAL-15/16 | mitigating |
+| R-010 | Vinext beta divergir de Next em metadata/cache/imagens. | Média | Alto | `vinext check`, build, SSR/HTML e testes cross-browser antes de qualquer deploy. | HEAL-01/08/21 | open |
