@@ -15,9 +15,11 @@ Atualizado em: 2026-08-28
 - O workspace começou sem aplicação e sem repositório Git.
 - O prompt mestre fornecido pelo usuário está preservado em `HEAL_PROMPT_MESTRE_MULTIAGENTE.md`.
 - Um scaffold Sites/Vinext foi criado em `site/` com Next-compatible App Router, React, TypeScript, Tailwind e configuração Cloudflare/Sites.
-- Dependências estão em instalação na sessão inicial.
 - Não há catálogo real, credenciais, conta de commerce, checkout, domínio, analytics ou deploy configurados.
-- Estado atual: **scaffold + governança em construção**. Nenhuma loja funcional foi alegada.
+- Estado atual: **storefront local funcional em fixture explícita**, com Home, coleção, PDP, busca/filtro, sacola, frete fictício, handoff sem pagamento, rotas institucionais, Anime.js e Three.js com fallback.
+- Gates locais presentes: lint, typecheck, unit, integração, Playwright cross-browser, axe, build e audit. A auditoria Lighthouse mediu desktop 99 e mobile 79; portanto produção não está aprovada.
+- SEO permanece globalmente `noindex`; schema comercial, sitemap/canonical definitivo, Merchant Center e origem social dependem de domínio e catálogo reais.
+- O design visual selecionado é **Tempo de Brasa**; imagens e produtos atuais são demonstrativos e possuem proveniência/rotulagem.
 
 ## Direção não negociável
 
@@ -30,4 +32,3 @@ Atualizado em: 2026-08-28
 
 - Sem compra, contratação, criação de conta externa, credencial pessoal, pagamento real, DNS ou deploy sem aprovação humana explícita.
 - Mock, fixture, sandbox e produção serão sempre identificados separadamente.
-

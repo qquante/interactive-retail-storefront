@@ -7,7 +7,7 @@ Estado: `research`
 
 - Sites/Vinext `1.0.0-beta.8`, Vite `8.2.2`, Next `16.3.3` e React `19.2.8`.
 - `npm audit --omit=dev --json`: zero vulnerabilidades conhecidas no snapshot.
-- `vinext check`: 90% compatível; único item parcial é `next/font/google`, que será removido antes da vertical slice.
+- Baseline: `vinext check` começou em 90% por uso de `next/font/google`. Após a remoção e expansão das rotas, o rerun final registrou 100%, 17 páginas e 0 itens parciais/issues.
 - Anime.js e Three.js ainda não estão instalados neste ponto da execução.
 
 ## Anime.js v4
@@ -73,4 +73,3 @@ Three.js ficará fora do caminho crítico e de rotas que não exibem a assinatur
 4. Cleanup reproduzível ao navegar.
 5. Reduced motion, WebGL indisponível e rede lenta testados.
 6. Bundle e CWV lab comparados com efeitos ligados/desligados.
-
