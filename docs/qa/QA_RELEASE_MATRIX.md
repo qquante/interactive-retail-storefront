@@ -213,12 +213,12 @@ Nenhum P0 identificado no protótipo local. Isso não equivale a pentest, compli
 **Owner:** frontend platform/Vinext.  
 **Remediação/prova:** dois builds consecutivos produziram manifesto CSS estável. Client, server e SSR emitiram `commerce.BmIhDIRk.css` com 8.444 bytes e SHA-256 `4458929FDF990B76B178B7D6743B0A7B8173411F5042D466F69F138DE75674B7`; o smoke carregou o CSSOM sem perda. Ver `BUILD_DETERMINISM.md`. Reabre se o conteúdo divergir ou o smoke falhar.
 
-### QA-004 — P3 — fechado no primeiro release candidate; nova remediação aguarda hash final
+### QA-004 — P3 — fechado — evidência ligada a commits imutáveis
 
 **Evidência:** a auditoria testou `HEAD 04d1e04` mais uma árvore de trabalho com arquivos modificados e não rastreados. `git diff --check` passou, porém há avisos LF→CRLF.  
 **Impacto:** não é possível reproduzir exatamente o estado aprovado apenas pelo hash atual.  
 **Owner:** root/release owner.  
-**Remediação:** o estado HEAL-21 foi consolidado em `b5ec1826ec1255a8cbe66c37e37660edb800afe2`, limpo e revisado por HEAL-22. As correções pedidas no primeiro review serão ligadas a um segundo hash e rerodadas antes do re-review.
+**Remediação:** o estado HEAL-21 foi consolidado em `b5ec1826ec1255a8cbe66c37e37660edb800afe2`, limpo e revisado por HEAL-22. As correções do primeiro review e seus gates foram consolidados em `70be2a6c92754339a9c90e1e987965a62243d0d2` para re-review read-only.
 
 ## Blockers de produção confirmados fora do escopo funcional local
 

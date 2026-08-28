@@ -29,6 +29,7 @@ Atualizado em: 2026-08-28
 | Design system obrigatório | real/local | Dialog, drawer, accordion, tabs e toast em `site/components/ui/`; testes em `ui-interactions.test.tsx` |
 | Warning CSS Vinext | real/local | `docs/qa/BUILD_DETERMINISM.md`; dois builds, hashes CSS estáveis e cópias idênticas |
 | Handoffs e sessões | governança real | `docs/agents/handoffs/`, `docs/agents/sessions/` e `SESSIONS.md`; horários ausentes explicitamente não inventados |
+| Release candidate remediado | Git/local | `70be2a6c92754339a9c90e1e987965a62243d0d2`; 12/12 Vitest, 52/52 E2E, build/smoke/audits verdes |
 
 | Evidence | Task | Tipo | Caminho/resultado | Estado |
 |---|---|---|---|---|
