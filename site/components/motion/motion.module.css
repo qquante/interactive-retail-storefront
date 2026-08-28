@@ -1,0 +1,99 @@
+.seam {
+  position: relative;
+  block-size: 2px;
+  overflow: hidden;
+  background: linear-gradient(
+    90deg,
+    var(--color-ember) 0 18%,
+    var(--color-paper) 18% 100%
+  );
+}
+
+.seamTrace {
+  position: absolute;
+  inset: 0;
+  background: inherit;
+}
+
+.seamEmber {
+  position: absolute;
+  inset-block-start: 50%;
+  inset-inline-start: calc(18% - 4px);
+  inline-size: 8px;
+  block-size: 8px;
+  margin-block-start: -4px;
+  border-radius: 50%;
+  background: var(--color-ember);
+  box-shadow: 0 0 12px color-mix(in srgb, var(--color-ember) 55%, transparent);
+  opacity: 0.72;
+}
+
+.cartFeedback {
+  display: grid;
+  grid-template-columns: 2rem minmax(0, 1fr);
+  gap: 0.75rem;
+  align-items: center;
+  min-block-size: 2.75rem;
+}
+
+.emberTrack {
+  position: relative;
+  display: block;
+  inline-size: 2rem;
+  block-size: 2px;
+  background: var(--color-line);
+}
+
+.cartEmber {
+  position: absolute;
+  inset-block-start: 50%;
+  inset-inline-start: 0;
+  inline-size: 8px;
+  block-size: 8px;
+  margin-block-start: -4px;
+  border-radius: 50%;
+  background: var(--color-ember);
+  box-shadow: 0 0 10px color-mix(in srgb, var(--color-ember) 48%, transparent);
+  opacity: 0;
+}
+
+.cartStatus {
+  margin: 0;
+  color: var(--color-success);
+  font: 500 0.875rem/1.45 var(--font-ui);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .seamTrace,
+  .emberTrack {
+    display: none;
+  }
+
+  .seamEmber {
+    box-shadow: none;
+  }
+
+  .cartFeedback {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (forced-colors: active) {
+  .seam {
+    background: CanvasText;
+  }
+
+  .seamTrace,
+  .seamEmber,
+  .emberTrack {
+    display: none;
+  }
+
+  .cartFeedback {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .cartStatus {
+    color: CanvasText;
+  }
+}

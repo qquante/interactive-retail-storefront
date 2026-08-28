@@ -1,21 +1,30 @@
 import Link from 'next/link';
+import { CartLink } from '@/components/commerce/CartLink';
+import { ProductCard } from '@/components/commerce/ProductCard';
+import { EditorialSeamReveal } from '@/components/motion';
+import { EmberSmokeScene } from '@/components/three';
+import { fixtureCommerce } from '@/lib/commerce';
 
 const navItems = [
-  { href: '#escolher', label: 'Incensos' },
-  { href: '#como-escolher', label: 'Como escolher' },
-  { href: '#materia', label: 'Matéria' },
+  { href: '/colecoes/intervalos', label: 'Incensos' },
+  { href: '/como-escolher', label: 'Como escolher' },
+  { href: '/materia', label: 'Matéria' },
 ];
 
-export default function Home() {
+export default async function Home() {
+  const productResult = await fixtureCommerce.listProducts(
+    { collectionHandle: 'intervalos' },
+    { limit: 3 },
+  );
   return (
     <>
       <a className="skip-link" href="#conteudo">
         Pular para o conteúdo
       </a>
 
-      <div className="demo-banner" role="note">
-        <span>Ambiente de demonstração</span>
-        <span>Dados e imagens ilustrativos</span>
+      <div className="demo-banner" role="region" aria-label="Aviso de demonstração">
+        <span>Demonstração — produtos, valores, estoque e frete fictícios</span>
+        <span>Nenhum pagamento será processado</span>
       </div>
 
       <header className="site-header">
@@ -33,9 +42,8 @@ export default function Home() {
         </nav>
 
         <div className="header-actions">
-          <Link className="bag-link" href="/carrinho" aria-label="Abrir sacola, vazia">
-            Sacola <span aria-hidden="true">(0)</span>
-          </Link>
+          <Link className="search-link" href="/busca" prefetch={false}>Buscar</Link>
+          <CartLink />
         </div>
 
         <details className="mobile-menu">
@@ -46,6 +54,7 @@ export default function Home() {
                 {item.label}
               </a>
             ))}
+            <Link href="/busca" prefetch={false}>Buscar</Link>
           </nav>
         </details>
       </header>
@@ -61,12 +70,12 @@ export default function Home() {
                 A beleza chama. A informação sustenta a escolha.
               </p>
               <div className="hero-actions">
-                <a className="button button-light" href="#escolher">
-                  Escolher uma atmosfera
-                </a>
-                <a className="editorial-link" href="#como-escolher">
+                <Link className="button button-light" href="/colecoes/intervalos">
+                  Explorar incensos
+                </Link>
+              <Link className="editorial-link" href="/como-escolher" prefetch={false}>
                   Como escolher
-                </a>
+              </Link>
               </div>
               <dl className="hero-proof" aria-label="Princípios da experiência HEAL">
                 <div>
@@ -85,21 +94,11 @@ export default function Home() {
             </div>
 
             <figure className="hero-visual">
-              <picture>
-                <source srcSet="/images/heal-ritual-demo.avif" type="image/avif" />
-                <source srcSet="/images/heal-ritual-demo.webp" type="image/webp" />
-                <img
-                  src="/images/heal-ritual-demo.png"
-                  width="1536"
-                  height="1024"
-                  alt="Composição demonstrativa de uma vareta de incenso acesa em suporte cerâmico escuro"
-                  fetchPriority="high"
-                />
-              </picture>
-              <figcaption>Imagem demonstrativa — não representa um produto real.</figcaption>
+              <EmberSmokeScene className="hero-three" />
+              <figcaption>Assinatura sensorial demonstrativa — a compra não depende da cena.</figcaption>
             </figure>
           </div>
-          <div className="transition-seam" aria-hidden="true" />
+          <EditorialSeamReveal className="transition-seam" />
         </section>
 
         <section className="choice-section" id="escolher" aria-labelledby="choice-title">
@@ -113,7 +112,7 @@ export default function Home() {
           </div>
 
           <div className="choice-grid">
-            <a className="choice-card choice-card-matter" href="#materia" id="materia">
+            <Link className="choice-card choice-card-matter" href="/colecoes/intervalos" id="materia">
               <span className="card-index">01</span>
               <span className="card-kicker">Por matéria</span>
               <strong>Madeiras, resinas e folhas</strong>
@@ -121,9 +120,9 @@ export default function Home() {
                 Famílias conceituais. Composição e origem aguardam catálogo real.
               </span>
               <span className="card-cta">Explorar famílias →</span>
-            </a>
+            </Link>
 
-            <a className="choice-card choice-card-moment" href="#como-escolher">
+            <Link className="choice-card choice-card-moment" href="/colecoes/intervalos?entrada=momento">
               <span className="card-index">02</span>
               <span className="card-kicker">Por momento</span>
               <strong>Chegar, receber, recolher</strong>
@@ -131,8 +130,29 @@ export default function Home() {
                 Uma orientação editorial — nunca uma promessa de efeito terapêutico.
               </span>
               <span className="card-cta">Encontrar uma atmosfera →</span>
-            </a>
+            </Link>
           </div>
+        </section>
+
+        <section className="home-products" aria-labelledby="home-products-title">
+          <div className="home-products-heading">
+            <div>
+              <p className="eyebrow eyebrow-dark">Coleção demonstrativa</p>
+              <h2 id="home-products-title">Intervalos.</h2>
+            </div>
+            <p>Três fixtures mostram como categoria, percepção, prova e compra ocuparão a mesma página — sem fingir que o catálogo já existe.</p>
+          </div>
+          {productResult.ok ? (
+            <div className="home-product-grid">
+              {productResult.data.items.map((product) => <ProductCard key={product.id} product={product} />)}
+            </div>
+          ) : (
+            <div className="home-product-error" role="alert">
+              <p>Não foi possível carregar a coleção demonstrativa.</p>
+              <Link href="/colecoes">Ver todas as coleções</Link>
+            </div>
+          )}
+          <Link className="home-products-link" href="/colecoes/intervalos" prefetch={false}>Ver coleção demonstrativa →</Link>
         </section>
 
         <section className="method-strip" id="como-escolher" aria-labelledby="method-title">
@@ -148,6 +168,27 @@ export default function Home() {
           </ol>
         </section>
       </main>
+
+      <footer className="home-footer">
+        <div>
+          <p className="wordmark" aria-label="HEAL. CURA."><span>HEAL.</span><span>CURA.</span></p>
+          <p>Incensos para escolher pela atmosfera e entender pela matéria.</p>
+        </div>
+        <nav aria-label="Marca e conteúdo">
+          <Link href="/sobre" prefetch={false}>Sobre</Link>
+          <Link href="/materia" prefetch={false}>Matéria</Link>
+          <Link href="/como-escolher" prefetch={false}>Como escolher</Link>
+          <Link href="/journal" prefetch={false}>Journal</Link>
+        </nav>
+        <nav aria-label="Ajuda e políticas">
+          <Link href="/seguranca" prefetch={false}>Segurança</Link>
+          <Link href="/entrega-trocas" prefetch={false}>Entrega e trocas</Link>
+          <Link href="/privacidade" prefetch={false}>Privacidade</Link>
+          <Link href="/termos" prefetch={false}>Termos</Link>
+          <Link href="/contato" prefetch={false}>Contato</Link>
+        </nav>
+        <p className="footer-status">Demonstração local · operação e catálogo ainda não definidos</p>
+      </footer>
     </>
   );
 }

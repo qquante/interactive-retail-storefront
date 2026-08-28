@@ -1,0 +1,51 @@
+.status {
+  --status-color: var(--color-focus);
+
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
+  gap: 0.625rem;
+  border-inline-start: 3px solid var(--status-color);
+  background: var(--color-paper-strong);
+  color: var(--color-ink);
+  font-family: var(--font-ui);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  padding: 0.75rem 1rem;
+}
+
+.status[data-tone='success'] {
+  --status-color: var(--color-success, var(--color-moss));
+}
+
+.status[data-tone='warning'] {
+  --status-color: var(--color-ember);
+}
+
+.status[data-tone='error'] {
+  --status-color: var(--color-error, var(--color-ember));
+}
+
+.mark {
+  display: inline-grid;
+  inline-size: 1.35rem;
+  block-size: 1.35rem;
+  place-items: center;
+  border: 1px solid var(--status-color);
+  border-radius: 50%;
+  color: var(--status-color);
+  font-size: 0.75rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.label {
+  color: var(--status-color);
+}
+
+@media (forced-colors: active) {
+  .status,
+  .mark {
+    forced-color-adjust: auto;
+  }
+}

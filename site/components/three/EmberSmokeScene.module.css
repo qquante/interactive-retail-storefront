@@ -1,0 +1,95 @@
+.root {
+  --ember-scene-smoke: var(--color-smoke, #c9c1b5);
+  --ember-scene-ember: var(--color-ember, #b73b1d);
+  --ember-scene-ink: var(--color-ink, #171411);
+
+  position: relative;
+  isolation: isolate;
+  inline-size: 100%;
+  min-block-size: clamp(15rem, 42vw, 38rem);
+  overflow: clip;
+  contain: layout paint style;
+  pointer-events: none;
+  user-select: none;
+}
+
+.canvas,
+.fallback {
+  position: absolute;
+  inset: 0;
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.canvas {
+  z-index: 1;
+  display: block;
+  opacity: 0;
+  transition: opacity 480ms ease-out;
+}
+
+.fallback {
+  z-index: 0;
+  opacity: 1;
+  transition: opacity 480ms ease-out;
+}
+
+.root[data-state="ready"] .canvas {
+  opacity: 1;
+}
+
+.root[data-state="ready"] .fallback {
+  opacity: 0.12;
+}
+
+.smokePath {
+  fill: none;
+  stroke: var(--ember-scene-smoke);
+  stroke-linecap: round;
+}
+
+.stick {
+  fill: var(--ember-scene-ink);
+}
+
+.emberCore {
+  fill: var(--ember-scene-ember);
+}
+
+.emberHalo {
+  fill: var(--ember-scene-ember);
+  opacity: 0.26;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .canvas,
+  .fallback {
+    transition: none;
+  }
+}
+
+@media (prefers-reduced-data: reduce) {
+  .canvas {
+    display: none;
+  }
+}
+
+@media (forced-colors: active) {
+  .canvas {
+    display: none;
+  }
+
+  .fallback {
+    opacity: 0.7;
+  }
+
+  .smokePath {
+    stroke: CanvasText;
+  }
+
+  .stick,
+  .emberCore,
+  .emberHalo {
+    fill: CanvasText;
+  }
+}

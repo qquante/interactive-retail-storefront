@@ -1,0 +1,87 @@
+.pageShell { min-height: 100vh; background: var(--color-paper, #f4f0e8); color: var(--color-ink, #171411); }
+.skipLink { position: fixed; inset-block-start: -6rem; inset-inline-start: 1rem; z-index: 100; background: #fffdfc; padding: .75rem 1rem; font-weight: 700; }
+.skipLink:focus-visible { inset-block-start: 1rem; }
+.demoBanner { position: relative; z-index: 20; display: flex; min-height: 2.75rem; align-items: center; justify-content: center; gap: .35rem 1rem; flex-wrap: wrap; border-bottom: 1px solid #b73b1d; background: #fffdfc; padding: .5rem 1rem; font-size: .75rem; letter-spacing: .04em; text-align: center; }
+.demoBanner strong { color: #a52920; letter-spacing: .1em; }
+.header { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 2rem; width: min(calc(100% - 2rem), 90rem); min-height: 5.5rem; margin-inline: auto; border-bottom: 1px solid #d4ccbf; }
+.wordmark { min-height: 2.75rem; display: grid; align-content: center; line-height: .82; font-family: Georgia, serif; font-size: 1.25rem; text-decoration: none; }
+.nav { display: flex; justify-content: center; gap: clamp(1rem, 3vw, 2.5rem); }
+.nav a, .headerLink a { min-height: 2.75rem; display: inline-flex; align-items: center; text-underline-offset: .3em; }
+.main { width: min(calc(100% - 2rem), 90rem); margin-inline: auto; padding-block: clamp(2rem, 5vw, 5rem); }
+.footer { width: min(calc(100% - 2rem), 90rem); margin-inline: auto; border-top: 1px solid #d4ccbf; padding-block: 2rem; color: #6b6258; font-size: .875rem; }
+.breadcrumbs ol { display: flex; flex-wrap: wrap; gap: .4rem; margin: 0 0 2rem; padding: 0; list-style: none; color: #6b6258; font-size: .875rem; }
+.breadcrumbs li:not(:last-child)::after { content: '/'; margin-inline-start: .4rem; }
+.eyebrow { margin: 0 0 .75rem; color: #a52920; font-size: .75rem; font-weight: 700; letter-spacing: .12em; }
+.pageIntro { max-width: 48rem; margin-block-end: 3rem; }
+.pageIntro h1 { margin: 0 0 1rem; max-width: 18ch; font-family: Georgia, serif; font-size: clamp(2.5rem, 6vw, 5rem); font-weight: 400; line-height: 1; }
+.pageIntro p { max-width: 44rem; }
+.collectionGrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1rem, 3vw, 2rem); }
+.productCard { display: flex; min-width: 0; flex-direction: column; padding-block-end: 2rem; border-bottom: 1px solid #d4ccbf; }
+.productPlaceholder { position: relative; display: grid; aspect-ratio: 4 / 5; place-items: center; overflow: hidden; margin-block-end: 1.25rem; background: linear-gradient(145deg, #211d18, #393129); color: #f4f0e8; }
+.productPlaceholder::before { content: ''; position: absolute; width: 50%; height: 70%; border: 1px solid rgb(244 240 232 / 25%); transform: rotate(8deg); }
+.incenseStick { width: 2px; height: 58%; background: #c9c1b5; transform: rotate(8deg); }
+.ember { position: absolute; top: 20%; left: 54%; width: .45rem; height: .45rem; border-radius: 50%; background: #d3522d; box-shadow: 0 0 1.5rem #b73b1d; }
+.placeholderLabel { position: absolute; inset-inline: 1rem; inset-block-end: 1rem; font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; }
+.cardTitle { margin: 0 0 1rem; font-family: Georgia, serif; font-size: clamp(1.35rem, 2vw, 1.8rem); font-weight: 400; line-height: 1.2; }
+.cardTitle a { text-decoration-thickness: 1px; text-underline-offset: .2em; }
+.compactFacts { display: grid; gap: .35rem; margin: 0 0 1rem; font-size: .875rem; }
+.compactFacts div { display: flex; justify-content: space-between; gap: 1rem; border-bottom: 1px solid #d4ccbf; padding-block-end: .25rem; }
+.compactFacts dd { margin: 0; text-align: end; color: #6b6258; }
+.price { margin: auto 0 0; padding-block-start: 1rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+.availability { min-height: 3rem; margin: .25rem 0 1rem; color: #4e5c4b; }
+.primaryButton, .secondaryButton, .textButton { display: inline-flex; min-height: 2.75rem; align-items: center; justify-content: center; border: 1px solid #171411; border-radius: .25rem; padding: .65rem 1.15rem; font: inherit; font-weight: 700; text-align: center; text-decoration: none; cursor: pointer; }
+.primaryButton { background: #171411; color: #fffdfc; }
+.secondaryButton { background: transparent; color: #171411; }
+.textButton { min-height: 2.75rem; border-color: transparent; background: transparent; text-decoration: underline; text-underline-offset: .25em; }
+.primaryButton:disabled, .secondaryButton:disabled { cursor: not-allowed; opacity: .55; }
+.controls { display: flex; align-items: end; justify-content: space-between; gap: 1rem; margin-block: 2rem; border-block: 1px solid #d4ccbf; padding-block: 1rem; }
+.field { display: grid; gap: .35rem; font-weight: 600; }
+.field input, .field select { min-height: 3rem; border: 1px solid #6b6258; border-radius: .25rem; background: #fffdfc; padding: .65rem .75rem; color: #171411; font: inherit; }
+.productLayout { display: grid; grid-template-columns: minmax(0, 7fr) minmax(20rem, 5fr); gap: clamp(2rem, 5vw, 5rem); align-items: start; }
+.productLayout > * { min-width: 0; }
+.buyPanel { min-width: 0; padding: clamp(1.25rem, 3vw, 2.5rem); overflow-wrap: anywhere; background: #fffdfc; border: 1px solid #d4ccbf; }
+.buyPanel h1 { margin: 0 0 1rem; font-family: Georgia, serif; font-size: clamp(2.25rem, 4vw, 4rem); font-weight: 400; line-height: 1.02; }
+.sensoryList, .factsList { display: grid; gap: 0; margin-block: 1.5rem; }
+.sensoryList div, .factsList div { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; border-bottom: 1px solid #d4ccbf; padding-block: .65rem; }
+.sensoryList dd, .factsList dd { margin: 0; text-align: end; }
+.purchaseForm { display: grid; gap: 1rem; margin-block-start: 1.5rem; }
+.status { min-height: 1.75rem; margin: 0; color: #2f6d4a; }
+.error { color: #a52920; }
+.statusActions { display: flex; gap: 1rem; flex-wrap: wrap; }
+.proofSection { max-width: 55rem; margin-block-start: clamp(3rem, 7vw, 7rem); }
+.proofSection h2, .cartSection h2 { font-family: Georgia, serif; font-size: clamp(1.75rem, 3vw, 2.75rem); font-weight: 400; }
+.warning { border-inline-start: 4px solid #b73b1d; background: #fffdfc; padding: 1rem 1.25rem; }
+.cartLayout { display: grid; grid-template-columns: minmax(0, 2fr) minmax(20rem, 1fr); gap: clamp(2rem, 5vw, 5rem); align-items: start; }
+.cartLines { display: grid; gap: 1rem; }
+.cartLine { display: grid; grid-template-columns: 1fr auto; gap: 1rem; border-block-end: 1px solid #d4ccbf; padding-block: 1.25rem; }
+.cartLine h2 { margin: 0; font-family: Georgia, serif; font-size: 1.35rem; font-weight: 400; }
+.quantity { display: flex; align-items: center; gap: .5rem; margin-block-start: 1rem; }
+.quantity button { width: 2.75rem; min-height: 2.75rem; border: 1px solid #171411; background: transparent; font: inherit; }
+.summary { display: grid; min-width: 0; gap: 1rem; background: #fffdfc; border: 1px solid #d4ccbf; padding: clamp(1rem, 3vw, 2rem); }
+.summary h2 { margin: 0; }
+.totals { display: grid; gap: .5rem; margin: 0; }
+.totals div { display: flex; justify-content: space-between; gap: 1rem; }
+.totals dd { margin: 0; font-variant-numeric: tabular-nums; text-align: end; }
+.totalRow { border-top: 1px solid #171411; padding-block-start: .75rem; font-weight: 700; }
+.shippingForm { display: grid; gap: .75rem; }
+.shippingFormActions { display: flex; gap: .5rem; flex-wrap: wrap; }
+.emptyState { max-width: 42rem; padding-block: 4rem; }
+.actionRow { display: flex; gap: 1rem; flex-wrap: wrap; }
+.handoff { max-width: 52rem; margin-inline: auto; }
+.handoffAlert { margin-block: 2rem; border: 2px solid #b73b1d; background: #fffdfc; padding: clamp(1rem, 4vw, 2rem); }
+.handoffList { display: grid; gap: .75rem; padding: 0; list-style: none; }
+@media (max-width: 1023px) {
+  .collectionGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .productLayout, .cartLayout { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 767px) {
+  .header { grid-template-columns: auto 1fr; min-height: 4.75rem; gap: 1rem; }
+  .nav { grid-column: 1 / -1; justify-content: flex-start; overflow-x: auto; border-top: 1px solid #d4ccbf; }
+  .headerLink { justify-self: end; }
+  .collectionGrid, .productLayout, .cartLayout { grid-template-columns: minmax(0, 1fr); }
+  .controls { align-items: stretch; flex-direction: column; }
+  .cartLine { grid-template-columns: 1fr; }
+  .compactFacts div, .sensoryList div, .factsList div { grid-template-columns: 1fr; gap: .15rem; }
+  .compactFacts dd, .sensoryList dd, .factsList dd { text-align: start; }
+}
+@media (forced-colors: active) { .productPlaceholder { border: 1px solid CanvasText; } }
