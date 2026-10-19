@@ -1,0 +1,17 @@
+# Apply only to the existing HEAL service and production environment in the runbook.
+# Railway no longer applies legacy railway.json settings to newly created services.
+mutation ConfigureHeal($serviceId: String!, $environmentId: String!) {
+  serviceInstanceUpdate(
+    serviceId: $serviceId
+    environmentId: $environmentId
+    input: {
+      dockerfilePath: "Dockerfile"
+      healthcheckPath: "/"
+      healthcheckTimeout: 120
+      restartPolicyType: ON_FAILURE
+      restartPolicyMaxRetries: 3
+      numReplicas: 1
+      railwayConfigFile: null
+    }
+  )
+}

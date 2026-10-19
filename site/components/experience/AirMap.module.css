@@ -1,0 +1,327 @@
+.section {
+  width: min(100%, var(--container));
+  margin-inline: auto;
+  padding: clamp(5rem, 10vw, 10rem) var(--page-gutter);
+}
+
+.intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(18rem, .75fr);
+  gap: 1.25rem clamp(2rem, 8vw, 8rem);
+  align-items: end;
+  margin-bottom: clamp(2.5rem, 6vw, 5rem);
+}
+
+.eyebrow {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: var(--color-muted);
+  font-size: .75rem;
+  font-weight: 750;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+}
+
+.intro h2 {
+  max-width: 12ch;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 5.7vw, 6.2rem);
+  font-weight: 560;
+  letter-spacing: -.065em;
+  line-height: .9;
+}
+
+.intro > p:last-child {
+  max-width: 36rem;
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 1.05rem;
+}
+
+.experience {
+  display: grid;
+  grid-template-columns: minmax(14rem, 3fr) minmax(0, 9fr);
+  border-block: 1px solid var(--color-line);
+}
+
+.selector {
+  min-width: 0;
+  margin: 0;
+  border: 0;
+  border-inline-end: 1px solid var(--color-line);
+  padding: 0;
+}
+
+.selector legend {
+  width: 100%;
+  padding: 1rem;
+  color: var(--color-muted);
+  font-size: .72rem;
+  font-weight: 750;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.selector button {
+  position: relative;
+  width: 100%;
+  min-height: 4.5rem;
+  display: grid;
+  grid-template-columns: 3.5rem 1fr;
+  align-items: center;
+  gap: .75rem;
+  border: 0;
+  border-top: 1px solid var(--color-line);
+  background: transparent;
+  padding: .75rem 1rem;
+  color: inherit;
+  font: inherit;
+  text-align: start;
+  cursor: pointer;
+}
+
+.selector button:disabled {
+  cursor: wait;
+}
+
+.selector button::after {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 4px;
+  background: var(--variant-color);
+  opacity: .25;
+  transform: scaleY(.15);
+  transition: opacity 180ms ease, transform 280ms ease;
+}
+
+.selector button:hover::after,
+.selector button[aria-pressed='true']::after {
+  opacity: 1;
+  transform: scaleY(1);
+}
+
+.selector button[aria-pressed='true'] {
+  background: var(--color-paper-strong);
+  font-weight: 700;
+}
+
+.code,
+.stageCode {
+  color: var(--color-ink);
+  font-family: var(--font-code);
+  font-size: .72rem;
+  letter-spacing: .1em;
+}
+
+.stage {
+  position: relative;
+  min-height: 41rem;
+  display: grid;
+  grid-template-columns: minmax(15rem, 1fr) minmax(18rem, .9fr);
+  align-items: center;
+  overflow: hidden;
+  background:
+    linear-gradient(90deg, transparent 49.9%, rgb(23 25 27 / 8%) 50%, transparent 50.1%),
+    var(--color-paper-strong);
+}
+
+.stage::after {
+  content: '';
+  position: absolute;
+  width: min(28rem, 60vw);
+  aspect-ratio: 1;
+  left: 12%;
+  top: 14%;
+  border: 1px solid var(--variant-color);
+  border-radius: 50%;
+  opacity: .11;
+}
+
+.stageCode {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+}
+
+.glyph {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 22rem);
+  height: 34rem;
+  justify-self: center;
+  filter: drop-shadow(0 1.5rem 3rem color-mix(in srgb, var(--variant-color) 18%, transparent));
+}
+
+.reading {
+  position: relative;
+  z-index: 2;
+  max-width: 30rem;
+  padding: clamp(1.5rem, 5vw, 4rem);
+}
+
+.reading > p:first-child {
+  margin: 0 0 .75rem;
+  color: var(--color-ink);
+  font-size: .75rem;
+  font-weight: 750;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+.reading h3 {
+  margin: 0 0 1rem;
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 5.5rem);
+  font-weight: 560;
+  letter-spacing: -.06em;
+  line-height: .9;
+}
+
+.reading p {
+  color: var(--color-muted);
+}
+
+.reading .note {
+  margin-top: 1.5rem;
+  border-inline-start: 1px solid var(--variant-color);
+  padding-inline-start: 1rem;
+  font-size: .85rem;
+}
+
+.reading a {
+  min-height: 2.75rem;
+  display: inline-flex;
+  align-items: center;
+  margin-top: 1rem;
+  font-weight: 750;
+  text-underline-offset: .3em;
+}
+
+.disclosure {
+  max-width: 50rem;
+  margin: 1rem 0 0;
+  color: var(--color-muted);
+  font-size: .75rem;
+}
+
+.motionControls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin-top: 1rem;
+}
+
+.motionControls button {
+  min-height: 2.75rem;
+  border: 1px solid var(--color-line);
+  border-radius: 999px;
+  background: transparent;
+  padding: .55rem 1rem;
+  color: var(--color-ink);
+  font-size: .78rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.motionControls button[aria-pressed='true'] {
+  border-color: var(--color-ink);
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+
+.motionControls button:disabled {
+  cursor: not-allowed;
+  opacity: .5;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .intro,
+  .experience,
+  .stage {
+    grid-template-columns: 1fr;
+  }
+
+  .selector {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(10rem, 1fr));
+    overflow-x: auto;
+    border-inline-end: 0;
+    border-bottom: 1px solid var(--color-line);
+  }
+
+  .selector legend {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+
+  .selector button {
+    min-height: 4rem;
+    border-top: 0;
+    border-inline-end: 1px solid var(--color-line);
+  }
+
+  .stage {
+    min-height: auto;
+    padding-block: 2rem;
+  }
+
+  .glyph {
+    height: 25rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .intro {
+    grid-template-columns: 1fr;
+  }
+
+  .intro h2 {
+    font-size: clamp(2.7rem, 14vw, 4.6rem);
+  }
+
+  .stage {
+    padding-top: 1rem;
+  }
+
+  .selector {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    overflow: visible;
+  }
+
+  .selector button {
+    grid-template-columns: 2.6rem 1fr;
+    border-bottom: 1px solid var(--color-line);
+  }
+
+  .selector button:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .glyph {
+    height: 21rem;
+  }
+
+  .reading {
+    padding-top: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .selector button::after {
+    transition: none;
+  }
+}

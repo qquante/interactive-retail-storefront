@@ -24,7 +24,7 @@ describe('fixture commerce invariants', () => {
     const result = buildFixtureCartSnapshot({
       cartId: 'fixture:cart:test',
       revision: '1',
-      lines: [{ variantId: 'fixture:variant:intervalo-01', quantity: 2 }],
+      lines: [{ variantId: 'fixture:variant:canela', quantity: 2 }],
       shippingPostalCode: '01001000',
     });
 
@@ -40,7 +40,7 @@ describe('fixture commerce invariants', () => {
     const cart = buildFixtureCartSnapshot({
       cartId: 'fixture:cart:test-unknown',
       revision: '1',
-      lines: [{ variantId: 'fixture:variant:intervalo-03', quantity: 1 }],
+      lines: [{ variantId: 'fixture:variant:alecrim', quantity: 1 }],
     });
 
     expect(cart.ok).toBe(true);

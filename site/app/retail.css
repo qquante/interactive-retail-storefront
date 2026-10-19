@@ -1,0 +1,394 @@
+.retail-header-wrap {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 35;
+}
+.retail-masthead {
+  position: relative;
+  isolation: isolate;
+  background: #111914;
+  color: #f6f5f0;
+  padding-top: 96px;
+}
+.retail-hero {
+  position: relative;
+  min-height: 650px;
+  height: calc(88svh - 96px);
+  max-height: 790px;
+  display: flex;
+  align-items: center;
+  padding: 4rem var(--page-gutter) 7rem;
+  max-width: 1440px;
+  margin: auto;
+}
+.retail-hero-copy {
+  position: relative;
+  z-index: 30;
+  max-width: 52%;
+  pointer-events: none;
+}
+.retail-hero-copy a {
+  pointer-events: auto;
+}
+.retail-hero .eyebrow {
+  color: #cdd5cc;
+  margin: 0 0 2rem;
+}
+.retail-hero h1 {
+  font-size: clamp(3.8rem, 6.1vw, 6.8rem);
+  line-height: 0.97;
+  letter-spacing: -0.045em;
+  margin: 0;
+}
+.retail-hero h1 em {
+  font-style: normal;
+  color: #ccd7c8;
+}
+.retail-hero-lead {
+  font-size: 0.95rem;
+  line-height: 1.85;
+  margin: 2rem 0;
+  color: #d5ddd2;
+}
+.retail-hero-bottom {
+  position: absolute;
+  bottom: 1.5rem;
+  inset-inline: var(--page-gutter);
+  z-index: 30;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.retail-hero-bottom > a {
+  font-size: 0.7rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  min-height: 44px;
+  text-decoration: none;
+}
+.motion-control {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-height: 44px;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  color: inherit;
+  font-size: 0.65rem;
+}
+.motion-control > span {
+  font-size: 0.9rem;
+}
+.motion-control:disabled {
+  opacity: 0.7;
+  cursor: default;
+}
+.retail-section {
+  max-width: 1440px;
+  margin: auto;
+  padding: 5rem var(--page-gutter) 5.5rem;
+}
+.retail-section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+.retail-section-heading .eyebrow {
+  margin: 0 0 0.9rem;
+  color: var(--color-muted);
+}
+.retail-section h2,
+.retail-help h2 {
+  font-size: clamp(2.1rem, 3vw, 3.1rem);
+  line-height: 1.1;
+  margin: 0;
+  letter-spacing: -0.025em;
+}
+.retail-product-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1.15rem;
+}
+.retail-campaign {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  min-height: 600px;
+  background: #e8e8df;
+}
+.retail-campaign-image {
+  position: relative;
+  min-height: 560px;
+  overflow: hidden;
+}
+.retail-campaign-copy {
+  padding: 5rem clamp(2.5rem, 5vw, 6rem);
+  align-self: center;
+}
+.retail-campaign-copy h2,
+.retail-detail h2 {
+  font-size: clamp(3.25rem, 4.7vw, 5.4rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  margin: 1.5rem 0;
+}
+.retail-campaign-copy > p:not(.eyebrow) {
+  max-width: 27rem;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+}
+.retail-detail {
+  max-width: 1440px;
+  margin: auto;
+  padding: 6rem var(--page-gutter);
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: clamp(2rem, 7vw, 7rem);
+  align-items: center;
+}
+.retail-detail-copy {
+  max-width: 30rem;
+}
+.retail-detail-copy > p:not(.eyebrow) {
+  max-width: 26rem;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
+.retail-detail-image {
+  position: relative;
+  aspect-ratio: 1.12;
+  overflow: hidden;
+}
+.retail-help {
+  margin: 0 var(--page-gutter);
+  padding: 3rem 0;
+  border-block: 1px solid var(--color-line);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+.retail-help p:not(.eyebrow) {
+  color: var(--color-muted);
+  font-size: 0.85rem;
+  margin-bottom: 0;
+}
+.retail-professional {
+  text-align: center;
+  max-width: 900px;
+  margin: auto;
+  padding: 5.5rem var(--page-gutter) 6rem;
+}
+.retail-professional h2 {
+  font-size: clamp(2.7rem, 4.4vw, 4.6rem);
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+  margin: 1.5rem 0;
+}
+.retail-professional > p:not(.eyebrow) {
+  color: var(--color-muted);
+  font-size: 0.85rem;
+  line-height: 1.8;
+}
+@media (min-width: 1001px) {
+  .retail-masthead .retail-plume {
+    height: 100%;
+  }
+  .retail-plume [data-incense-stick] {
+    right: max(13vw, calc((100vw - 1440px) / 2 + 180px));
+    bottom: 58px;
+    width: 190px;
+  }
+}
+@media (max-width: 1000px) {
+  .retail-hero {
+    min-height: 640px;
+    height: 760px;
+    max-height: calc(100svh - 80px);
+  }
+  .retail-hero h1 {
+    font-size: 4.5rem;
+  }
+  .retail-hero-copy {
+    max-width: 60%;
+  }
+  .retail-product-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .retail-campaign {
+    grid-template-columns: 1.2fr 1fr;
+    min-height: 500px;
+  }
+  .retail-campaign-image {
+    min-height: 480px;
+  }
+  .retail-campaign-copy {
+    padding: 3rem 2rem;
+  }
+  .retail-masthead .retail-plume {
+    height: 100%;
+  }
+  .retail-plume [data-incense-stick] {
+    right: 5%;
+    bottom: 70px;
+    width: 170px;
+  }
+}
+@media (max-width: 650px) {
+  .retail-hero {
+    min-height: 710px;
+    height: 790px;
+    max-height: none;
+    align-items: flex-start;
+    padding-top: 3.5rem;
+  }
+  .retail-hero-copy {
+    max-width: 100%;
+  }
+  .retail-hero h1 {
+    font-size: clamp(3.25rem, 11.2vw, 4.5rem);
+  }
+  .retail-hero .eyebrow {
+    margin-bottom: 1.5rem;
+  }
+  .retail-hero-lead {
+    font-size: 0.82rem;
+    line-height: 1.7;
+    margin: 1.5rem 0;
+  }
+  .retail-hero .button {
+    font-size: 0.73rem;
+    min-height: 48px;
+    padding: 0.7rem 1rem;
+  }
+  .retail-plume [data-incense-stick] {
+    right: 6%;
+    bottom: 72px;
+    width: 122px;
+  }
+  .retail-hero-bottom {
+    bottom: 1rem;
+  }
+  .retail-section {
+    padding-block: 3rem;
+  }
+  .retail-section-heading {
+    align-items: start;
+    margin-bottom: 1.5rem;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  .retail-section-heading .editorial-link {
+    min-height: 36px;
+  }
+  .retail-product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.75rem 0.75rem;
+  }
+  .retail-campaign {
+    display: flex;
+    flex-direction: column;
+  }
+  .retail-campaign-image {
+    aspect-ratio: 1.25;
+    min-height: 0;
+  }
+  .retail-campaign-copy {
+    padding: 2.5rem var(--page-gutter) 3rem;
+  }
+  .retail-campaign-copy h2 {
+    font-size: 3.5rem;
+  }
+  .retail-campaign-copy h2 br {
+    display: none;
+  }
+  .retail-detail {
+    padding-block: 3rem;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .retail-detail h2 {
+    font-size: 3.5rem;
+  }
+  .retail-detail-image {
+    grid-row: 1;
+    aspect-ratio: 1.15;
+  }
+  .retail-help {
+    align-items: start;
+    flex-direction: column;
+    padding-block: 2.5rem;
+    gap: 1.5rem;
+  }
+  .retail-professional {
+    padding-block: 3.5rem;
+  }
+  .retail-professional p br {
+    display: none;
+  }
+}
+@media (min-width: 1001px) {
+  .retail-hero {
+    min-height: 550px;
+    height: calc(76svh - 96px);
+    max-height: 660px;
+  }
+}
+
+/* A vareta entra pela base: apenas a ponta fica no enquadramento. */
+.retail-plume [data-incense-stick] {
+  --visible-incense-tip: 88px;
+  bottom: 0;
+  width: 260px;
+  transform: translateY(calc(100% - var(--visible-incense-tip)));
+}
+.retail-plume [data-incense-stick] img {
+  filter: brightness(1.55) contrast(1.06) saturate(.9);
+}
+@media (max-width: 1000px) {
+  .retail-plume [data-incense-stick] {
+    width: 220px;
+  }
+}
+@media (max-width: 650px) {
+  .retail-plume [data-incense-stick] {
+    --visible-incense-tip: 68px;
+    width: 200px;
+    right: 3%;
+  }
+  .retail-hero-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
+}
+@media (max-width: 1000px) {
+  .retail-masthead {
+    padding-top: 80px;
+  }
+}
+@media (max-width: 650px) {
+  .retail-masthead {
+    padding-top: 74px;
+  }
+  .retail-masthead::after {
+    content: '';
+    position: absolute;
+    z-index: 25;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(90deg, #111914 0%, rgb(17 25 20 / 85%) 30%, rgb(17 25 20 / 25%) 65%, transparent 90%);
+  }
+  .retail-hero {
+    min-height: 660px;
+    height: 710px;
+  }
+  .retail-campaign-image {
+    aspect-ratio: 1.6;
+  }
+}

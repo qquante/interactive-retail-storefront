@@ -1,82 +1,134 @@
-import type { Metadata } from 'next';
-import { notFound } from 'next/navigation';
-import { AddToCartForm } from '@/components/commerce/AddToCartForm';
-import { Breadcrumbs } from '@/components/commerce/Breadcrumbs';
-import { CommercePageShell } from '@/components/commerce/CommercePageShell';
-import { ProductPlaceholder } from '@/components/commerce/ProductPlaceholder';
-import { inventoryLabel } from '@/components/commerce/ProductCard';
-import styles from '@/components/commerce/commerce.module.css';
-import { fixtureCommerce, formatMoney } from '@/lib/commerce';
-
+import type { Metadata } from "next";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { Breadcrumbs } from "@/components/commerce/Breadcrumbs";
+import { CommercePageShell } from "@/components/commerce/CommercePageShell";
+import { ProductMedia } from "@/components/commerce/ProductMedia";
+import { ProductCard } from "@/components/commerce/ProductCard";
+import styles from "@/components/commerce/commerce.module.css";
+import { HEAL_VARIANTS, getHealVariant } from "@/lib/brand/air-variants";
+import { fixtureCommerce } from "@/lib/commerce";
 type PageProps = { params: Promise<{ handle: string }> };
-
 export async function generateStaticParams() {
-  return [{ handle: 'intervalo-01' }, { handle: 'intervalo-02' }, { handle: 'intervalo-03' }];
+  return HEAL_VARIANTS.map(({ id }) => ({ handle: id }));
 }
-
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
   const { handle } = await params;
-  const result = await fixtureCommerce.getProductByHandle(handle);
-  if (!result.ok) return { title: 'Produto não encontrado', robots: { index: false, follow: false } };
+  const visual = getHealVariant(handle);
   return {
-    title: result.data.title,
-    description: 'Produto fictício usado para validar a experiência de uma loja de incensos. Nenhuma informação comercial ou material é real.',
+    title: visual
+      ? `${visual.name} · Incenso em bastão`
+      : "Produto não encontrado",
+    description: visual
+      ? `Conheça ${visual.name}, da coleção de incensos HEALS. Veja a apresentação, o formato e os cuidados de uso.`
+      : undefined,
     robots: { index: false, follow: true },
   };
 }
-
 export default async function ProductPage({ params }: PageProps) {
   const { handle } = await params;
   const result = await fixtureCommerce.getProductByHandle(handle);
   if (!result.ok) notFound();
   const product = result.data;
-  const variant = product.variants[0];
-  if (!variant) notFound();
-
+  const visual = getHealVariant(handle);
+  if (!visual) notFound();
+  const related = await fixtureCommerce.listProducts({}, { limit: 5 });
   return (
     <CommercePageShell>
-      <Breadcrumbs items={[{ label: 'Início', href: '/' }, { label: 'Intervalos', href: '/colecoes/intervalos' }, { label: product.title }]} />
+      <Breadcrumbs
+        items={[
+          { label: "Início", href: "/" },
+          { label: "Incensos", href: "/colecoes/heals" },
+          { label: visual.name },
+        ]}
+      />
       <div className={styles.productLayout}>
-        <ProductPlaceholder sequence={product.handle.replace('intervalo-', '')} />
+        <ProductMedia product={product} priority />
         <section className={styles.buyPanel} aria-labelledby="product-title">
-          <p className={styles.eyebrow}>INCENSO · DEMONSTRAÇÃO</p>
-          <h1 id="product-title">{product.title}</h1>
-          <p>Produto fictício criado para testar leitura, comparação e compra. Os campos abaixo mostram a estrutura esperada; não descrevem um incenso real.</p>
+          <p className={styles.eyebrow}>HEALS · INCENSO EM BASTÃO</p>
+          <h1 id="product-title">{visual.name}</h1>
+          <p className={styles.productLead}>
+            {visual.name} faz parte da coleção HEALS. Um incenso para acompanhar
+            os momentos que você escolhe reservar para si e para o seu espaço.
+          </p>
           <dl className={styles.sensoryList}>
-            <div><dt>Família aromática</dt><dd>[A VALIDAR]</dd></div>
-            <div><dt>Notas percebidas</dt><dd>[A VALIDAR]</dd></div>
-            <div><dt>Intensidade percebida</dt><dd>[A VALIDAR conforme método]</dd></div>
-            <div><dt>Nível de fumaça</dt><dd>[A VALIDAR conforme método]</dd></div>
+            <div>
+              <dt>Formato</dt>
+              <dd>Incenso em bastão</dd>
+            </div>
+            <div>
+              <dt>Coleção</dt>
+              <dd>HEALS</dd>
+            </div>
+            <div>
+              <dt>Aroma</dt>
+              <dd>{visual.name}</dd>
+            </div>
           </dl>
-          <p><strong>Opção:</strong> {variant.title}</p>
-          <p className={styles.price}>Valor demonstrativo — {formatMoney(variant.price.current)}</p>
-          <p className={styles.availability}>Disponibilidade demonstrativa — {inventoryLabel(product)}</p>
-          <AddToCartForm variantId={variant.id} productTitle={product.title} inventoryStatus={variant.inventory.status} />
+          <div className={styles.launchStatus}>
+            <strong>Lançamento em preparação</strong>Este incenso ainda não está
+            disponível para compra online. Preço, quantidade e ficha técnica
+            serão informados na abertura.
+          </div>
+          <div className={styles.actionRow}>
+            <Link href="/como-escolher" className={styles.primaryButton}>
+              Encontre seu aroma ↗
+            </Link>
+            <Link href="/contato" className={styles.secondaryButton}>
+              Atendimento
+            </Link>
+          </div>
+          <div className={styles.disclosures}>
+            <details>
+              <summary>Sobre este incenso</summary>
+              <p>
+                A apresentação reúne a embalagem {visual.name} e o formato em
+                bastão. As imagens são ilustrativas. Composição, quantidade por
+                caixa, origem e tempo de queima serão publicados na ficha
+                técnica do produto.
+              </p>
+            </details>
+            <details>
+              <summary>Uso e cuidados</summary>
+              <p>
+                Leia as instruções da embalagem antes de usar. Reserve um local
+                ventilado e um suporte apropriado, estável e resistente ao
+                calor. Nunca deixe o incenso aceso sem supervisão.
+              </p>
+              <p>
+                <Link href="/seguranca">Ver cuidados de uso</Link>
+              </p>
+            </details>
+            <details>
+              <summary>Entrega e disponibilidade</summary>
+              <p>
+                Os pedidos online ainda não estão abertos. Frete, prazos e
+                condições de compra serão exibidos antes da primeira venda.
+              </p>
+              <p>
+                <Link href="/entrega-trocas">Entrega e trocas</Link>
+              </p>
+            </details>
+          </div>
         </section>
       </div>
-
-      <section className={styles.proofSection} aria-labelledby="facts-title">
-        <p className={styles.eyebrow}>PROVA ANTES DA POESIA</p>
-        <h2 id="facts-title">O que sabemos sobre este produto</h2>
-        <dl className={styles.factsList}>
-          <div><dt>Formato</dt><dd>[A VALIDAR]</dd></div>
-          <div><dt>Composição</dt><dd>[A VALIDAR]</dd></div>
-          <div><dt>Origem de fabricação</dt><dd>[A VALIDAR]</dd></div>
-          <div><dt>Origem de ingredientes</dt><dd>[A VALIDAR]</dd></div>
-          <div><dt>Quantidade</dt><dd>[A VALIDAR]</dd></div>
-          <div><dt>Dimensões</dt><dd>[A VALIDAR]</dd></div>
-          <div><dt>Tempo aproximado de queima</dt><dd>[A VALIDAR]</dd></div>
-        </dl>
-        <p>Nenhum destes campos descreve um produto real até que a HEAL registre fonte, escopo e data de validação.</p>
-      </section>
-      <section className={styles.proofSection} aria-labelledby="safety-title">
-        <h2 id="safety-title">Uso e segurança [A VALIDAR por produto]</h2>
-        <p className={styles.warning}><strong>Demonstração:</strong> as instruções de uso e segurança deste produto ainda não foram fornecidas nem validadas. Este protótipo não deve ser usado como orientação de uso.</p>
-      </section>
-      <section className={styles.proofSection} aria-labelledby="policies-title">
-        <h2 id="policies-title">Entrega, trocas e devoluções [A VALIDAR]</h2>
-        <p>As condições comerciais da HEAL ainda não foram definidas. O texto final deve informar prazos, custos, cobertura, processo, exceções e contato reais.</p>
-      </section>
+      {related.ok ? (
+        <section
+          className={styles.relatedSection}
+          aria-labelledby="related-title"
+        >
+          <h2 id="related-title">Outros aromas para conhecer.</h2>
+          <div className={styles.collectionGrid}>
+            {related.data.items
+              .filter((item) => item.handle !== handle)
+              .map((item) => (
+                <ProductCard product={item} key={item.id} />
+              ))}
+          </div>
+        </section>
+      ) : null}
     </CommercePageShell>
   );
 }

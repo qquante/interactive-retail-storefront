@@ -85,7 +85,7 @@ export function AddToCartForm({
       {message && !isError ? (
         <div className={styles.statusActions}>
           <Link href="/carrinho">Ver sacola</Link>
-          <Link href="/colecoes/intervalos">Continuar explorando</Link>
+          <Link href="/colecoes/heals">Continuar explorando</Link>
         </div>
       ) : null}
     </form>

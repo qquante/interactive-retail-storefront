@@ -4,7 +4,7 @@ import { chromium } from '@playwright/test';
 const browser = await chromium.launch({ headless: true });
 const context = await browser.newContext({ viewport: { width: 390, height: 844 } });
 const page = await context.newPage();
-const routes = ['/', '/colecoes/intervalos', '/produtos/intervalo-01'];
+const routes = ['/', '/colecoes/heals', '/produtos/canela', '/profissionais'];
 let failed = false;
 
 for (const route of routes) {

@@ -1,11 +1,17 @@
 # HEAL — Tasks
 
-Atualizado em: 2026-08-28
+Atualizado em: 2026-09-26
 
 Estados permitidos: `proposed`, `researching`, `ready`, `in_progress`, `review`, `changes_requested`, `verified`, `integrated`, `done`, `blocked`, `cancelled`.
 
 | Task | Goal | Owner | Dependências | Escopo | Estado | Evidência/aceite |
 |---|---|---|---|---|---|---|
+| HEAL-T051 | G-007 | HEAL-00 + railway_runtime_audit | Pedido de serviço Railway separado | Publicar apresentação atual em projeto/serviço próprio com domínio Railway; preservar Sites e outros serviços | done | HEAL/heal-web, HTTPS público, SUCCESS/healthcheck 1/1; 23 testes + 8 E2E + 46 checks remotos + 10 axe; `docs/operations/RAILWAY_DEPLOYMENT.md`; sem ativar vendas |
+| HEAL-T050 | G-003/G-004/G-007 | HEAL-00 + retail_source_audit | Ajustes visuais aprovados após HEAL-T049 | Pulsos ascendentes como único padrão; remover seletor; clarear vareta e enquadrar apenas a ponta na base em desktop/mobile | done | 23 testes, 8 E2E focados, build/lint/typecheck passaram; captura mobile/desktop revisada; publicação privada succeeded. `docs/evidence/qa/retail-v1/PULSE_TIP.md` |
+| HEAL-T049 | G-001/G-003/G-004/G-007 | HEAL-00 + premium_brand_research + retail_campaign_assets + retail_source_audit | Avanço integral autorizado em 2026-09-26 | Branding, loja completa, banners, navegação, QA e publicação privada | done | 23 testes, 74 E2E, 46 verificações de rota e 10 axe passaram; build/lint/typecheck OK; publicação privada succeeded. `docs/evidence/qa/retail-v1/RESULTS.md` |
+| HEAL-T048 | G-001/G-003/G-004 | HEAL-00 | Pedido de 2026-09-26 após publicação | Diagnóstico e proposta retail-premium; preservar incenso/fumaça | done | Proposta aceita pelo pedido seguinte de execução integral; implementada em HEAL-T049 |
+| HEAL-T047 | G-001/G-007/G-008 | HEAL-00 + catalogue_integration + photo_asset_audit + live_readiness | HEAL-T046 aprovado; pedido de avanço/live | Cinco fotos com referência material Nirvana, integração e publicação privada | done | 22/22 testes, build, E2E 2/2, probe 28/28; publicação privada succeeded. Evidência: `docs/evidence/qa/catalogue-v2/PUBLICATION.md`; sem abertura de vendas |
+| HEAL-T046 | G-001/G-008 | HEAL-00 | Pedido de produção por partes de 2026-09-26 | Primeira foto de catálogo: Canela, preservando embalagem V3 | done | Direção aprovada pelo usuário; original preservado e refinado na coleção V2 em HEAL-T047 |
 | HEAL-T000 | G-007 | HEAL-00 | — | Scaffold e governança | done | Scaffold atualizado; audit 0; controles e commits locais presentes |
 | HEAL-T001 | G-001/G-002/G-005 | HEAL-01 | HEAL-T000 | Reconhecimento read-only e ADR preliminar | verified | Handoff concluído; ADR-001 aceita para vertical slice |
 | HEAL-T002 | G-001 | HEAL-02 | HEAL-T001 | Benchmarks e mercado | verified | `docs/research/2026-08-28-market-benchmarks.md` |
@@ -40,3 +46,15 @@ Estados permitidos: `proposed`, `researching`, `ready`, `in_progress`, `review`,
 | HEAL-T031 | G-001/G-008 | HEAL-31 | DEC-018 | Auditoria V2 das linhas Nirvana e Fênix | verified research-only | Premium/Tradicional/Essencial e médio/grande/in natura, gaps e protocolo visual em `docs/concepts/COMPETITOR_LINE_AUDIT_V2.md` |
 | HEAL-T032 | G-003/G-008 | HEAL-32 | DEC-018/019 | Sistema físico/digital Coreografia do ar | verified concept-only | Gramática por SKU, motion, Three.js, fallbacks, budgets e storyboards em `docs/concepts/COREOGRAFIA_DO_AR_SYSTEM.md` |
 | HEAL-T033 | G-001/G-008 | HEAL-00 | HEAL-T030/T031/T032 | Mockups e prancha vetorial das cinco caixas | verified concept-only | 6 mockups ImageGen + SVG/PNG com cinco frentes e mapa integral de faces; inspeção visual e provenance concluídos |
+| HEAL-T034 | G-001/G-003/G-004/G-005/G-006 | HEAL-33..37 | HEAL-T032/T033 | Especificações de frontend, Anime.js, Three.js, SEO/commerce e QA para a direção escolhida | verified | Cinco specs implementáveis e handoffs `HEAL-33` a `HEAL-37` em `docs/implementation/` e `docs/agents/handoffs/` |
+| HEAL-T035 | G-001/G-008 | HEAL-38/HEAL-00 | HEAL-T030/T033 | Símbolo HEAL, hero de vareta/fumaça e cinco embalagens V3 | verified concept-only | Símbolo SVG/code-native, 1 hero e 5 mockups V3 com PNG de evidência, WebP integrado e provenance |
+| HEAL-T036 | G-001..G-008 | HEAL-00 | HEAL-T034/T035 | Integrar `Coreografia do ar` na loja completa | verified local-only | Home, mapa interativo, marca, catálogo, PDP, busca paginada, profissionais, conteúdo e rotas pré-lançamento integrados; sem venda/deploy |
+| HEAL-T037 | G-001..G-007 | HEAL-37/HEAL-39/HEAL-00 | HEAL-T036 | QA final, revisão independente e remediação | verified | Findings de contraste, hidratação, semiótica, paginação, nomenclatura, claims e lifecycle Three removidos; 15/15 Vitest e 65 E2E PASS + 3 skips intencionais |
+| HEAL-T038 | G-001/G-003/G-004/G-008 | HEAL-00 | HEAL-T037 | Pesquisa de componentes transferíveis, fumaça, texto e storytelling | verified | Research-only em `docs/research/2026-08-28-section-by-section-component-research.md`; nenhuma seção alterada |
+| HEAL-T039 | G-001/G-003/G-004 | HEAL-00 | HEAL-T038 | Primeiro viewport: Header + Hero | review | Protótipo temporário A fluxo/B hélice/C pulsos via `?variant=`; progressão 1→10 preservada e antecipada, com dez cores circulando depois; ritmo final em 25% da primeira versão móvel; fumaça, brasa, calor, faíscas e vareta compartilham uma única âncora validada em 320–1920 px; glyph marrom e blocos editoriais redundantes removidos para deixar a área visual somente com incenso, combustão e fumaça; aguarda aceite |
+| HEAL-T040 | G-001/G-003/G-004 | HEAL-00 | HEAL-T039 aprovado | Mapa do Ar | proposed | Uma seção por mensagem; não iniciar sem aceite do Hero |
+| HEAL-T041 | G-001/G-004/G-008 | HEAL-00 | HEAL-T040 aprovado | História da marca | proposed | Storytelling, símbolo, matéria e origem; uma seção por mensagem |
+| HEAL-T042 | G-001/G-002/G-004 | HEAL-00 | HEAL-T041 aprovado | Coleção e cards de produto | proposed | Comparação rápida desktop/mobile; sem aparência de prancha técnica |
+| HEAL-T043 | G-001/G-004 | HEAL-00 | HEAL-T042 aprovado | Como escolher | proposed | Decisão por aroma, intensidade, momento e ambiente |
+| HEAL-T044 | G-001/G-002/G-004 | HEAL-00 | HEAL-T043 aprovado | Profissionais | proposed | Lojas, terapias, espaços e revenda com prova visual e CTA claro |
+| HEAL-T045 | G-001/G-004/G-006 | HEAL-00 | HEAL-T044 aprovado | Rodapé e fechamento narrativo | proposed | Continuidade da marca, contato e confiança; revisão final após aceite |

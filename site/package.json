@@ -9,7 +9,7 @@
     "dev": "vinext dev",
     "build": "vinext build",
     "start": "vinext start",
-    "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",
+    "lint": "eslint . --ignore-pattern dist --ignore-pattern .next --ignore-pattern playwright-report --ignore-pattern test-results",
     "test": "vitest run",
     "test:unit": "vitest run tests/unit",
     "test:integration": "vitest run tests/integration",
@@ -18,6 +18,8 @@
     "test:all": "npm run test && npm run test:e2e"
   },
   "dependencies": {
+    "@paper-design/shaders": "^0.0.80",
+    "@paper-design/shaders-react": "^0.0.80",
     "animejs": "^4.5.0",
     "next": "16.3.3",
     "react": "19.2.8",

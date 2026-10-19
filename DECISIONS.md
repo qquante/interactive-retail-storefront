@@ -26,6 +26,11 @@ Atualizado em: 2026-08-28
 | DEC-018 | `Coreografia do ar` é a direção escolhida para desenvolvimento conceitual; `Matéria aberta` permanece como camada factual. | Escolha explícita do usuário; une experiência autoral e prova do bastão real. | confirmed-concept-direction |
 | DEC-019 | Na embalagem, `HEAL` aparece uma vez como masterbrand; o aroma domina; `incenso HEALS · em bastão` é descritor textual, nunca segundo logo empilhado. | Resolve a competição HEAL/HEALS apontada pelo usuário e mantém a categoria compreensível. | confirmed |
 | DEC-020 | A janela curva é uma hipótese de estrutura da `Coreografia do ar`, condicionada a pouch/barreira e testes de partículas, queda, compressão, umidade e transporte. | O bastão pretendido é grosso, áspero e pode desprender material; o gesto visual não pode comprometer proteção. | confirmed-as-physical-gate |
+| DEC-021 | `Coreografia do ar` passa de direção conceitual a experiência integrada do protótipo local, preservando fallback e camada factual. | Escolha explícita do usuário e specs/QA posteriores sustentam a implementação. | confirmed-local-only |
+| DEC-022 | Atenção será construída por hierarquia, contraste, ritmo, movimento responsivo e semiótica declarada; hipnose, mensagem subliminar, numerologia oculta, dark patterns e promessa de efeito ficam proibidos. | Preserva autonomia, confiança e acessibilidade sem transformar associação cultural em manipulação ou claim. | superseded-by-DEC-025 |
+| DEC-023 | Os cinco aromas são coleção inaugural, não limite do catálogo; busca e coleção devem suportar paginação por cursor para aproximadamente 50 produtos. | Requisito explícito do usuário e arquitetura de expansão HEAL/HEALS. | confirmed |
+| DEC-024 | A reconstrução da Home será serial, uma seção por mensagem e aceite. Componentes prontos serão pesquisados e adaptados para Anime.js/CSS/Three.js, sem empilhar frameworks concorrentes. | Pedido explícito do usuário e compatibilidade com a stack real. | confirmed |
+| DEC-025 | DEC-022 fica superseded na proibição ampla de simbolismo: curvas espelhadas, portal, repetição, fumaça e significados em camadas podem compor a direção de atenção da HEAL. A referência do portão é uma gramática formal, não o número 666 literal. | Esclarecimento explícito do usuário sobre hipnose visual e a imagem de referência. | confirmed |
 
 ## Provisórias
 

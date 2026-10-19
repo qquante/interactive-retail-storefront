@@ -1,40 +1,41 @@
-import type { Metadata } from 'next';
-import Link from 'next/link';
-import { Breadcrumbs } from '@/components/commerce/Breadcrumbs';
-import { CommercePageShell } from '@/components/commerce/CommercePageShell';
-import styles from '@/components/commerce/commerce.module.css';
-import { fixtureCommerce } from '@/lib/commerce';
-
+import type { Metadata } from "next";
+import Link from "next/link";
+import Image from "next/image";
+import { CommercePageShell } from "@/components/commerce/CommercePageShell";
+import { Breadcrumbs } from "@/components/commerce/Breadcrumbs";
+import styles from "@/components/commerce/commerce.module.css";
 export const metadata: Metadata = {
-  title: 'Coleções demonstrativas de incensos',
-  description: 'Conheça a estrutura demonstrativa de coleções da HEAL. Produtos e condições não são reais.',
+  title: "Coleções de incensos",
+  description: "Explore a coleção de incensos HEALS.",
   robots: { index: false, follow: true },
 };
-
-export default async function CollectionsPage() {
-  const result = await fixtureCommerce.listCollections({ limit: 24 });
-  const collections = result.ok ? result.data.items : [];
-
+export default function CollectionsPage() {
   return (
     <CommercePageShell>
-      <Breadcrumbs items={[{ label: 'Início', href: '/' }, { label: 'Coleções' }]} />
-      <header className={styles.pageIntro}>
-        <p className={styles.eyebrow}>COLEÇÕES · DEMONSTRAÇÃO</p>
-        <h1>Escolha com contexto.</h1>
-        <p>Estas coleções existem apenas para validar navegação e comparação. Nenhum atributo representa um catálogo real.</p>
-      </header>
-      <div className={styles.collectionGrid}>
-        {collections.map((collection) => (
-          <article className={styles.productCard} key={collection.id}>
-            <p className={styles.eyebrow}>COLEÇÃO DEMONSTRATIVA</p>
-            <h2 className={styles.cardTitle}>{collection.title}</h2>
-            <p>{collection.description}</p>
-            <p>{collection.productCount} produtos demonstrativos</p>
-            <Link className={styles.secondaryButton} href={`/colecoes/${collection.handle}`}>Explorar coleção</Link>
-          </article>
-        ))}
-      </div>
+      <Breadcrumbs
+        items={[{ label: "Início", href: "/" }, { label: "Coleções" }]}
+      />
+      <section className={styles.collectionFeature}>
+        <div>
+          <p className={styles.eyebrow}>OS INCENSOS DA HEAL</p>
+          <h1>A coleção HEALS.</h1>
+          <p>
+            Canela, Lavanda Celestial, Mirra, Olíbano e Alecrim. Cinco aromas
+            para conhecer de perto.
+          </p>
+          <Link className={styles.primaryButton} href="/colecoes/heals">
+            Explorar incensos ↗
+          </Link>
+        </div>
+        <Image
+          src="/images/heals/retail/collection-campaign.webp"
+          alt="As cinco embalagens da coleção HEALS"
+          width={1672}
+          height={941}
+          priority
+          sizes="(max-width:700px) 100vw, 60vw"
+        />
+      </section>
     </CommercePageShell>
   );
 }
-

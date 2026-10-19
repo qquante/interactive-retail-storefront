@@ -60,7 +60,7 @@ export function CartView() {
           >Desfazer remoção</button>
         ) : null}
         <div className={styles.actionRow}>
-          <Link className={styles.primaryButton} href="/colecoes/intervalos">Explorar incensos</Link>
+          <Link className={styles.primaryButton} href="/colecoes/heals">Explorar incensos</Link>
           <Link className={styles.secondaryButton} href="/#como-escolher">Como escolher</Link>
         </div>
       </section>
@@ -156,7 +156,7 @@ export function CartView() {
           </dl>
           <p>Este total não é uma cobrança nem uma oferta comercial.</p>
           <Link className={styles.primaryButton} href="/checkout">Revisar handoff demonstrativo</Link>
-          <Link className={styles.secondaryButton} href="/colecoes/intervalos">Continuar explorando</Link>
+          <Link className={styles.secondaryButton} href="/colecoes/heals">Continuar explorando</Link>
           <button className={styles.textButton} type="button" onClick={() => applyResult(clearFixtureCart(), 'Sacola demonstrativa limpa.')}>Limpar sacola demonstrativa</button>
         </aside>
       </div>

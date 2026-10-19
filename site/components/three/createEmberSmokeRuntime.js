@@ -1,16 +1,18 @@
 import * as THREE from "three";
+import { getHealVariant } from "../../lib/brand/air-variants";
 
 const QUALITY = {
-  low: { dpr: 1.15, fps: 30, ribbons: 2, segments: 28 },
-  medium: { dpr: 1.5, fps: 45, ribbons: 3, segments: 38 },
+  low: { dpr: 1, fps: 30, ribbons: 2, segments: 28 },
+  medium: { dpr: 1.35, fps: 45, ribbons: 3, segments: 38 },
   high: { dpr: 1.75, fps: 60, ribbons: 3, segments: 48 },
 };
 
 const SMOKE_VERTEX_SHADER = /* glsl */ `
   uniform float uTime;
   uniform float uPhase;
+  uniform float uReveal;
+  uniform float uSettle;
   uniform float uWidth;
-  uniform float uSway;
 
   varying vec2 vUv;
   varying float vBreath;
@@ -18,16 +20,15 @@ const SMOKE_VERTEX_SHADER = /* glsl */ `
   void main() {
     vUv = uv;
     float height = uv.y;
-    float slowWave = sin(height * 8.2 - uTime * 0.58 + uPhase);
-    float fineWave = sin(height * 17.0 + uTime * 0.23 + uPhase * 1.7);
-    float unfolding = smoothstep(0.0, 0.82, height);
-    float center = (slowWave * 0.22 + fineWave * 0.07) * uSway * (0.28 + unfolding);
+    float motion = 1.0 - uSettle;
+    float slowWave = sin(height * 8.2 - uTime * 0.58 + uPhase) * 0.026 * motion;
+    float fineWave = sin(height * 17.0 + uTime * 0.23 + uPhase * 1.7) * 0.009 * motion;
 
     vec3 transformed = position;
-    transformed.x += center + (uv.x - 0.5) * uWidth * (1.0 - height * 0.28);
-    transformed.y += sin(height * 10.0 - uTime * 0.31 + uPhase) * 0.025;
-    transformed.z += fineWave * 0.025;
-    vBreath = 0.82 + 0.18 * sin(uTime * 0.42 + uPhase + height * 5.0);
+    transformed.x += slowWave + fineWave + (uv.x - 0.5) * uWidth * (1.0 - height * 0.28);
+    transformed.y += sin(height * 10.0 - uTime * 0.31 + uPhase) * 0.008 * motion;
+    transformed.z += fineWave;
+    vBreath = mix(0.82 + 0.18 * sin(uTime * 0.42 + uPhase + height * 5.0), 1.0, uSettle);
 
     gl_Position = projectionMatrix * modelViewMatrix * vec4(transformed, 1.0);
   }
@@ -37,6 +38,7 @@ const SMOKE_FRAGMENT_SHADER = /* glsl */ `
   uniform vec3 uColor;
   uniform float uOpacity;
   uniform float uPhase;
+  uniform float uReveal;
 
   varying vec2 vUv;
   varying float vBreath;
@@ -47,7 +49,8 @@ const SMOKE_FRAGMENT_SHADER = /* glsl */ `
     float enter = smoothstep(0.01, 0.12, vUv.y);
     float dissolve = 1.0 - smoothstep(0.70, 1.0, vUv.y);
     float striation = 0.88 + 0.12 * sin(vUv.y * 34.0 + uPhase * 4.0);
-    float alpha = softEdge * enter * dissolve * striation * vBreath * uOpacity;
+    float revealMask = 1.0 - smoothstep(uReveal, uReveal + 0.045, vUv.y);
+    float alpha = softEdge * enter * dissolve * striation * vBreath * uOpacity * revealMask;
 
     if (alpha < 0.008) discard;
     gl_FragColor = vec4(uColor, alpha);
@@ -65,6 +68,7 @@ const EMBER_VERTEX_SHADER = /* glsl */ `
 
 const EMBER_FRAGMENT_SHADER = /* glsl */ `
   uniform float uTime;
+  uniform float uSettle;
   uniform vec3 uEmber;
   uniform vec3 uCore;
 
@@ -72,7 +76,7 @@ const EMBER_FRAGMENT_SHADER = /* glsl */ `
 
   void main() {
     float distanceFromCenter = length(vUv - 0.5) * 2.0;
-    float breath = 0.94 + 0.06 * sin(uTime * 1.7);
+    float breath = mix(0.94 + 0.06 * sin(uTime * 1.7), 1.0, uSettle);
     float halo = exp(-3.8 * distanceFromCenter) * 0.38;
     float coal = smoothstep(0.5, 0.04, distanceFromCenter / breath);
     float heat = smoothstep(0.26, 0.0, distanceFromCenter);
@@ -84,15 +88,63 @@ const EMBER_FRAGMENT_SHADER = /* glsl */ `
   }
 `;
 
-function createRibbonGeometry(segments) {
+function cubicPoint(start, controlA, controlB, end, t) {
+  const inverse = 1 - t;
+  return {
+    x: inverse ** 3 * start.x + 3 * inverse ** 2 * t * controlA.x + 3 * inverse * t ** 2 * controlB.x + t ** 3 * end.x,
+    y: inverse ** 3 * start.y + 3 * inverse ** 2 * t * controlA.y + 3 * inverse * t ** 2 * controlB.y + t ** 3 * end.y,
+  };
+}
+
+function sampleAuthoredPath(path, sampleCount) {
+  const tokens = path.match(/[MCL]|-?\d+(?:\.\d+)?/g) ?? [];
+  const pathSegments = [];
+  let cursor = { x: 120, y: 318 };
+  for (let index = 0; index < tokens.length;) {
+    const command = tokens[index++];
+    if (command === "M") {
+      cursor = { x: Number(tokens[index++]), y: Number(tokens[index++]) };
+    } else if (command === "C") {
+      const controlA = { x: Number(tokens[index++]), y: Number(tokens[index++]) };
+      const controlB = { x: Number(tokens[index++]), y: Number(tokens[index++]) };
+      const end = { x: Number(tokens[index++]), y: Number(tokens[index++]) };
+      pathSegments.push({ type: "C", start: cursor, controlA, controlB, end });
+      cursor = end;
+    } else if (command === "L") {
+      const end = { x: Number(tokens[index++]), y: Number(tokens[index++]) };
+      pathSegments.push({ type: "L", start: cursor, end });
+      cursor = end;
+    }
+  }
+
+  return Array.from({ length: sampleCount + 1 }, (_, index) => {
+    const scaled = (index / sampleCount) * pathSegments.length;
+    const segmentIndex = Math.min(pathSegments.length - 1, Math.floor(scaled));
+    const segment = pathSegments[segmentIndex];
+    const t = index === sampleCount ? 1 : scaled - segmentIndex;
+    const point = segment.type === "C"
+      ? cubicPoint(segment.start, segment.controlA, segment.controlB, segment.end, t)
+      : {
+          x: segment.start.x + (segment.end.x - segment.start.x) * t,
+          y: segment.start.y + (segment.end.y - segment.start.y) * t,
+        };
+    return {
+      x: ((point.x - 120) / 70) * 0.82,
+      y: ((318 - point.y) / 264) * 3.65,
+    };
+  });
+}
+
+function createRibbonGeometry(segments, path) {
   const positions = [];
   const uvs = [];
   const indices = [];
 
+  const points = sampleAuthoredPath(path, segments);
   for (let index = 0; index <= segments; index += 1) {
     const height = index / segments;
-    const y = height * 3.65;
-    positions.push(0, y, 0, 0, y, 0);
+    const point = points[index];
+    positions.push(point.x, point.y, 0, point.x, point.y, 0);
     uvs.push(0, height, 1, height);
 
     if (index < segments) {
@@ -108,8 +160,8 @@ function createRibbonGeometry(segments) {
   return geometry;
 }
 
-function createSmokeRibbon({ opacity, phase, segments, sway, width }) {
-  const geometry = createRibbonGeometry(segments);
+function createSmokeRibbon({ opacity, path, phase, segments, width, variant }) {
+  const geometry = createRibbonGeometry(segments, path);
   const material = new THREE.ShaderMaterial({
     blending: THREE.NormalBlending,
     depthTest: false,
@@ -117,10 +169,11 @@ function createSmokeRibbon({ opacity, phase, segments, sway, width }) {
     fragmentShader: SMOKE_FRAGMENT_SHADER,
     transparent: true,
     uniforms: {
-      uColor: { value: new THREE.Color(0xc9c1b5) },
+      uColor: { value: new THREE.Color(variant.color) },
       uOpacity: { value: opacity },
       uPhase: { value: phase },
-      uSway: { value: sway },
+      uReveal: { value: 0 },
+      uSettle: { value: 0 },
       uTime: { value: 0 },
       uWidth: { value: width },
     },
@@ -142,6 +195,7 @@ function createEmber() {
     uniforms: {
       uCore: { value: new THREE.Color(0xffd3a3) },
       uEmber: { value: new THREE.Color(0xb73b1d) },
+      uSettle: { value: 0 },
       uTime: { value: 0 },
     },
     vertexShader: EMBER_VERTEX_SHADER,
@@ -170,8 +224,9 @@ function createStick() {
  * Inicializa a camada WebGL já validada pelo componente React. O chamador é
  * responsável por controlar visibilidade e encerrar o runtime.
  */
-export function createEmberSmokeRuntime({ canvas, context, qualityTier }) {
+export function createEmberSmokeRuntime({ canvas, context, qualityTier, variantId }) {
   const settings = QUALITY[qualityTier] ?? QUALITY.low;
+  const variant = getHealVariant(variantId) ?? getHealVariant("canela");
   const renderer = new THREE.WebGLRenderer({
     alpha: true,
     antialias: qualityTier !== "low",
@@ -191,13 +246,17 @@ export function createEmberSmokeRuntime({ canvas, context, qualityTier }) {
   camera.position.z = 5;
 
   const ribbonSettings = [
-    { opacity: 0.42, phase: 0.4, sway: 1, width: 0.32 },
-    { opacity: 0.24, phase: 2.5, sway: 0.82, width: 0.46 },
-    { opacity: 0.17, phase: 4.1, sway: 1.16, width: 0.56 },
+    { opacity: 0.42, path: variant.path, phase: 0.4, width: 0.32 },
+    { opacity: 0.24, path: variant.counterPath, phase: 2.5, width: 0.42 },
+    { opacity: 0.14, path: variant.path, phase: 4.1, width: 0.54 },
   ];
   const ribbons = ribbonSettings
     .slice(0, settings.ribbons)
-    .map((options) => createSmokeRibbon({ ...options, segments: settings.segments }));
+    .map((options) => createSmokeRibbon({
+      ...options,
+      segments: settings.segments,
+      variant,
+    }));
   const ember = createEmber();
   const stick = createStick();
 
@@ -210,7 +269,10 @@ export function createEmberSmokeRuntime({ canvas, context, qualityTier }) {
   let active = false;
   let disposed = false;
   let lastFrameAt = Number.NEGATIVE_INFINITY;
+  let traceStartedAt = Number.NaN;
+  let traceCompleted = false;
   const frameInterval = 1000 / settings.fps;
+  const traceDuration = Math.min(900, variant.cadenceMs);
 
   const render = (time) => {
     if (disposed || !active) {
@@ -221,13 +283,25 @@ export function createEmberSmokeRuntime({ canvas, context, qualityTier }) {
       return;
     }
     lastFrameAt = time;
+    if (Number.isNaN(traceStartedAt)) traceStartedAt = time;
     const seconds = time * 0.001;
+    const progress = Math.min(1, (time - traceStartedAt) / traceDuration);
+    const reveal = 1 - (1 - progress) ** 3;
+    const settle = Math.max(0, Math.min(1, (progress - 0.72) / 0.28));
 
     for (const ribbon of ribbons) {
       ribbon.material.uniforms.uTime.value = seconds;
+      ribbon.material.uniforms.uReveal.value = reveal;
+      ribbon.material.uniforms.uSettle.value = settle;
     }
     ember.material.uniforms.uTime.value = seconds;
+    ember.material.uniforms.uSettle.value = settle;
     renderer.render(scene, camera);
+    if (progress >= 1) {
+      traceCompleted = true;
+      active = false;
+      renderer.setAnimationLoop(null);
+    }
   };
 
   const resize = () => {
@@ -293,7 +367,7 @@ export function createEmberSmokeRuntime({ canvas, context, qualityTier }) {
       }
       active = nextActive;
       lastFrameAt = Number.NEGATIVE_INFINITY;
-      renderer.setAnimationLoop(active ? render : null);
+      renderer.setAnimationLoop(active && !traceCompleted ? render : null);
       if (active) {
         renderer.render(scene, camera);
       }

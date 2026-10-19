@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { AirGlyph } from "@/components/brand";
+import { HEAL_VARIANTS, type HealVariantId } from "@/lib/brand/air-variants";
 
 import styles from "./EmberSmokeScene.module.css";
 
@@ -24,6 +26,7 @@ type NavigatorWithCapabilities = Navigator & {
 
 export type EmberSmokeSceneProps = {
   className?: string;
+  variantId?: HealVariantId;
 };
 
 const WEBGL_ATTRIBUTES: WebGLContextAttributes = {
@@ -61,40 +64,8 @@ function chooseQualityTier(): QualityTier {
   return "high";
 }
 
-function EmberSmokeFallback() {
-  return (
-    <svg
-      className={styles.fallback}
-      focusable="false"
-      viewBox="0 0 480 620"
-      preserveAspectRatio="xMidYMid meet"
-    >
-      <path
-        className={styles.smokePath}
-        d="M241 355 C198 306 281 258 236 209 C194 164 249 111 228 55"
-        opacity="0.42"
-        strokeWidth="15"
-      />
-      <path
-        className={styles.smokePath}
-        d="M249 358 C290 311 214 273 261 220 C303 172 251 125 278 73"
-        opacity="0.23"
-        strokeWidth="10"
-      />
-      <path
-        className={styles.smokePath}
-        d="M238 349 C226 310 260 287 242 253 C218 208 246 177 238 145"
-        opacity="0.54"
-        strokeWidth="5"
-      />
-
-      <g transform="rotate(-3 240 446)">
-        <rect className={styles.stick} x="235" y="405" width="10" height="178" rx="4" />
-        <circle className={styles.emberHalo} cx="240" cy="405" r="48" />
-        <circle className={styles.emberCore} cx="240" cy="405" r="8" />
-      </g>
-    </svg>
-  );
+function EmberSmokeFallback({ variantId }: { variantId: HealVariantId }) {
+  return <AirGlyph className={styles.fallback} variantId={variantId} decorative />;
 }
 
 /**
@@ -102,14 +73,57 @@ function EmberSmokeFallback() {
  * a experiência completa quando movimento, dados reduzidos ou WebGL2 impedem 3D.
  * O módulo Three.js só é baixado depois que a cena entra na viewport.
  */
-export function EmberSmokeScene({ className }: EmberSmokeSceneProps) {
+export function EmberSmokeScene({ className, variantId = "canela" }: EmberSmokeSceneProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const runtimeRef = useRef<SceneRuntime | undefined>(undefined);
+  const startRuntimeRef = useRef<() => void>(() => undefined);
+  const syncRuntimeRef = useRef<() => void>(() => undefined);
+  const generationRef = useRef(0);
+  const contextLossCountRef = useRef(0);
+  const permanentFallbackRef = useRef(false);
+  const pausedRef = useRef(false);
   const [sceneState, setSceneState] = useState<SceneState>("fallback");
   const [qualityTier, setQualityTier] = useState<QualityTier | undefined>();
+  const [selectedVariantId, setSelectedVariantId] = useState<HealVariantId | null>(null);
+  const [userReduced, setUserReduced] = useState(false);
+  const activeVariantId = selectedVariantId ?? variantId;
+
+  useEffect(() => {
+    const onVariantChange = (event: Event) => {
+      const nextId = (event as CustomEvent<{ variantId?: string }>).detail?.variantId;
+      if (HEAL_VARIANTS.some((variant) => variant.id === nextId)) {
+        setSelectedVariantId(nextId as HealVariantId);
+      }
+    };
+    const onMotionControl = (event: Event) => {
+      const detail = (event as CustomEvent<{ paused?: boolean; reduced?: boolean }>).detail;
+      if (typeof detail?.paused === "boolean") {
+        pausedRef.current = detail.paused;
+        if (detail.paused) runtimeRef.current?.setActive(false);
+        else syncRuntimeRef.current();
+      }
+      if (typeof detail?.reduced === "boolean") {
+        if (detail.reduced) {
+          runtimeRef.current?.dispose();
+          runtimeRef.current = undefined;
+          setSceneState("fallback");
+          setQualityTier(undefined);
+        }
+        setUserReduced(detail.reduced);
+      }
+    };
+
+    window.addEventListener("heal:variant-change", onVariantChange);
+    window.addEventListener("heal:motion-control", onMotionControl);
+    return () => {
+      window.removeEventListener("heal:variant-change", onVariantChange);
+      window.removeEventListener("heal:motion-control", onMotionControl);
+    };
+  }, []);
 
   useEffect(() => {
     const canvas = canvasRef.current;
-    if (!canvas) {
+    if (!canvas || userReduced) {
       return;
     }
 
@@ -122,17 +136,24 @@ export function EmberSmokeScene({ className }: EmberSmokeSceneProps) {
     let disposed = false;
     let loading = false;
     let runtime: SceneRuntime | undefined;
+    let pendingContext: WebGL2RenderingContext | undefined;
 
     const shouldUseFallback = () =>
       motionPreference.matches || dataPreference.matches || connection?.saveData === true;
 
     const updateRuntimeActivity = () => {
-      runtime?.setActive(activeInViewport && !document.hidden && !shouldUseFallback());
+      runtime?.setActive(activeInViewport && !document.hidden && !pausedRef.current && !shouldUseFallback());
     };
 
     const disposeRuntime = (loseContext = true) => {
+      generationRef.current += 1;
       runtime?.dispose(loseContext);
+      if (!runtime && pendingContext && loseContext) {
+        pendingContext.getExtension("WEBGL_lose_context")?.loseContext();
+      }
       runtime = undefined;
+      pendingContext = undefined;
+      runtimeRef.current = undefined;
       loading = false;
       if (!disposed) {
         setSceneState("fallback");
@@ -145,19 +166,23 @@ export function EmberSmokeScene({ className }: EmberSmokeSceneProps) {
         disposed ||
         loading ||
         runtime ||
+        permanentFallbackRef.current ||
         !activeInViewport ||
         document.hidden ||
+        pausedRef.current ||
         shouldUseFallback()
       ) {
         updateRuntimeActivity();
         return;
       }
 
+      const token = ++generationRef.current;
       const context = canvas.getContext("webgl2", WEBGL_ATTRIBUTES);
       if (!context) {
         setSceneState("fallback");
         return;
       }
+      pendingContext = context;
 
       loading = true;
       setSceneState("loading");
@@ -165,23 +190,40 @@ export function EmberSmokeScene({ className }: EmberSmokeSceneProps) {
 
       try {
         const { createEmberSmokeRuntime } = await import("./createEmberSmokeRuntime");
-        if (disposed || shouldUseFallback()) {
-          context.getExtension("WEBGL_lose_context")?.loseContext();
+        if (
+          disposed ||
+          token !== generationRef.current ||
+          permanentFallbackRef.current ||
+          !activeInViewport ||
+          document.hidden ||
+          pausedRef.current ||
+          shouldUseFallback()
+        ) {
+          if (!disposed && token === generationRef.current) {
+            context.getExtension("WEBGL_lose_context")?.loseContext();
+          }
           return;
         }
 
-        runtime = createEmberSmokeRuntime({ canvas, context, qualityTier: tier });
+        runtime = createEmberSmokeRuntime({ canvas, context, qualityTier: tier, variantId: activeVariantId });
+        pendingContext = undefined;
+        runtimeRef.current = runtime;
         setQualityTier(tier);
         setSceneState("ready");
         updateRuntimeActivity();
       } catch {
-        context.getExtension("WEBGL_lose_context")?.loseContext();
-        if (!disposed) {
+        if (!disposed && token === generationRef.current) {
+          context.getExtension("WEBGL_lose_context")?.loseContext();
           setSceneState("fallback");
         }
       } finally {
-        loading = false;
+        if (token === generationRef.current) loading = false;
       }
+    };
+    startRuntimeRef.current = () => void startRuntime();
+    syncRuntimeRef.current = () => {
+      updateRuntimeActivity();
+      if (!runtime) void startRuntime();
     };
 
     const onPreferenceChange = () => {
@@ -201,11 +243,13 @@ export function EmberSmokeScene({ className }: EmberSmokeSceneProps) {
 
     const onContextLost = (event: Event) => {
       event.preventDefault();
+      contextLossCountRef.current += 1;
+      permanentFallbackRef.current = contextLossCountRef.current >= 2;
       disposeRuntime(false);
     };
 
     const onContextRestored = () => {
-      void startRuntime();
+      if (!permanentFallbackRef.current) void startRuntime();
     };
 
     const intersectionObserver =
@@ -247,8 +291,13 @@ export function EmberSmokeScene({ className }: EmberSmokeSceneProps) {
       canvas.removeEventListener("webglcontextrestored", onContextRestored);
       runtime?.dispose();
       runtime = undefined;
+      runtimeRef.current = undefined;
+      pendingContext?.getExtension("WEBGL_lose_context")?.loseContext();
+      pendingContext = undefined;
+      startRuntimeRef.current = () => undefined;
+      syncRuntimeRef.current = () => undefined;
     };
-  }, []);
+  }, [activeVariantId, userReduced]);
 
   return (
     <div
@@ -256,8 +305,9 @@ export function EmberSmokeScene({ className }: EmberSmokeSceneProps) {
       className={[styles.root, className].filter(Boolean).join(" ")}
       data-quality={qualityTier}
       data-state={sceneState}
+      data-variant={activeVariantId}
     >
-      <EmberSmokeFallback />
+      <EmberSmokeFallback variantId={activeVariantId} />
       <canvas className={styles.canvas} ref={canvasRef} tabIndex={-1} />
     </div>
   );

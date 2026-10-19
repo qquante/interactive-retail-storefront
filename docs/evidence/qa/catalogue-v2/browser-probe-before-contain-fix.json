@@ -1,0 +1,1552 @@
+{
+  "checkedAt": "2026-09-26T21:10:52.901Z",
+  "scope": "Custom Chromium probe of catalogue image integration only; not the full Playwright E2E suite; no shader validation.",
+  "total": 28,
+  "failed": 28,
+  "results": [
+    {
+      "viewport": {
+        "width": 320,
+        "height": 700
+      },
+      "route": "/colecoes/heals",
+      "status": 200,
+      "count": 5,
+      "overflow": 0,
+      "pageErrors": [],
+      "consoleErrors": [],
+      "resourceErrors": [],
+      "imageMetrics": [
+        {
+          "src": "/images/heals/catalogue-v2/canela.webp",
+          "alt": "Imagem ilustrativa do incenso HEAL Canela: embalagem fechada e vareta de superfície rugosa.",
+          "complete": true,
+          "naturalWidth": 1122,
+          "naturalHeight": 1402,
+          "objectFit": "cover",
+          "transform": "none",
+          "frameAspectRatio": "4 / 5",
+          "width": 288,
+          "height": 360,
+          "frameWidth": 288,
+          "frameHeight": 360,
+          "captionOutsideFrame": true
+        },
+        {
+          "src": "/images/heals/catalogue-v2/lavanda-celestial.webp",
+          "alt": "Imagem ilustrativa do incenso HEAL Lavanda Celestial: embalagem fechada e vareta de superfície rugosa.",
+          "complete": true,
+          "naturalWidth": 1122,
+          "naturalHeight": 1402,
+          "objectFit": "cover",
+          "transform": "none",
+          "frameAspectRatio": "4 / 5",
+          "width": 288,
+          "height": 360,
+          "frameWidth": 288,
+          "frameHeight": 360,
+          "captionOutsideFrame": true
+        },
+        {
+          "src": "/images/heals/catalogue-v2/mirra.webp",
+          "alt": "Imagem ilustrativa do incenso HEAL Mirra: embalagem fechada e vareta de superfície rugosa.",
+          "complete": true,
+          "naturalWidth": 1122,
+          "naturalHeight": 1402,
+          "objectFit": "cover",
+          "transform": "none",
+          "frameAspectRatio": "4 / 5",
+          "width": 288,
+          "height": 360,
+          "frameWidth": 288,
+          "frameHeight": 360,
+          "captionOutsideFrame": true
+        },
+        {
+          "src": "/images/heals/catalogue-v2/olibano.webp",
+          "alt": "Imagem ilustrativa do incenso HEAL Olíbano: embalagem fechada e vareta de superfície rugosa.",
+          "complete": true,
+          "naturalWidth": 1122,
+          "naturalHeight": 1402,
+          "objectFit": "cover",
+          "transform": "none",
+          "frameAspectRatio": "4 / 5",
+          "width": 288,
+          "height": 360,
+          "frameWidth": 288,
+          "frameHeight": 360,
+          "captionOutsideFrame": true
+        },
+        {
+          "src": "/images/heals/catalogue-v2/alecrim.webp",
+          "alt": "Imagem ilustrativa do incenso HEAL Alecrim: embalagem fechada e vareta de superfície rugosa.",
+          "complete": true,
+          "naturalWidth": 1122,
+          "naturalHeight": 1402,
+          "objectFit": "cover",
+          "transform": "none",
+          "frameAspectRatio": "4 / 5",
+          "width": 288,
+          "height": 360,
+          "frameWidth": 288,
+          "frameHeight": 360,
+          "captionOutsideFrame": true
+        }
+      ],
+      "hover": {
+        "transform": "none",
+        "objectFit": "cover"
+      },
+      "failures": [
+        "imageMetrics",
+        "hoverCrop"
+      ]
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 700
+      },
+      "route": "/produtos/canela",
+      "status": 200,
+      "count": 1,
+      "overflow": 0,
+      "pageErrors": [],
+      "consoleErrors": [],
+      "resourceErrors": [],
+      "imageMetrics": [
+        {
+          "src": "/images/heals/catalogue-v2/canela.webp",
+          "alt": "Imagem ilustrativa do incenso HEAL Canela: embalagem fechada e vareta de superfície rugosa.",
+          "complete": true,
+          "naturalWidth": 1122,
+          "naturalHeight": 1402,
+          "objectFit": "cover",
+          "transform": "none",
+          "frameAspectRatio": "4 / 5",
+          "width": 288,
+          "height": 360,
+          "frameWidth": 288,
+          "frameHeight": 360,
+          "captionOutsideFrame": true
+        }
+      ],
+      "hover": {
+        "transform": "none",
+        "objectFit": "cover"
+      },
+      "failures": [
+        "imageMetrics",
+        "hoverCrop"
+      ]
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 700
+      },
+      "route": "/produtos/lavanda-celestial",
+      "status": 200,
+      "count": 1,
+      "overflow": 0,
+      "pageErrors": [],
+      "consoleErrors": [],
+      "resourceErrors": [],
+      "imageMetrics": [
+        {
+          "src": "/images/heals/catalogue-v2/lavanda-celestial.webp",
+          "alt": "Imagem ilustrativa do incenso HEAL Lavanda Celestial: embalagem fechada e vareta de superfície rugosa.",
+          "complete": true,
+          "naturalWidth": 1122,
+          "naturalHeight": 1402,
+          "objectFit": "cover",
+          "transform": "none",
+          "frameAspectRatio": "4 / 5",
+          "width": 288,
+          "height": 360,
+          "frameWidth": 288,
+          "frameHeight": 360,
+          "captionOutsideFrame": true
+        }
+      ],
+      "hover": {
+        "transform": "none",
+        "objectFit": "cover"
+      },
+      "failures": [
+        "imageMetrics",
+        "hoverCrop"
+      ]
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 700
+      },
+      "route": "/produtos/mirra",
+      "status": 200,
+      "count": 1,
+      "overflow": 0,
+      "pageErrors": [],
+      "consoleErrors": [],
+      "resourceErrors": [],
+      "imageMetrics": [
+        {
+          "src": "/images/heals/catalogue-v2/mirra.webp",
+          "alt": "Imagem ilustrativa do incenso HEAL Mirra: embalagem fechada e vareta de superfície rugosa.",
+          "complete": true,
+          "naturalWidth": 1122,
+          "naturalHeight": 1402,
+          "objectFit": "cover",
+          "transform": "none",
+          "frameAspectRatio": "4 / 5",
+          "width": 288,
+          "height": 360,
+          "frameWidth": 288,
+          "frameHeight": 360,
+          "captionOutsideFrame": true
+        }
+      ],
+      "hover": {
+        "transform": "none",
+        "objectFit": "cover"
+      },
+      "failures": [
+        "imageMetrics",
+        "hoverCrop"
+      ]
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 700
+      },
+      "route": "/produtos/olibano",
+      "status": 200,
+      "count": 1,
+      "overflow": 0,
+      "pageErrors": [],
+      "consoleErrors": [],
+      "resourceErrors": [],
+      "imageMetrics": [
+        {
+          "src": "/images/heals/catalogue-v2/olibano.webp",
+          "alt": "Imagem ilustrativa do incenso HEAL Olíbano: embalagem fechada e vareta de superfície rugosa.",
+          "complete": true,
+          "naturalWidth": 1122,
+          "naturalHeight": 1402,
+          "objectFit": "cover",
+          "transform": "none",
+          "frameAspectRatio": "4 / 5",
+          "width": 288,
+          "height": 360,
+          "frameWidth": 288,
+          "frameHeight": 360,
+          "captionOutsideFrame": true
+        }
+      ],
+      "hover": {
+        "transform": "none",
+        "objectFit": "cover"
+      },
+      "failures": [
+        "imageMetrics",
+        "hoverCrop"
+      ]
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 700
+      },
+      "route": "/produtos/alecrim",
+      "status": 200,
+      "count": 1,
+      "overflow": 0,
+      "pageErrors": [],
+      "consoleErrors": [],
+      "resourceErrors": [],
+      "imageMetrics": [
+        {
+          "src": "/images/heals/catalogue-v2/alecrim.webp",
+          "alt": "Imagem ilustrativa do incenso HEAL Alecrim: embalagem fechada e vareta de superfície rugosa.",
+          "complete": true,
+          "naturalWidth": 1122,
+          "naturalHeight": 1402,
+          "objectFit": "cover",
+          "transform": "none",
+          "frameAspectRatio": "4 / 5",
+          "width": 288,
+          "height": 360,
+          "frameWidth": 288,
+          "frameHeight": 360,
+          "captionOutsideFrame": true
+        }
+      ],
+      "hover": {
+        "transform": "none",
+        "objectFit": "cover"
+      },
+      "failures": [
+        "imageMetrics",
+        "hoverCrop"
+      ]
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 700
+      },
+      "route": "/",
+      "status": 200,
+      "count": 5,
+      "overflow": 0,
+      "pageErrors": [],
+      "consoleErrors": [],
+      "resourceErrors": [],
+      "imageMetrics": [
+        {
+          "src": "/images/heals/catalogue-v2/canela.webp",
+          "alt": "Imagem ilustrativa do incenso HEAL Canela: embalagem fechada e vareta de superfície rugosa.",
+          "complete": true,
+          "naturalWidth": 1122,
+          "naturalHeight": 1402,
+          "objectFit": "cover",
+          "transform": "none",
+          "frameAspectRatio": "4 / 5",
+          "width": 288,
+          "height": 360,
+          "frameWidth": 288,
+          "frameHeight": 360,
+          "captionOutsideFrame": true
+        },
+        {
+          "src": "/images/heals/catalogue-v2/lavanda-celestial.webp",
+          "alt": "Imagem ilustrativa do incenso HEAL Lavanda Celestial: embalagem fechada e vareta de superfície rugosa.",
+          "complete": true,
+          "naturalWidth": 1122,
+          "naturalHeight": 1402,
+          "objectFit": "cover",
+          "transform": "none",
+          "frameAspectRatio": "4 / 5",
+          "width": 288,
+          "height": 360,
+          "frameWidth": 288,
+          "frameHeight": 360,
+          "captionOutsideFrame": true
+        },
+        {
+          "src": "/images/heals/catalogue-v2/mirra.webp",
+          "alt": "Imagem ilustrativa do incenso HEAL Mirra: embalagem fechada e vareta de superfície rugosa.",
+          "complete": true,
+          "naturalWidth": 1122,
+          "naturalHeight": 1402,
+          "objectFit": "cover",
+          "transform": "none",
+          "frameAspectRatio": "4 / 5",
+          "width": 288,
+          "height": 360,
+          "frameWidth": 288,
+          "frameHeight": 360,
+          "captionOutsideFrame": true
+        },
+        {
+          "src": "/images/heals/catalogue-v2/olibano.webp",
+          "alt": "Imagem ilustrativa do incenso HEAL Olíbano: embalagem fechada e vareta de superfície rugosa.",
+          "complete": true,
+          "naturalWidth": 1122,
+          "naturalHeight": 1402,
+          "objectFit": "cover",
+          "transform": "none",
+          "frameAspectRatio": "4 / 5",
+          "width": 288,
+          "height": 360,
+          "frameWidth": 288,
+          "frameHeight": 360,
+          "captionOutsideFrame": true
+        },
+        {
+          "src": "/images/heals/catalogue-v2/alecrim.webp",
+          "alt": "Imagem ilustrativa do incenso HEAL Alecrim: embalagem fechada e vareta de superfície rugosa.",
+          "complete": true,
+          "naturalWidth": 1122,
+          "naturalHeight": 1402,
+          "objectFit": "cover",
+          "transform": "none",
+          "frameAspectRatio": "4 / 5",
+          "width": 288,
+          "height": 360,
+          "frameWidth": 288,
+          "frameHeight": 360,
+          "captionOutsideFrame": true
+        }
+      ],
+      "hover": {
+        "transform": "none",
+        "objectFit": "cover"
+      },
+      "failures": [
+        "imageMetrics",
+        "hoverCrop"
+      ]
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/colecoes/heals",
+      "status": 200,
+      "count": 5,
+      "overflow": 0,
+      "pageErrors": [],
+      "consoleErrors": [],
+      "resourceErrors": [],
+      "imageMetrics": [
+        {
+          "src": "/images/heals/catalogue-v2/canela.webp",
+          "alt": "Imagem ilustrativa do incenso HEAL Canela: embalagem fechada e vareta de superfície rugosa.",
+          "complete": true,
+          "naturalWidth": 1122,
+          "naturalHeight": 1402,
+          "objectFit": "cover",
+          "transform": "none",
+          "frameAspectRatio": "4 / 5",
+          "width": 358,
+          "height": 447.5,
+          "frameWidth": 358,
+          "frameHeight": 447.5,
+          "captionOutsideFrame": true
+        },
+        {
+          "src": "/images/heals/catalogue-v2/lavanda-celestial.webp",
+          "alt": "Imagem ilustrativa do incenso HEAL Lavanda Celestial: embalagem fechada e vareta de superfície rugosa.",
+          "complete": true,
+          "naturalWidth": 1122,
+          "naturalHeight": 1402,
+          "objectFit": "cover",
+          "transform": "none",
+          "frameAspectRatio": "4 / 5",
+          "width": 358,
+          "height": 447.5,
+          "frameWidth": 358,
+          "frameHeight": 447.5,
+          "captionOutsideFrame": true
+        },
+        {
+          "src": "/images/heals/catalogue-v2/mirra.webp",
+          "alt": "Imagem ilustrativa do incenso HEAL Mirra: embalagem fechada e vareta de superfície rugosa.",
+          "complete": true,
+          "naturalWidth": 1122,
+          "naturalHeight": 1402,
+          "objectFit": "cover",
+          "transform": "none",
+          "frameAspectRatio": "4 / 5",
+          "width": 358,
+          "height": 447.5,
+          "frameWidth": 358,
+          "frameHeight": 447.5,
+          "captionOutsideFrame": true
+        },
+        {
+          "src": "/images/heals/catalogue-v2/olibano.webp",
+          "alt": "Imagem ilustrativa do incenso HEAL Olíbano: embalagem fechada e vareta de superfície rugosa.",
+          "complete": true,
+          "naturalWidth": 1122,
+          "naturalHeight": 1402,
+          "objectFit": "cover",
+          "transform": "none",
+          "frameAspectRatio": "4 / 5",
+          "width": 358,
+          "height": 447.5,
+          "frameWidth": 358,
+          "frameHeight": 447.5,
+          "captionOutsideFrame": true
+        },
+        {
+          "src": "/images/heals/catalogue-v2/alecrim.webp",
+          "alt": "Imagem ilustrativa do incenso HEAL Alecrim: embalagem fechada e vareta de superfície rugosa.",
+          "complete": true,
+          "naturalWidth": 1122,
+          "naturalHeight": 1402,
+          "objectFit": "cover",
+          "transform": "none",
+          "frameAspectRatio": "4 / 5",
+          "width": 358,
+          "height": 447.5,
+          "frameWidth": 358,
+          "frameHeight": 447.5,
+          "captionOutsideFrame": true
+        }
+      ],
+      "hover": {
+        "transform": "none",
+        "objectFit": "cover"
+      },
+      "failures": [
+        "imageMetrics",
+        "hoverCrop"
+      ]
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/produtos/canela",
+      "status": 200,
+      "count": 1,
+      "overflow": 0,
+      "pageErrors": [],
+      "consoleErrors": [],
+      "resourceErrors": [],
+      "imageMetrics": [
+        {
+          "src": "/images/heals/catalogue-v2/canela.webp",
+          "alt": "Imagem ilustrativa do incenso HEAL Canela: embalagem fechada e vareta de superfície rugosa.",
+          "complete": true,
+          "naturalWidth": 1122,
+          "naturalHeight": 1402,
+          "objectFit": "cover",
+          "transform": "none",
+          "frameAspectRatio": "4 / 5",
+          "width": 358,
+          "height": 447.5,
+          "frameWidth": 358,
+          "frameHeight": 447.5,
+          "captionOutsideFrame": true
+        }
+      ],
+      "hover": {
+        "transform": "none",
+        "objectFit": "cover"
+      },
+      "failures": [
+        "imageMetrics",
+        "hoverCrop"
+      ]
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/produtos/lavanda-celestial",
+      "status": 200,
+      "count": 1,
+      "overflow": 0,
+      "pageErrors": [],
+      "consoleErrors": [],
+      "resourceErrors": [],
+      "imageMetrics": [
+        {
+          "src": "/images/heals/catalogue-v2/lavanda-celestial.webp",
+          "alt": "Imagem ilustrativa do incenso HEAL Lavanda Celestial: embalagem fechada e vareta de superfície rugosa.",
+          "complete": true,
+          "naturalWidth": 1122,
+          "naturalHeight": 1402,
+          "objectFit": "cover",
+          "transform": "none",
+          "frameAspectRatio": "4 / 5",
+          "width": 358,
+          "height": 447.5,
+          "frameWidth": 358,
+          "frameHeight": 447.5,
+          "captionOutsideFrame": true
+        }
+      ],
+      "hover": {
+        "transform": "none",
+        "objectFit": "cover"
+      },
+      "failures": [
+        "imageMetrics",
+        "hoverCrop"
+      ]
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/produtos/mirra",
+      "status": 200,
+      "count": 1,
+      "overflow": 0,
+      "pageErrors": [],
+      "consoleErrors": [],
+      "resourceErrors": [],
+      "imageMetrics": [
+        {
+          "src": "/images/heals/catalogue-v2/mirra.webp",
+          "alt": "Imagem ilustrativa do incenso HEAL Mirra: embalagem fechada e vareta de superfície rugosa.",
+          "complete": true,
+          "naturalWidth": 1122,
+          "naturalHeight": 1402,
+          "objectFit": "cover",
+          "transform": "none",
+          "frameAspectRatio": "4 / 5",
+          "width": 358,
+          "height": 447.5,
+          "frameWidth": 358,
+          "frameHeight": 447.5,
+          "captionOutsideFrame": true
+        }
+      ],
+      "hover": {
+        "transform": "none",
+        "objectFit": "cover"
+      },
+      "failures": [
+        "imageMetrics",
+        "hoverCrop"
+      ]
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/produtos/olibano",
+      "status": 200,
+      "count": 1,
+      "overflow": 0,
+      "pageErrors": [],
+      "consoleErrors": [],
+      "resourceErrors": [],
+      "imageMetrics": [
+        {
+          "src": "/images/heals/catalogue-v2/olibano.webp",
+          "alt": "Imagem ilustrativa do incenso HEAL Olíbano: embalagem fechada e vareta de superfície rugosa.",
+          "complete": true,
+          "naturalWidth": 1122,
+          "naturalHeight": 1402,
+          "objectFit": "cover",
+          "transform": "none",
+          "frameAspectRatio": "4 / 5",
+          "width": 358,
+          "height": 447.5,
+          "frameWidth": 358,
+          "frameHeight": 447.5,
+          "captionOutsideFrame": true
+        }
+      ],
+      "hover": {
+        "transform": "none",
+        "objectFit": "cover"
+      },
+      "failures": [
+        "imageMetrics",
+        "hoverCrop"
+      ]
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/produtos/alecrim",
+      "status": 200,
+      "count": 1,
+      "overflow": 0,
+      "pageErrors": [],
+      "consoleErrors": [],
+      "resourceErrors": [],
+      "imageMetrics": [
+        {
+          "src": "/images/heals/catalogue-v2/alecrim.webp",
+          "alt": "Imagem ilustrativa do incenso HEAL Alecrim: embalagem fechada e vareta de superfície rugosa.",
+          "complete": true,
+          "naturalWidth": 1122,
+          "naturalHeight": 1402,
+          "objectFit": "cover",
+          "transform": "none",
+          "frameAspectRatio": "4 / 5",
+          "width": 358,
+          "height": 447.5,
+          "frameWidth": 358,
+          "frameHeight": 447.5,
+          "captionOutsideFrame": true
+        }
+      ],
+      "hover": {
+        "transform": "none",
+        "objectFit": "cover"
+      },
+      "failures": [
+        "imageMetrics",
+        "hoverCrop"
+      ]
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/",
+      "status": 200,
+      "count": 5,
+      "overflow": 0,
+      "pageErrors": [],
+      "consoleErrors": [],
+      "resourceErrors": [],
+      "imageMetrics": [
+        {
+          "src": "/images/heals/catalogue-v2/canela.webp",
+          "alt": "Imagem ilustrativa do incenso HEAL Canela: embalagem fechada e vareta de superfície rugosa.",
+          "complete": true,
+          "naturalWidth": 1122,
+          "naturalHeight": 1402,
+          "objectFit": "cover",
+          "transform": "none",
+          "frameAspectRatio": "4 / 5",
+          "width": 358,
+          "height": 447.5,
+          "frameWidth": 358,
+          "frameHeight": 447.5,
+          "captionOutsideFrame": true
+        },
+        {
+          "src": "/images/heals/catalogue-v2/lavanda-celestial.webp",
+          "alt": "Imagem ilustrativa do incenso HEAL Lavanda Celestial: embalagem fechada e vareta de superfície rugosa.",
+          "complete": true,
+          "naturalWidth": 1122,
+          "naturalHeight": 1402,
+          "objectFit": "cover",
+          "transform": "none",
+          "frameAspectRatio": "4 / 5",
+          "width": 358,
+          "height": 447.5,
+          "frameWidth": 358,
+          "frameHeight": 447.5,
+          "captionOutsideFrame": true
+        },
+        {
+          "src": "/images/heals/catalogue-v2/mirra.webp",
+          "alt": "Imagem ilustrativa do incenso HEAL Mirra: embalagem fechada e vareta de superfície rugosa.",
+          "complete": true,
+          "naturalWidth": 1122,
+          "naturalHeight": 1402,
+          "objectFit": "cover",
+          "transform": "none",
+          "frameAspectRatio": "4 / 5",
+          "width": 358,
+          "height": 447.5,
+          "frameWidth": 358,
+          "frameHeight": 447.5,
+          "captionOutsideFrame": true
+        },
+        {
+          "src": "/images/heals/catalogue-v2/olibano.webp",
+          "alt": "Imagem ilustrativa do incenso HEAL Olíbano: embalagem fechada e vareta de superfície rugosa.",
+          "complete": true,
+          "naturalWidth": 1122,
+          "naturalHeight": 1402,
+          "objectFit": "cover",
+          "transform": "none",
+          "frameAspectRatio": "4 / 5",
+          "width": 358,
+          "height": 447.5,
+          "frameWidth": 358,
+          "frameHeight": 447.5,
+          "captionOutsideFrame": true
+        },
+        {
+          "src": "/images/heals/catalogue-v2/alecrim.webp",
+          "alt": "Imagem ilustrativa do incenso HEAL Alecrim: embalagem fechada e vareta de superfície rugosa.",
+          "complete": true,
+          "naturalWidth": 1122,
+          "naturalHeight": 1402,
+          "objectFit": "cover",
+          "transform": "none",
+          "frameAspectRatio": "4 / 5",
+          "width": 358,
+          "height": 447.5,
+          "frameWidth": 358,
+          "frameHeight": 447.5,
+          "captionOutsideFrame": true
+        }
+      ],
+      "hover": {
+        "transform": "none",
+        "objectFit": "cover"
+      },
+      "failures": [
+        "imageMetrics",
+        "hoverCrop"
+      ]
+    },
+    {
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "route": "/colecoes/heals",
+      "status": 200,
+      "count": 5,
+      "overflow": 0,
+      "pageErrors": [],
+      "consoleErrors": [],
+      "resourceErrors": [],
+      "imageMetrics": [
+        {
+          "src": "/images/heals/catalogue-v2/canela.webp",
+          "alt": "Imagem ilustrativa do incenso HEAL Canela: embalagem fechada e vareta de superfície rugosa.",
+          "complete": true,
+          "naturalWidth": 1122,
+          "naturalHeight": 1402,
+          "objectFit": "cover",
+          "transform": "none",
+          "frameAspectRatio": "4 / 5",
+          "width": 356.484375,
+          "height": 445.59375,
+          "frameWidth": 356.484375,
+          "frameHeight": 445.59375,
+          "captionOutsideFrame": true
+        },
+        {
+          "src": "/images/heals/catalogue-v2/lavanda-celestial.webp",
+          "alt": "Imagem ilustrativa do incenso HEAL Lavanda Celestial: embalagem fechada e vareta de superfície rugosa.",
+          "complete": true,
+          "naturalWidth": 1122,
+          "naturalHeight": 1402,
+          "objectFit": "cover",
+          "transform": "none",
+          "frameAspectRatio": "4 / 5",
+          "width": 356.484375,
+          "height": 445.59375,
+          "frameWidth": 356.484375,
+          "frameHeight": 445.59375,
+          "captionOutsideFrame": true
+        },
+        {
+          "src": "/images/heals/catalogue-v2/mirra.webp",
+          "alt": "Imagem ilustrativa do incenso HEAL Mirra: embalagem fechada e vareta de superfície rugosa.",
+          "complete": true,
+          "naturalWidth": 1122,
+          "naturalHeight": 1402,
+          "objectFit": "cover",
+          "transform": "none",
+          "frameAspectRatio": "4 / 5",
+          "width": 356.484375,
+          "height": 445.59375,
+          "frameWidth": 356.484375,
+          "frameHeight": 445.59375,
+          "captionOutsideFrame": true
+        },
+        {
+          "src": "/images/heals/catalogue-v2/olibano.webp",
+          "alt": "Imagem ilustrativa do incenso HEAL Olíbano: embalagem fechada e vareta de superfície rugosa.",
+          "complete": true,
+          "naturalWidth": 1122,
+          "naturalHeight": 1402,
+          "objectFit": "cover",
+          "transform": "none",
+          "frameAspectRatio": "4 / 5",
+          "width": 356.484375,
+          "height": 445.59375,
+          "frameWidth": 356.484375,
+          "frameHeight": 445.59375,
+          "captionOutsideFrame": true
+        },
+        {
+          "src": "/images/heals/catalogue-v2/alecrim.webp",
+          "alt": "Imagem ilustrativa do incenso HEAL Alecrim: embalagem fechada e vareta de superfície rugosa.",
+          "complete": true,
+          "naturalWidth": 1122,
+          "naturalHeight": 1402,
+          "objectFit": "cover",
+          "transform": "none",
+          "frameAspectRatio": "4 / 5",
+          "width": 356.484375,
+          "height": 445.59375,
+          "frameWidth": 356.484375,
+          "frameHeight": 445.59375,
+          "captionOutsideFrame": true
+        }
+      ],
+      "hover": {
+        "transform": "none",
+        "objectFit": "cover"
+      },
+      "failures": [
+        "imageMetrics",
+        "hoverCrop"
+      ]
+    },
+    {
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "route": "/produtos/canela",
+      "status": 200,
+      "count": 1,
+      "overflow": 0,
+      "pageErrors": [],
+      "consoleErrors": [],
+      "resourceErrors": [],
+      "imageMetrics": [
+        {
+          "src": "/images/heals/catalogue-v2/canela.webp",
+          "alt": "Imagem ilustrativa do incenso HEAL Canela: embalagem fechada e vareta de superfície rugosa.",
+          "complete": true,
+          "naturalWidth": 1122,
+          "naturalHeight": 1402,
+          "objectFit": "cover",
+          "transform": "none",
+          "frameAspectRatio": "4 / 5",
+          "width": 736,
+          "height": 920,
+          "frameWidth": 736,
+          "frameHeight": 920,
+          "captionOutsideFrame": true
+        }
+      ],
+      "hover": {
+        "transform": "none",
+        "objectFit": "cover"
+      },
+      "failures": [
+        "imageMetrics",
+        "hoverCrop"
+      ]
+    },
+    {
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "route": "/produtos/lavanda-celestial",
+      "status": 200,
+      "count": 1,
+      "overflow": 0,
+      "pageErrors": [],
+      "consoleErrors": [],
+      "resourceErrors": [],
+      "imageMetrics": [
+        {
+          "src": "/images/heals/catalogue-v2/lavanda-celestial.webp",
+          "alt": "Imagem ilustrativa do incenso HEAL Lavanda Celestial: embalagem fechada e vareta de superfície rugosa.",
+          "complete": true,
+          "naturalWidth": 1122,
+          "naturalHeight": 1402,
+          "objectFit": "cover",
+          "transform": "none",
+          "frameAspectRatio": "4 / 5",
+          "width": 736,
+          "height": 920,
+          "frameWidth": 736,
+          "frameHeight": 920,
+          "captionOutsideFrame": true
+        }
+      ],
+      "hover": {
+        "transform": "none",
+        "objectFit": "cover"
+      },
+      "failures": [
+        "imageMetrics",
+        "hoverCrop"
+      ]
+    },
+    {
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "route": "/produtos/mirra",
+      "status": 200,
+      "count": 1,
+      "overflow": 0,
+      "pageErrors": [],
+      "consoleErrors": [],
+      "resourceErrors": [],
+      "imageMetrics": [
+        {
+          "src": "/images/heals/catalogue-v2/mirra.webp",
+          "alt": "Imagem ilustrativa do incenso HEAL Mirra: embalagem fechada e vareta de superfície rugosa.",
+          "complete": true,
+          "naturalWidth": 1122,
+          "naturalHeight": 1402,
+          "objectFit": "cover",
+          "transform": "none",
+          "frameAspectRatio": "4 / 5",
+          "width": 736,
+          "height": 920,
+          "frameWidth": 736,
+          "frameHeight": 920,
+          "captionOutsideFrame": true
+        }
+      ],
+      "hover": {
+        "transform": "none",
+        "objectFit": "cover"
+      },
+      "failures": [
+        "imageMetrics",
+        "hoverCrop"
+      ]
+    },
+    {
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "route": "/produtos/olibano",
+      "status": 200,
+      "count": 1,
+      "overflow": 0,
+      "pageErrors": [],
+      "consoleErrors": [],
+      "resourceErrors": [],
+      "imageMetrics": [
+        {
+          "src": "/images/heals/catalogue-v2/olibano.webp",
+          "alt": "Imagem ilustrativa do incenso HEAL Olíbano: embalagem fechada e vareta de superfície rugosa.",
+          "complete": true,
+          "naturalWidth": 1122,
+          "naturalHeight": 1402,
+          "objectFit": "cover",
+          "transform": "none",
+          "frameAspectRatio": "4 / 5",
+          "width": 736,
+          "height": 920,
+          "frameWidth": 736,
+          "frameHeight": 920,
+          "captionOutsideFrame": true
+        }
+      ],
+      "hover": {
+        "transform": "none",
+        "objectFit": "cover"
+      },
+      "failures": [
+        "imageMetrics",
+        "hoverCrop"
+      ]
+    },
+    {
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "route": "/produtos/alecrim",
+      "status": 200,
+      "count": 1,
+      "overflow": 0,
+      "pageErrors": [],
+      "consoleErrors": [],
+      "resourceErrors": [],
+      "imageMetrics": [
+        {
+          "src": "/images/heals/catalogue-v2/alecrim.webp",
+          "alt": "Imagem ilustrativa do incenso HEAL Alecrim: embalagem fechada e vareta de superfície rugosa.",
+          "complete": true,
+          "naturalWidth": 1122,
+          "naturalHeight": 1402,
+          "objectFit": "cover",
+          "transform": "none",
+          "frameAspectRatio": "4 / 5",
+          "width": 736,
+          "height": 920,
+          "frameWidth": 736,
+          "frameHeight": 920,
+          "captionOutsideFrame": true
+        }
+      ],
+      "hover": {
+        "transform": "none",
+        "objectFit": "cover"
+      },
+      "failures": [
+        "imageMetrics",
+        "hoverCrop"
+      ]
+    },
+    {
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "route": "/",
+      "status": 200,
+      "count": 5,
+      "overflow": 0,
+      "pageErrors": [],
+      "consoleErrors": [],
+      "resourceErrors": [],
+      "imageMetrics": [
+        {
+          "src": "/images/heals/catalogue-v2/canela.webp",
+          "alt": "Imagem ilustrativa do incenso HEAL Canela: embalagem fechada e vareta de superfície rugosa.",
+          "complete": true,
+          "naturalWidth": 1122,
+          "naturalHeight": 1402,
+          "objectFit": "cover",
+          "transform": "none",
+          "frameAspectRatio": "4 / 5",
+          "width": 345.609375,
+          "height": 432,
+          "frameWidth": 345.609375,
+          "frameHeight": 432,
+          "captionOutsideFrame": true
+        },
+        {
+          "src": "/images/heals/catalogue-v2/lavanda-celestial.webp",
+          "alt": "Imagem ilustrativa do incenso HEAL Lavanda Celestial: embalagem fechada e vareta de superfície rugosa.",
+          "complete": true,
+          "naturalWidth": 1122,
+          "naturalHeight": 1402,
+          "objectFit": "cover",
+          "transform": "none",
+          "frameAspectRatio": "4 / 5",
+          "width": 345.609375,
+          "height": 432,
+          "frameWidth": 345.609375,
+          "frameHeight": 432,
+          "captionOutsideFrame": true
+        },
+        {
+          "src": "/images/heals/catalogue-v2/mirra.webp",
+          "alt": "Imagem ilustrativa do incenso HEAL Mirra: embalagem fechada e vareta de superfície rugosa.",
+          "complete": true,
+          "naturalWidth": 1122,
+          "naturalHeight": 1402,
+          "objectFit": "cover",
+          "transform": "none",
+          "frameAspectRatio": "4 / 5",
+          "width": 345.609375,
+          "height": 432,
+          "frameWidth": 345.609375,
+          "frameHeight": 432,
+          "captionOutsideFrame": true
+        },
+        {
+          "src": "/images/heals/catalogue-v2/olibano.webp",
+          "alt": "Imagem ilustrativa do incenso HEAL Olíbano: embalagem fechada e vareta de superfície rugosa.",
+          "complete": true,
+          "naturalWidth": 1122,
+          "naturalHeight": 1402,
+          "objectFit": "cover",
+          "transform": "none",
+          "frameAspectRatio": "4 / 5",
+          "width": 345.609375,
+          "height": 432,
+          "frameWidth": 345.609375,
+          "frameHeight": 432,
+          "captionOutsideFrame": true
+        },
+        {
+          "src": "/images/heals/catalogue-v2/alecrim.webp",
+          "alt": "Imagem ilustrativa do incenso HEAL Alecrim: embalagem fechada e vareta de superfície rugosa.",
+          "complete": true,
+          "naturalWidth": 1122,
+          "naturalHeight": 1402,
+          "objectFit": "cover",
+          "transform": "none",
+          "frameAspectRatio": "4 / 5",
+          "width": 345.609375,
+          "height": 432,
+          "frameWidth": 345.609375,
+          "frameHeight": 432,
+          "captionOutsideFrame": true
+        }
+      ],
+      "hover": {
+        "transform": "none",
+        "objectFit": "cover"
+      },
+      "failures": [
+        "imageMetrics",
+        "hoverCrop"
+      ]
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "route": "/colecoes/heals",
+      "status": 200,
+      "count": 5,
+      "overflow": 0,
+      "pageErrors": [],
+      "consoleErrors": [],
+      "resourceErrors": [],
+      "imageMetrics": [
+        {
+          "src": "/images/heals/catalogue-v2/canela.webp",
+          "alt": "Imagem ilustrativa do incenso HEAL Canela: embalagem fechada e vareta de superfície rugosa.",
+          "complete": true,
+          "naturalWidth": 1122,
+          "naturalHeight": 1402,
+          "objectFit": "cover",
+          "transform": "none",
+          "frameAspectRatio": "4 / 5",
+          "width": 448,
+          "height": 560,
+          "frameWidth": 448,
+          "frameHeight": 560,
+          "captionOutsideFrame": true
+        },
+        {
+          "src": "/images/heals/catalogue-v2/lavanda-celestial.webp",
+          "alt": "Imagem ilustrativa do incenso HEAL Lavanda Celestial: embalagem fechada e vareta de superfície rugosa.",
+          "complete": true,
+          "naturalWidth": 1122,
+          "naturalHeight": 1402,
+          "objectFit": "cover",
+          "transform": "none",
+          "frameAspectRatio": "4 / 5",
+          "width": 448,
+          "height": 560,
+          "frameWidth": 448,
+          "frameHeight": 560,
+          "captionOutsideFrame": true
+        },
+        {
+          "src": "/images/heals/catalogue-v2/mirra.webp",
+          "alt": "Imagem ilustrativa do incenso HEAL Mirra: embalagem fechada e vareta de superfície rugosa.",
+          "complete": true,
+          "naturalWidth": 1122,
+          "naturalHeight": 1402,
+          "objectFit": "cover",
+          "transform": "none",
+          "frameAspectRatio": "4 / 5",
+          "width": 448,
+          "height": 560,
+          "frameWidth": 448,
+          "frameHeight": 560,
+          "captionOutsideFrame": true
+        },
+        {
+          "src": "/images/heals/catalogue-v2/olibano.webp",
+          "alt": "Imagem ilustrativa do incenso HEAL Olíbano: embalagem fechada e vareta de superfície rugosa.",
+          "complete": true,
+          "naturalWidth": 1122,
+          "naturalHeight": 1402,
+          "objectFit": "cover",
+          "transform": "none",
+          "frameAspectRatio": "4 / 5",
+          "width": 448,
+          "height": 560,
+          "frameWidth": 448,
+          "frameHeight": 560,
+          "captionOutsideFrame": true
+        },
+        {
+          "src": "/images/heals/catalogue-v2/alecrim.webp",
+          "alt": "Imagem ilustrativa do incenso HEAL Alecrim: embalagem fechada e vareta de superfície rugosa.",
+          "complete": true,
+          "naturalWidth": 1122,
+          "naturalHeight": 1402,
+          "objectFit": "cover",
+          "transform": "none",
+          "frameAspectRatio": "4 / 5",
+          "width": 448,
+          "height": 560,
+          "frameWidth": 448,
+          "frameHeight": 560,
+          "captionOutsideFrame": true
+        }
+      ],
+      "hover": {
+        "transform": "none",
+        "objectFit": "cover"
+      },
+      "failures": [
+        "imageMetrics",
+        "hoverCrop"
+      ]
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "route": "/produtos/canela",
+      "status": 200,
+      "count": 1,
+      "overflow": 0,
+      "pageErrors": [],
+      "consoleErrors": [],
+      "resourceErrors": [],
+      "imageMetrics": [
+        {
+          "src": "/images/heals/catalogue-v2/canela.webp",
+          "alt": "Imagem ilustrativa do incenso HEAL Canela: embalagem fechada e vareta de superfície rugosa.",
+          "complete": true,
+          "naturalWidth": 1122,
+          "naturalHeight": 1402,
+          "objectFit": "cover",
+          "transform": "none",
+          "frameAspectRatio": "4 / 5",
+          "width": 779.328125,
+          "height": 974.15625,
+          "frameWidth": 779.328125,
+          "frameHeight": 974.15625,
+          "captionOutsideFrame": true
+        }
+      ],
+      "hover": {
+        "transform": "none",
+        "objectFit": "cover"
+      },
+      "failures": [
+        "imageMetrics",
+        "hoverCrop"
+      ]
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "route": "/produtos/lavanda-celestial",
+      "status": 200,
+      "count": 1,
+      "overflow": 0,
+      "pageErrors": [],
+      "consoleErrors": [],
+      "resourceErrors": [],
+      "imageMetrics": [
+        {
+          "src": "/images/heals/catalogue-v2/lavanda-celestial.webp",
+          "alt": "Imagem ilustrativa do incenso HEAL Lavanda Celestial: embalagem fechada e vareta de superfície rugosa.",
+          "complete": true,
+          "naturalWidth": 1122,
+          "naturalHeight": 1402,
+          "objectFit": "cover",
+          "transform": "none",
+          "frameAspectRatio": "4 / 5",
+          "width": 779.328125,
+          "height": 974.15625,
+          "frameWidth": 779.328125,
+          "frameHeight": 974.15625,
+          "captionOutsideFrame": true
+        }
+      ],
+      "hover": {
+        "transform": "none",
+        "objectFit": "cover"
+      },
+      "failures": [
+        "imageMetrics",
+        "hoverCrop"
+      ]
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "route": "/produtos/mirra",
+      "status": 200,
+      "count": 1,
+      "overflow": 0,
+      "pageErrors": [],
+      "consoleErrors": [],
+      "resourceErrors": [],
+      "imageMetrics": [
+        {
+          "src": "/images/heals/catalogue-v2/mirra.webp",
+          "alt": "Imagem ilustrativa do incenso HEAL Mirra: embalagem fechada e vareta de superfície rugosa.",
+          "complete": true,
+          "naturalWidth": 1122,
+          "naturalHeight": 1402,
+          "objectFit": "cover",
+          "transform": "none",
+          "frameAspectRatio": "4 / 5",
+          "width": 779.328125,
+          "height": 974.15625,
+          "frameWidth": 779.328125,
+          "frameHeight": 974.15625,
+          "captionOutsideFrame": true
+        }
+      ],
+      "hover": {
+        "transform": "none",
+        "objectFit": "cover"
+      },
+      "failures": [
+        "imageMetrics",
+        "hoverCrop"
+      ]
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "route": "/produtos/olibano",
+      "status": 200,
+      "count": 1,
+      "overflow": 0,
+      "pageErrors": [],
+      "consoleErrors": [],
+      "resourceErrors": [],
+      "imageMetrics": [
+        {
+          "src": "/images/heals/catalogue-v2/olibano.webp",
+          "alt": "Imagem ilustrativa do incenso HEAL Olíbano: embalagem fechada e vareta de superfície rugosa.",
+          "complete": true,
+          "naturalWidth": 1122,
+          "naturalHeight": 1402,
+          "objectFit": "cover",
+          "transform": "none",
+          "frameAspectRatio": "4 / 5",
+          "width": 779.328125,
+          "height": 974.15625,
+          "frameWidth": 779.328125,
+          "frameHeight": 974.15625,
+          "captionOutsideFrame": true
+        }
+      ],
+      "hover": {
+        "transform": "none",
+        "objectFit": "cover"
+      },
+      "failures": [
+        "imageMetrics",
+        "hoverCrop"
+      ]
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "route": "/produtos/alecrim",
+      "status": 200,
+      "count": 1,
+      "overflow": 0,
+      "pageErrors": [],
+      "consoleErrors": [],
+      "resourceErrors": [],
+      "imageMetrics": [
+        {
+          "src": "/images/heals/catalogue-v2/alecrim.webp",
+          "alt": "Imagem ilustrativa do incenso HEAL Alecrim: embalagem fechada e vareta de superfície rugosa.",
+          "complete": true,
+          "naturalWidth": 1122,
+          "naturalHeight": 1402,
+          "objectFit": "cover",
+          "transform": "none",
+          "frameAspectRatio": "4 / 5",
+          "width": 779.328125,
+          "height": 974.15625,
+          "frameWidth": 779.328125,
+          "frameHeight": 974.15625,
+          "captionOutsideFrame": true
+        }
+      ],
+      "hover": {
+        "transform": "none",
+        "objectFit": "cover"
+      },
+      "failures": [
+        "imageMetrics",
+        "hoverCrop"
+      ]
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "route": "/",
+      "status": 200,
+      "count": 5,
+      "overflow": 0,
+      "pageErrors": [],
+      "consoleErrors": [],
+      "resourceErrors": [],
+      "imageMetrics": [
+        {
+          "src": "/images/heals/catalogue-v2/canela.webp",
+          "alt": "Imagem ilustrativa do incenso HEAL Canela: embalagem fechada e vareta de superfície rugosa.",
+          "complete": true,
+          "naturalWidth": 1122,
+          "naturalHeight": 1402,
+          "objectFit": "cover",
+          "transform": "none",
+          "frameAspectRatio": "4 / 5",
+          "width": 425.0625,
+          "height": 531.328125,
+          "frameWidth": 425.0625,
+          "frameHeight": 531.328125,
+          "captionOutsideFrame": true
+        },
+        {
+          "src": "/images/heals/catalogue-v2/lavanda-celestial.webp",
+          "alt": "Imagem ilustrativa do incenso HEAL Lavanda Celestial: embalagem fechada e vareta de superfície rugosa.",
+          "complete": true,
+          "naturalWidth": 1122,
+          "naturalHeight": 1402,
+          "objectFit": "cover",
+          "transform": "none",
+          "frameAspectRatio": "4 / 5",
+          "width": 425.078125,
+          "height": 531.34375,
+          "frameWidth": 425.078125,
+          "frameHeight": 531.34375,
+          "captionOutsideFrame": true
+        },
+        {
+          "src": "/images/heals/catalogue-v2/mirra.webp",
+          "alt": "Imagem ilustrativa do incenso HEAL Mirra: embalagem fechada e vareta de superfície rugosa.",
+          "complete": true,
+          "naturalWidth": 1122,
+          "naturalHeight": 1402,
+          "objectFit": "cover",
+          "transform": "none",
+          "frameAspectRatio": "4 / 5",
+          "width": 425.0625,
+          "height": 531.328125,
+          "frameWidth": 425.0625,
+          "frameHeight": 531.328125,
+          "captionOutsideFrame": true
+        },
+        {
+          "src": "/images/heals/catalogue-v2/olibano.webp",
+          "alt": "Imagem ilustrativa do incenso HEAL Olíbano: embalagem fechada e vareta de superfície rugosa.",
+          "complete": true,
+          "naturalWidth": 1122,
+          "naturalHeight": 1402,
+          "objectFit": "cover",
+          "transform": "none",
+          "frameAspectRatio": "4 / 5",
+          "width": 425.0625,
+          "height": 531.328125,
+          "frameWidth": 425.0625,
+          "frameHeight": 531.328125,
+          "captionOutsideFrame": true
+        },
+        {
+          "src": "/images/heals/catalogue-v2/alecrim.webp",
+          "alt": "Imagem ilustrativa do incenso HEAL Alecrim: embalagem fechada e vareta de superfície rugosa.",
+          "complete": true,
+          "naturalWidth": 1122,
+          "naturalHeight": 1402,
+          "objectFit": "cover",
+          "transform": "none",
+          "frameAspectRatio": "4 / 5",
+          "width": 425.078125,
+          "height": 531.34375,
+          "frameWidth": 425.078125,
+          "frameHeight": 531.34375,
+          "captionOutsideFrame": true
+        }
+      ],
+      "hover": {
+        "transform": "none",
+        "objectFit": "cover"
+      },
+      "failures": [
+        "imageMetrics",
+        "hoverCrop"
+      ]
+    }
+  ]
+}

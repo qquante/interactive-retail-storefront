@@ -1,0 +1,462 @@
+{
+  "base": "https://heal-web-production-48b1.up.railway.app",
+  "capturedAt": "2026-09-27T01:02:38.894Z",
+  "routes": [
+    {
+      "width": 390,
+      "route": "/",
+      "status": 200,
+      "overflow": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 390,
+      "route": "/colecoes",
+      "status": 200,
+      "overflow": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 390,
+      "route": "/colecoes/heals",
+      "status": 200,
+      "overflow": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 390,
+      "route": "/produtos/canela",
+      "status": 200,
+      "overflow": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 390,
+      "route": "/produtos/lavanda-celestial",
+      "status": 200,
+      "overflow": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 390,
+      "route": "/produtos/mirra",
+      "status": 200,
+      "overflow": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 390,
+      "route": "/produtos/olibano",
+      "status": 200,
+      "overflow": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 390,
+      "route": "/produtos/alecrim",
+      "status": 200,
+      "overflow": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 390,
+      "route": "/busca",
+      "status": 200,
+      "overflow": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 390,
+      "route": "/busca?q=olibano",
+      "status": 200,
+      "overflow": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 390,
+      "route": "/sobre",
+      "status": 200,
+      "overflow": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 390,
+      "route": "/materia",
+      "status": 200,
+      "overflow": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 390,
+      "route": "/como-escolher",
+      "status": 200,
+      "overflow": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 390,
+      "route": "/profissionais",
+      "status": 200,
+      "overflow": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 390,
+      "route": "/contato",
+      "status": 200,
+      "overflow": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 390,
+      "route": "/guia",
+      "status": 200,
+      "overflow": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 390,
+      "route": "/journal",
+      "status": 200,
+      "overflow": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 390,
+      "route": "/seguranca",
+      "status": 200,
+      "overflow": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 390,
+      "route": "/entrega-trocas",
+      "status": 200,
+      "overflow": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 390,
+      "route": "/privacidade",
+      "status": 200,
+      "overflow": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 390,
+      "route": "/termos",
+      "status": 200,
+      "overflow": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 390,
+      "route": "/carrinho",
+      "status": 200,
+      "overflow": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 390,
+      "route": "/checkout",
+      "status": 200,
+      "overflow": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 1440,
+      "route": "/",
+      "status": 200,
+      "overflow": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 1440,
+      "route": "/colecoes",
+      "status": 200,
+      "overflow": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 1440,
+      "route": "/colecoes/heals",
+      "status": 200,
+      "overflow": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 1440,
+      "route": "/produtos/canela",
+      "status": 200,
+      "overflow": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 1440,
+      "route": "/produtos/lavanda-celestial",
+      "status": 200,
+      "overflow": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 1440,
+      "route": "/produtos/mirra",
+      "status": 200,
+      "overflow": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 1440,
+      "route": "/produtos/olibano",
+      "status": 200,
+      "overflow": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 1440,
+      "route": "/produtos/alecrim",
+      "status": 200,
+      "overflow": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 1440,
+      "route": "/busca",
+      "status": 200,
+      "overflow": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 1440,
+      "route": "/busca?q=olibano",
+      "status": 200,
+      "overflow": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 1440,
+      "route": "/sobre",
+      "status": 200,
+      "overflow": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 1440,
+      "route": "/materia",
+      "status": 200,
+      "overflow": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 1440,
+      "route": "/como-escolher",
+      "status": 200,
+      "overflow": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 1440,
+      "route": "/profissionais",
+      "status": 200,
+      "overflow": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 1440,
+      "route": "/contato",
+      "status": 200,
+      "overflow": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 1440,
+      "route": "/guia",
+      "status": 200,
+      "overflow": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 1440,
+      "route": "/journal",
+      "status": 200,
+      "overflow": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 1440,
+      "route": "/seguranca",
+      "status": 200,
+      "overflow": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 1440,
+      "route": "/entrega-trocas",
+      "status": 200,
+      "overflow": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 1440,
+      "route": "/privacidade",
+      "status": 200,
+      "overflow": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 1440,
+      "route": "/termos",
+      "status": 200,
+      "overflow": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 1440,
+      "route": "/carrinho",
+      "status": 200,
+      "overflow": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 1440,
+      "route": "/checkout",
+      "status": 200,
+      "overflow": 0,
+      "h1": 1,
+      "main": 1
+    }
+  ],
+  "accessibility": [
+    {
+      "width": 390,
+      "route": "/",
+      "violations": []
+    },
+    {
+      "width": 390,
+      "route": "/colecoes/heals",
+      "violations": []
+    },
+    {
+      "width": 390,
+      "route": "/produtos/canela",
+      "violations": []
+    },
+    {
+      "width": 390,
+      "route": "/sobre",
+      "violations": []
+    },
+    {
+      "width": 390,
+      "route": "/profissionais",
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "route": "/",
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "route": "/colecoes/heals",
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "route": "/produtos/canela",
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "route": "/sobre",
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "route": "/profissionais",
+      "violations": []
+    }
+  ],
+  "motion": [
+    {
+      "variant": "flow",
+      "state": {
+        "motionVariant": "pulse",
+        "state": "ready",
+        "sourceX": "0.779731",
+        "sourceY": "0.108362",
+        "colorCount": "10"
+      },
+      "changed": true
+    },
+    {
+      "variant": "helix",
+      "state": {
+        "motionVariant": "pulse",
+        "state": "ready",
+        "colorCount": "10",
+        "sourceX": "0.779731",
+        "sourceY": "0.108362"
+      },
+      "changed": true
+    },
+    {
+      "variant": "pulse",
+      "state": {
+        "motionVariant": "pulse",
+        "state": "ready",
+        "sourceX": "0.779731",
+        "sourceY": "0.108362",
+        "colorCount": "10"
+      },
+      "changed": true
+    }
+  ],
+  "errors": []
+}

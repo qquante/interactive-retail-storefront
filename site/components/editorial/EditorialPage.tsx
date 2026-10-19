@@ -43,10 +43,9 @@ export function EditorialPage({
         </div>
       ) : null}
       <div className={styles.actions}>
-        <Link className={styles.primary} href="/colecoes/intervalos">Explorar incensos</Link>
+        <Link className={styles.primary} href="/colecoes/heals">Explorar incensos</Link>
         <Link className={styles.secondary} href="/">Voltar ao início</Link>
       </div>
     </CommercePageShell>
   );
 }
-

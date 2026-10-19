@@ -1,11 +1,51 @@
-import type { Metadata } from 'next';
-import { EditorialPage } from '@/components/editorial';
+import type { Metadata } from "next";
+import { EditorialPage } from "@/components/editorial";
 
-export const metadata: Metadata = { title: 'Guia do ritual', description: 'Estrutura futura do guia de uso da HEAL.', robots: { index: false, follow: true } };
+export const metadata: Metadata = {
+  title: "Guia de uso",
+  description:
+    "Um momento tranquilo começa com atenção ao espaço e às instruções do produto.",
+  robots: { index: false, follow: true },
+};
 
 export default function Page() {
-  return <EditorialPage eyebrow="Guia · conteúdo bloqueado" title="Do primeiro gesto ao fim." lede="O guia final seguirá a instrução do fabricante para cada formato e produto." notice={<><strong>Conteúdo ainda não validado.</strong> Este protótipo não contém procedimento de uso e não deve ser usado como orientação para acender ou descartar incenso.</>} sections={[
-    { title: 'Estrutura prevista', content: <p>Preparar, acender, posicionar, acompanhar, finalizar e guardar ou descartar. Cada etapa exigirá fonte, escopo de produto e revisão.</p> },
-    { title: 'Por que está vazio', content: <p>Uma instrução genérica poderia contradizer o rótulo do produto real. Clareza também significa não completar lacunas com suposições.</p> },
-  ]} />;
+  return (
+    <EditorialPage
+      eyebrow="USO E CUIDADOS"
+      title="Antes de acender."
+      lede="Um momento tranquilo começa com atenção ao espaço e às instruções do produto."
+      sections={[
+        {
+          title: "Prepare o ambiente.",
+          content: (
+            <p>
+              Escolha um local ventilado e um suporte próprio para incensos,
+              estável e resistente ao calor. Mantenha materiais inflamáveis
+              afastados.
+            </p>
+          ),
+        },
+        {
+          title: "Esteja presente.",
+          content: (
+            <p>
+              Não deixe um incenso aceso sem supervisão. Mantenha fora do
+              alcance de crianças e animais e considere a sensibilidade de quem
+              compartilha o ambiente.
+            </p>
+          ),
+        },
+        {
+          title: "Siga a embalagem.",
+          content: (
+            <p>
+              As instruções específicas de cada HEAL acompanharão o produto. A
+              coleção apresentada no site ainda não está disponível para compra
+              online.
+            </p>
+          ),
+        },
+      ]}
+    ></EditorialPage>
+  );
 }

@@ -1,38 +1,39 @@
-import Link from 'next/link';
-import { formatMoney, type Product } from '@/lib/commerce';
-import { ProductPlaceholder } from './ProductPlaceholder';
-import styles from './commerce.module.css';
-
+import Link from "next/link";
+import { getHealVariant } from "@/lib/brand/air-variants";
+import type { Product } from "@/lib/commerce";
+import { ProductMedia } from "./ProductMedia";
+import styles from "./commerce.module.css";
 export function inventoryLabel(product: Product): string {
-  const status = product.variants[0]?.inventory.status ?? 'unknown';
-  if (status === 'out_of_stock') return 'Indisponível nesta demonstração';
-  if (status === 'unknown') return 'Disponibilidade não confirmada — compra bloqueada';
-  return 'Disponível nesta demonstração';
+  if (product.provenance.mode === "fixture") return "Lançamento em preparação";
+  const status = product.variants[0]?.inventory.status ?? "unknown";
+  return status === "out_of_stock"
+    ? "Indisponível"
+    : status === "unknown"
+      ? "Lançamento em preparação"
+      : "Disponível";
 }
-
 export function ProductCard({ product }: { product: Product }) {
-  const variant = product.variants[0];
-  const sequence = product.handle.replace('intervalo-', '');
+  const visual = getHealVariant(product.handle);
   return (
     <article className={styles.productCard}>
-      <Link href={`/produtos/${product.handle}`} prefetch={false} aria-label={`Ver ${product.title}`}>
-        <ProductPlaceholder sequence={sequence} />
+      <Link
+        href={`/produtos/${product.handle}`}
+        prefetch={false}
+        className={styles.cardImageLink}
+        aria-label={`Ver ${visual?.name ?? product.title}`}
+      >
+        <ProductMedia product={product} caption={false} />
+        <span className={styles.cardImageAction} aria-hidden="true">
+          Conhecer <span>↗</span>
+        </span>
       </Link>
-      <p className={styles.eyebrow}>INCENSO · DEMONSTRAÇÃO</p>
+      <p className={styles.eyebrow}>INCENSO EM BASTÃO</p>
       <h2 className={styles.cardTitle}>
-        <Link href={`/produtos/${product.handle}`} prefetch={false}>{product.title}</Link>
+        <Link href={`/produtos/${product.handle}`} prefetch={false}>
+          {visual?.name ?? product.title}
+        </Link>
       </h2>
-      <dl className={styles.compactFacts}>
-        <div><dt>Família aromática</dt><dd>[A VALIDAR]</dd></div>
-        <div><dt>Notas percebidas</dt><dd>[A VALIDAR]</dd></div>
-        <div><dt>Intensidade</dt><dd>[A VALIDAR]</dd></div>
-        <div><dt>Nível de fumaça</dt><dd>[A VALIDAR]</dd></div>
-      </dl>
-      <p className={styles.price}>Valor demonstrativo — {variant ? formatMoney(variant.price.current) : 'indisponível'}</p>
-      <p className={styles.availability}>{inventoryLabel(product)}</p>
-      <Link className={styles.secondaryButton} href={`/produtos/${product.handle}`} prefetch={false}>
-        Ver produto demonstrativo
-      </Link>
+      <p className={styles.cardAvailability}>{inventoryLabel(product)}</p>
     </article>
   );
 }

@@ -3,9 +3,9 @@ import styles from './commerce.module.css';
 
 export function DemoBanner() {
   return (
-    <div className={styles.demoBanner} role="region" aria-label="Aviso de demonstração">
-      <strong>DEMONSTRAÇÃO</strong>
-      <span>{FIXTURE_BANNER.replace(/^Demonstração — /, '')}</span>
+    <div className={styles.demoBanner} role="region" aria-label="Status de lançamento">
+      <strong>EM PREPARAÇÃO</strong>
+      <span>{FIXTURE_BANNER}</span>
     </div>
   );
 }

@@ -1,53 +1,58 @@
-import { BRL, money } from './money';
+import {
+  HEAL_CATALOGUE_MEDIA,
+  type HealCatalogueId,
+} from "../brand/catalogue-media";
+import { BRL, money } from "./money";
 import type {
   Collection,
   CollectionId,
   DataProvenance,
   DateTimeIso,
+  ImageId,
   Inventory,
   Product,
   ProductId,
   Variant,
   VariantId,
-} from './types';
+} from "./types";
 
 export const FIXTURE_BANNER =
-  'Demonstração — produtos, valores, estoque e frete fictícios; nenhum pagamento será processado.';
+  "Coleção em preparação — a venda online ainda não está aberta.";
 
 export const FIXTURE_SUMMARY =
-  'Produto fictício criado para validar hierarquia, navegação e estados da loja. Aroma, composição, origem, formato, intensidade, fumaça, preço e disponibilidade não são informações reais.';
+  "Incenso em bastão da coleção HEALS. Lançamento em preparação.";
 
-export const FIXTURE_CHECKED_AT =
-  '2026-08-28T14:00:00.000Z' as DateTimeIso;
+export const FIXTURE_CHECKED_AT = "2026-08-28T14:00:00.000Z" as DateTimeIso;
 
 export const FIXTURE_PROVENANCE: DataProvenance = {
-  mode: 'fixture',
-  provider: 'fixture',
+  mode: "fixture",
+  provider: "fixture",
   fetchedAt: FIXTURE_CHECKED_AT,
-  label: 'Demonstração — dados fictícios',
+  label: "Pré-lançamento — dados comerciais não publicados",
 };
 
-const INTERVALOS_ID = 'fixture:collection:intervalos' as CollectionId;
+const HEALS_ID = "fixture:collection:heals" as CollectionId;
 
-function fixtureInventory(status: Inventory['status']): Inventory {
+function fixtureInventory(status: Inventory["status"]): Inventory {
   return {
     status,
     availableQuantity: null,
-    purchasePolicy: 'deny',
+    purchasePolicy: "deny",
     checkedAt: FIXTURE_CHECKED_AT,
   };
 }
 
 function fixtureVariant(
-  sequence: string,
+  handle: string,
+  code: string,
   amount: string,
-  inventoryStatus: Inventory['status'],
+  inventoryStatus: Inventory["status"],
 ): Variant {
   return {
-    id: `fixture:variant:intervalo-${sequence}` as VariantId,
-    sku: { value: `FIXTURE-HEAL-INT-${sequence}` },
-    title: 'Opção demonstrativa única',
-    options: [{ optionName: 'Formato', value: '[A VALIDAR]' }],
+    id: `fixture:variant:${handle}` as VariantId,
+    sku: { value: `PRE-HEAL-${code}` },
+    title: "Caixa de incensos em bastão",
+    options: [{ optionName: "Formato", value: "Incenso em bastão" }],
     price: {
       current: money(amount, BRL),
       compareAt: null,
@@ -62,21 +67,27 @@ function fixtureVariant(
 }
 
 function fixtureProduct(
-  sequence: '01' | '02' | '03',
+  handle: HealCatalogueId,
+  name: string,
+  code: "CNL" | "LVC" | "MRR" | "OLB" | "ALC",
   amount: string,
-  inventoryStatus: Inventory['status'],
+  inventoryStatus: Inventory["status"],
 ): Product {
-  const title = `Intervalo ${sequence} — Incenso HEALS [FORMATO A VALIDAR] [DEMONSTRAÇÃO]`;
+  const title = `${name} — incenso HEALS em bastão`;
+  const image = {
+    id: `concept:image:${handle}` as ImageId,
+    ...HEAL_CATALOGUE_MEDIA[handle],
+  };
 
   return {
-    id: `fixture:product:intervalo-${sequence}` as ProductId,
-    handle: `intervalo-${sequence}`,
+    id: `fixture:product:${handle}` as ProductId,
+    handle,
     title,
     summary: FIXTURE_SUMMARY,
     descriptionHtml: `<p>${FIXTURE_SUMMARY}</p>`,
-    status: 'active',
-    featuredImage: null,
-    images: [],
+    status: "active",
+    featuredImage: image,
+    images: [image],
     sensory: {
       aromaticFamily: null,
       descriptors: [],
@@ -85,7 +96,7 @@ function fixtureProduct(
       methodologyRef: null,
     },
     facts: {
-      format: null,
+      format: "Incenso em bastão",
       ingredients: null,
       origin: null,
       quantityLabel: null,
@@ -93,25 +104,33 @@ function fixtureProduct(
       usage: null,
       safety: null,
     },
-    variants: [fixtureVariant(sequence, amount, inventoryStatus)],
-    collectionIds: [INTERVALOS_ID],
+    variants: [fixtureVariant(handle, code, amount, inventoryStatus)],
+    collectionIds: [HEALS_ID],
     provenance: FIXTURE_PROVENANCE,
   };
 }
 
 export const FIXTURE_PRODUCTS: readonly Product[] = [
-  fixtureProduct('01', '39.00', 'in_stock'),
-  fixtureProduct('02', '44.00', 'in_stock'),
-  fixtureProduct('03', '49.00', 'unknown'),
+  fixtureProduct("canela", "Canela", "CNL", "39.00", "in_stock"),
+  fixtureProduct(
+    "lavanda-celestial",
+    "Lavanda Celestial",
+    "LVC",
+    "42.00",
+    "in_stock",
+  ),
+  fixtureProduct("mirra", "Mirra", "MRR", "45.00", "unknown"),
+  fixtureProduct("olibano", "Olíbano", "OLB", "48.00", "unknown"),
+  fixtureProduct("alecrim", "Alecrim", "ALC", "51.00", "unknown"),
 ];
 
 export const FIXTURE_COLLECTIONS: readonly Collection[] = [
   {
-    id: INTERVALOS_ID,
-    handle: 'intervalos',
-    title: 'HEALS — Intervalos [DEMONSTRAÇÃO]',
+    id: HEALS_ID,
+    handle: "heals",
+    title: "Coreografia do ar — coleção de estreia HEALS",
     description:
-      'Uma coleção fictícia para validar comparação, navegação e caminho de compra. Nenhum nome, atributo ou condição representa produto real da HEAL.',
+      "Canela, Lavanda Celestial, Mirra, Olíbano e Alecrim inauguram um sistema visual preparado para um repertório maior de incensos.",
     image: null,
     productCount: FIXTURE_PRODUCTS.length,
     provenance: FIXTURE_PROVENANCE,
@@ -126,7 +145,9 @@ export function findFixtureVariant(
   variantId: string,
 ): { product: Product; variant: Variant } | null {
   for (const product of FIXTURE_PRODUCTS) {
-    const variant = product.variants.find((candidate) => candidate.id === variantId);
+    const variant = product.variants.find(
+      (candidate) => candidate.id === variantId,
+    );
     if (variant) {
       return { product, variant };
     }

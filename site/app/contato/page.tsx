@@ -1,12 +1,49 @@
-import type { Metadata } from 'next';
-import { EditorialPage } from '@/components/editorial';
+import type { Metadata } from "next";
+import { EditorialPage } from "@/components/editorial";
 
-export const metadata: Metadata = { title: 'Contato', description: 'Estado demonstrativo do futuro atendimento HEAL.', robots: { index: false, follow: false } };
+export const metadata: Metadata = {
+  title: "Atendimento",
+  description:
+    "Os canais de atendimento online estão em preparação, junto com a abertura da loja.",
+  robots: { index: false, follow: true },
+};
 
 export default function Page() {
-  return <EditorialPage eyebrow="Contato · demonstração" title="Fale com a HEAL." lede="O canal, os responsáveis, os horários e os prazos de atendimento ainda não foram definidos." notice="Nenhuma mensagem é enviada por este protótipo. Não envie dados de cartão nem informações de saúde." sections={[
-    { title: 'Assuntos previstos', content: <p>Produto e uso; pedido e entrega; troca ou devolução; privacidade; outro.</p> },
-    { title: 'Canal e SLA', content: <p>Email, formulário, telefone, horário e prazo de resposta: [A VALIDAR].</p> },
-  ]} />;
+  return (
+    <EditorialPage
+      eyebrow="PODEMOS AJUDAR?"
+      title="Atendimento HEAL."
+      lede="Os canais de atendimento online estão em preparação, junto com a abertura da loja."
+      sections={[
+        {
+          title: "Quero conhecer os incensos.",
+          content: (
+            <p>
+              A coleção já pode ser explorada no site. Nas páginas dos aromas
+              você encontra as imagens, o formato e o status de lançamento.
+            </p>
+          ),
+        },
+        {
+          title: "Quero comprar ou revender.",
+          content: (
+            <p>
+              As vendas online e o programa profissional ainda não estão
+              abertos. Não recebemos pedidos, reservas ou pagamentos por este
+              site nesta etapa.
+            </p>
+          ),
+        },
+        {
+          title: "Dúvidas sobre a abertura.",
+          content: (
+            <p>
+              Contato, horários e condições de atendimento serão publicados aqui
+              assim que os canais estiverem disponíveis.
+            </p>
+          ),
+        },
+      ]}
+    ></EditorialPage>
+  );
 }
-
