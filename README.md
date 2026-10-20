@@ -26,7 +26,17 @@ Fixture catalogue → React routes/components → local bag and shipping simulat
 
 ## Current limitations
 
-This is a labelled local prototype: no real payment, order, shipping quote or production deployment. Some binary media are omitted from the review copy. Existing test definitions were not rerun here.
+This is a labelled local prototype: no real payment, order, shipping quote or production deployment. Some binary media are omitted from the review copy. Unit tests and production compilation do not establish that every browser flow or media asset works.
+
+## Validation
+
+Node.js 24.15.0 on Windows: all 19 unit tests and the production build passed after a fresh dependency install with lifecycle scripts disabled. Run these commands from `site/`; browser and payment flows were not exercised.
+
+```console
+npm ci --ignore-scripts
+npm run test:unit
+npm run build
+```
 
 ## License
 
